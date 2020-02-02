@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>数据结构几种排序的简单实现 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="源代码如下,亲测可用(基于c语言)#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;void swap(int a,int *b){    &#x2F;&#x2F;交换函数    int temp;    temp&#x3D;a;    a&#x3D;b;    *b&#x3D;temp;}&#x2F;&#x2F;直接插入排序void Insert(int a[],int n){    int i&#x3D;0,j&#x3D;0,k&#x3D;0,t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构几种排序的简单实现">
+<meta property="og:url" content="http://yoursite.com/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="源代码如下,亲测可用(基于c语言)#include&lt;stdio.h&gt;#include&lt;stdlib.h&gt;void swap(int a,int *b){    &#x2F;&#x2F;交换函数    int temp;    temp&#x3D;a;    a&#x3D;b;    *b&#x3D;temp;}&#x2F;&#x2F;直接插入排序void Insert(int a[],int n){    int i&#x3D;0,j&#x3D;0,k&#x3D;0,t">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-02T15:16:58.000Z">
+<meta property="article:modified_time" content="2020-02-02T15:21:24.013Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,76 +154,176 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-数据结构内部排序简单实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      数据结构几种排序的简单实现
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
+
+        
+        <a href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
   	<time datetime="2020-02-02T15:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">数据结构几种排序的简单实现</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>源代码如下,亲测可用(基于c语言)<br>#include&lt;stdio.h&gt;<br>#include&lt;stdlib.h&gt;<br>void swap(int <em>a,int *b){    //交换函数<br>    int temp;<br>    temp=</em>a;<br>    <em>a=</em>b;<br>    *b=temp;<br>}<br>//直接插入排序<br>void Insert(int a[],int n){<br>    int i=0,j=0,k=0,temp=0;<br>    for(i=1;i&lt;n;i++){<br>        for(j=0;j&lt;i;j++){<br>            if(a[i]&lt;a[j]){<br>                temp=a[i];<br>                for(k=i-1;k&gt;=j;k–){<br>                    a[k+1]=a[k];<br>                }<br>                a[j]=temp;<br>            }<br>        }<br>    }<br>}<br>//希尔排序<br>void Shell(int a[],int n){<br>    int D=5,Dk=0,i=0,j=0,k=0,temp=0;<br>    for(D=5;D&gt;=1;D/=2){        //增量<br>        for(Dk=0;Dk&lt;D;Dk++){    //执行增量排序次数<br>            for(i=Dk+D;i&lt;n;i+=D){        //基于增量的直接插入排序<br>                for(j=Dk;j&lt;i;j+=D){<br>                    if(a[i]&lt;a[j]){<br>                        temp=a[i];<br>                        for(k=i-D;k&gt;=j;k-=D){<br>                            a[k+D]=a[k];<br>                        }<br>                        a[j]=temp;<br>                    }<br>                }<br>            }<br>        }<br>    }<br>}<br>//简单选择排序<br>void Select(int a[],int n){<br>    int i=0,j=0,min=-1,minIndex,temp=0;<br>    for(i=0;i&lt;n-1;i++){<br>        min=a[i];<br>        for(j=i;j&lt;n;j++){    //找出最小元素的下标<br>            if(a[j]&lt;min){<br>                min=a[j];<br>                minIndex=j;<br>            }<br>        }<br>        swap(a+i,a+minIndex);<br>    }<br>}<br>//冒泡排序<br>void Bubble(int a[],int n){<br>    int i=0,j=0,temp=0;<br>    for(i=n-1;i&gt;0;i–){<br>        for(j=0;j&lt;i;j++){<br>            if(a[j]&gt;a[j+1]){<br>                swap(a+j,a+j+1);<br>            }<br>        }<br>    }<br>}<br>//快速排序<br>void Quick(int R[], int low, int high) {<br>        if(low&gt;high) return;<br>        int i, j, temp;<br>        i = low;<br>        j = high;<br>        temp = R[low];//轴枢<br>        while (i &lt; j) {<br>            while (j &gt; i &amp;&amp; R[j] &gt;= temp) {//首先从右往左找到小于轴枢的值<br>                –j;<br>            }<br>            if (i &lt; j) {<br>                R[i] = R[j];;//找到小于轴枢的值后，交换到序列前端i的位置</p>
+<pre><code>                    //从左往右扫描找到大于轴枢的值
+            ++i;
+        }
 
-        <div class="article-info info-on-right">
-          
-          
+        while (i &lt; j &amp;&amp; R[i] &lt; temp) {
+            ++i;
+        }
+        if (i &lt; j) {
+            R[j] = R[i];
+            --j;
+        }
 
+
+    }
+    R[i] = temp;
+    Quick(R, low, i - 1);
+    Quick(R, i+1, high);
+}</code></pre><p>int main(){<br>    int begin=0,end=0;<br>    int i=0,a[100]={0};<br>    for(i=0;i&lt;100;i++){<br>        a[i]=rand()%1000;<br>    }<br>    //Insert(a,100);<br>    //Bubble(a,100);<br>    //Select(a,100);<br>    //Shell(a,100);<br>    Quick(a,0,99);<br>    for(i=1;i&lt;=100;i++){<br>        printf(“%d “,a[i-1]);<br>        if(i%10==0) printf(“\n”);<br>    }<br>    return 0;<br>} </p>
+<hr>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-01T13:05:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客文章</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -242,8 +346,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
