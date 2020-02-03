@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>栈队列二叉树的简单实现 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="是发送到发爽肤水dasdasd* dgfsgdsg*">
+<meta property="og:type" content="article">
+<meta property="og:title" content="栈队列二叉树的简单实现">
+<meta property="og:url" content="http://yoursite.com/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="是发送到发爽肤水dasdasd* dgfsgdsg*">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E7%BE%8E%E5%A5%B3&hs=2&pn=6&spn=0&di=39380&pi=0&rn=1&tn=baiduimagedetail&is=0%252C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=4152711957%252C282546435&os=4248029407%252C317917436&simid=3381549339%252C182920406&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=girl&bdtype=0&oriquery=%E7%BE%8E%E5%A5%B3&objurl=http%253A%252F%252Ffinance.gmw.cn%252Fattachement%252Fjpg%252Fsite2%252F20131231%252Feca86bd9e2ca142c8a6a44.jpg&fromurl=ippr_z2C%2524qAzdH3FAzdH3Fkkf_z%2526e3Bgwgfito_z%2526e3Bv54AzdH3Fpi6jw1-bdnn0-8-c_z%2526e3Bip4s&gsm=&islist=&querylist=">
+<meta property="article:published_time" content="2020-02-03T13:03:14.000Z">
+<meta property="article:modified_time" content="2020-02-03T13:08:04.498Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E7%BE%8E%E5%A5%B3&hs=2&pn=6&spn=0&di=39380&pi=0&rn=1&tn=baiduimagedetail&is=0%252C0&ie=utf-8&oe=utf-8&cl=2&lm=-1&cs=4152711957%252C282546435&os=4248029407%252C317917436&simid=3381549339%252C182920406&adpicid=0&lpn=0&ln=30&fr=ala&fm=&sme=&cg=girl&bdtype=0&oriquery=%E7%BE%8E%E5%A5%B3&objurl=http%253A%252F%252Ffinance.gmw.cn%252Fattachement%252Fjpg%252Fsite2%252F20131231%252Feca86bd9e2ca142c8a6a44.jpg&fromurl=ippr_z2C%2524qAzdH3FAzdH3Fkkf_z%2526e3Bgwgfito_z%2526e3Bv54AzdH3Fpi6jw1-bdnn0-8-c_z%2526e3Bip4s&gsm=&islist=&querylist=">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,16 +156,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-静态栈和队列以及二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-静态栈和队列以及二叉树" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/">栈队列二叉树的简单实现</a>
+    <h1 class="article-title" itemprop="name">
+      栈队列二叉树的简单实现
     </h1>
   
 
@@ -180,6 +184,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -187,16 +212,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构几种排序的简单实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -216,144 +300,14 @@
 
 
 
-
   
-    <article id="post-数据结构内部排序简单实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">数据结构几种排序的简单实现</a>
-    </h1>
   
 
-        
-        <a href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-02-02T15:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>源代码如下,亲测可用(基于c语言)<br>#include&lt;stdio.h&gt;<br>#include&lt;stdlib.h&gt;<br>void swap(int <em>a,int *b){    //交换<br>    int temp;<br>    temp=</em>a;<br>    <em>a=</em>b;<br>    *b=temp;<br>}<br>//直接插入排序<br>void Insert(int a[],int n){<br>    int i=0,j=0,k=0,temp=0;<br>    for(i=1;i&lt;n;i++){<br>        for(j=0;j&lt;i;j++){<br>            if(a[i]&lt;a[j]){<br>                temp=a[i];<br>                for(k=i-1;k&gt;=j;k–){<br>                    a[k+1]=a[k];<br>                }<br>                a[j]=temp;<br>            }<br>        }<br>    }<br>}<br>//希尔排序<br>void Shell(int a[],int n){<br>    int D=5,Dk=0,i=0,j=0,k=0,temp=0;<br>    for(D=5;D&gt;=1;D/=2){        //增量<br>        for(Dk=0;Dk&lt;D;Dk++){    //执行增量排序次数<br>            for(i=Dk+D;i&lt;n;i+=D){        //基于增量的直接插入排序<br>                for(j=Dk;j&lt;i;j+=D){<br>                    if(a[i]&lt;a[j]){<br>                        temp=a[i];<br>                        for(k=i-D;k&gt;=j;k-=D){<br>                            a[k+D]=a[k];<br>                        }<br>                        a[j]=temp;<br>                    }<br>                }<br>            }<br>        }<br>    }<br>}<br>//简单选择排序<br>void Select(int a[],int n){<br>    int i=0,j=0,min=-1,minIndex,temp=0;<br>    for(i=0;i&lt;n-1;i++){<br>        min=a[i];<br>        for(j=i;j&lt;n;j++){    //找出最小元素的下标<br>            if(a[j]&lt;min){<br>                min=a[j];<br>                minIndex=j;<br>            }<br>        }<br>        swap(a+i,a+minIndex);<br>    }<br>}<br>//冒泡排序<br>void Bubble(int a[],int n){<br>    int i=0,j=0,temp=0;<br>    for(i=n-1;i&gt;0;i–){<br>        for(j=0;j&lt;i;j++){<br>            if(a[j]&gt;a[j+1]){<br>                swap(a+j,a+j+1);<br>            }<br>        }<br>    }<br>}<br>//快速排序<br>void Quick(int a[],int low,int high){<br>    if(low&gt;high) return;<br>    int L=low,R=high,pivot=a[low];<br>    while(L&lt;R){<br>        while(L&lt;R&amp;&amp;a[R]&gt;=pivot){    //从右边开始找到比枢纽小的值移到左边<br>            R–;<br>        }<br>        if(L&lt;R){<br>            a[L]=a[R];<br>            L++;<br>        }<br>        while(L&lt;R&amp;&amp;a[L]&lt;pivot){        //从左边开始找到比枢纽小的值移到右边<br>            L++;<br>        }<br>        if(L&lt;R){<br>            a[R]=a[L];<br>            R–;<br>        }<br>    }<br>    Quick(a,low,L-1);<br>    Quick(a,L+1,high);</p>
-<p>}<br>int main(){<br>    int begin=0,end=0;<br>    int i=0,a[100]={0};<br>    for(i=0;i&lt;100;i++){<br>        a[i]=rand()%1000;<br>    }<br>    //Insert(a,100);<br>    //Bubble(a,100);<br>    //Select(a,100);<br>    //Shell(a,100);<br>    Quick(a,0,99);<br>    for(i=1;i&lt;=100;i++){<br>        printf(“%d “,a[i-1]);<br>        if(i%10==0) printf(“\n”);<br>    }<br>    return 0;<br>} </p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
   
 
-        
-        <a href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-01T13:05:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="万事开头难–"><a href="#万事开头难–" class="headerlink" title="万事开头难–"></a><p align="left">万事开头难–</p></h1><h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a><p align="center">坚持</p></h2><hr>
-<pre><code>大四即将工作的老学长即日起更新博客.
-
-
-励志做一名中级程序员 qaq~~
-
-
-座右铭: 我赚钱养家,你拿去花.</code></pre><hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -376,8 +330,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
