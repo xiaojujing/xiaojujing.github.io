@@ -172,7 +172,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="V38~%60~%60X44%5D_V(G9SI~NW)Y.png" alt=""></p>
+        <p>#include<iostream><br>#include<cstdlib><br>using namespace std;<br>typedef char Elemtype;<br>typedef struct BiTNode{<br>    Elemtype data;<br>    BiTNode <em>lchild,<em>rchild;<br>}BiTNode,</em>BiTree;<br>int CreatBiTree(BiTree &amp;T){        //建立二叉树<br>    Elemtype ch;<br>    cin&gt;&gt;ch;<br>    if(ch==’#’) T=NULL;<br>    else{<br>        T=(BiTNode</em>)malloc(sizeof(BiTNode));<br>        T-&gt;data=ch;<br>        CreatBiTree(T-&gt;lchild);<br>        CreatBiTree(T-&gt;rchild);<br>    }<br>    return 0;<br>}<br>void PreOrder(BiTree &amp;T){<br>    if(T!=NULL){<br>        cout&lt;<T->data&lt;&lt;endl;<br>        PreOrder(T-&gt;lchild);<br>        PreOrder(T-&gt;rchild);<br>    }<br>}<br>void InOrder(BiTree &amp;T){<br>    if(T!=NULL){<br>        InOrder(T-&gt;lchild);<br>        cout&lt;<T->data&lt;&lt;endl;<br>        InOrder(T-&gt;rchild);<br>    }<br>}<br>void PostOrder(BiTree &amp;T){<br>    if(T!=NULL){<br>        PostOrder(T-&gt;lchild);<br>        PostOrder(T-&gt;rchild);<br>        cout&lt;<T->data&lt;&lt;endl;<br>    }<br>}</p>
+<p>int main(){<br>    BiTree T;<br>    CreatBiTree(T);<br>    printf(“先序遍历:\n”);      //    a<br>    PreOrder(T);            //    b        c<br>    printf(“中序遍历:\n”); //d            e<br>    InOrder(T);                  //    f  g<br>    printf(“后序遍历:\n”);<br>    PostOrder(T);<br>    return 0;<br>} </p>
 
       
 
