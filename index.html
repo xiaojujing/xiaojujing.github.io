@@ -152,6 +152,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-图的遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">图的遍历</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
+  	<time datetime="2020-02-05T14:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="邻接表存储DFS"><a href="#邻接表存储DFS" class="headerlink" title="邻接表存储DFS"></a>邻接表存储DFS</h2><p>void Visit(Vertex v){<br>    printf(“%d\n”,v);<br>}<br>void DFS(LGraph Graph,Vertex v,void (*Visit)(Vertex)){<br>    ProToAdjVNode W;<br>    Visit(v);<br>    Visited[v]=true;<br>    for(W=Graph-&gt;G[v].FitstEdge;W;W=W-&gt;Next){<br>        if(!Visited[W-&gt;Adjv]){<br>            DFS(Graph,W-&gt;Adjv,Visit);<br>        }<br>    }<br>}</p>
+<hr>
+<h2 id="邻接矩阵存储BFS"><a href="#邻接矩阵存储BFS" class="headerlink" title="邻接矩阵存储BFS"></a>邻接矩阵存储BFS</h2><p>void Visit(Vertex v){<br>    printf(“正在访问的顶点%d\n”,v);<br>}<br>bool IsEdge(MGraph Graph,Vertex v,Vertex w){<br>    return Graph-&gt;G[v][w]&lt;INFNITY?true:false;<br>}<br>void BFS(MGraph Graph,Vertex S,void(*Visit)(Vertex)){<br>    queue<Vertex> Q;<br>    Vertex V,W;<br>    Visit(S);<br>    Visited[S]=true;<br>    Q.push(S);<br>    while(!Q.empty()){<br>        V=Q.front();Q.pop();<br>        for(W=0;W<Graph->Nv;W++){<br>            if(!Visited[W]&amp;&amp;IsEdge(Graph,V,W)){<br>                Visit(W);<br>                Visited[W]=true;<br>                Q.push(W);<br>            }<br>        }<br>    }<br>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-图的两种表示法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
