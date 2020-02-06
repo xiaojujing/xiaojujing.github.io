@@ -172,7 +172,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>#include <iostream><br>#include<vector><br>#include<deque><br>#include<list><br>#include<set><br>#include<map><br>#include<stack><br>#include<queue><br>#include<algorithm><br>using namespace std;<br>struct Student{<br>    int a,b;<br>    bool operator &lt; (const Student &amp;rs) const{<br>        if(a==rs.a) return b&lt;rs.b;<br>        return a&lt;rs.a;<br>    }<br>};</p>
+<p>int main()<br>{<br>    priority_queue <int> q;<br>    deque <int>::const_iterator i;<br>    set <int>::const_iterator j;<br>    map &lt;int,char&gt;::iterator k;<br>    vector<int> v;<br>    deque<int> d;<br>    map&lt;int,char&gt; m;<br>    set<int> s;<br>    s.insert(5);s.insert(8);s.insert(1);s.insert(3);s.insert(3);<br>    m.insert(pair&lt;int,char&gt;(1,’a’));<br>    m.insert(pair&lt;int,char&gt;(2,’a’));<br>    m.insert(pair&lt;int,char&gt;(3,’c’));<br>    m.insert(pair&lt;int,char&gt;(4,’d’));<br>    /<em>m.insert(map&lt;int,char&gt;::value_type(1,’a’));<br>    m.insert(map&lt;int,char&gt;::value_type(1,’b’));<br>    m.insert(map&lt;int,char&gt;::value_type(3,’c’));<br>    m.insert(map&lt;int,char&gt;::value_type(4,’d’));</em>/<br>    for(k=m.begin();k!=m.end();k++){<br>        cout&lt;&lt;1&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;<br>    for(int i=0;i&lt;10;i++){<br>        v.push_back(i);<br>        d.push_front(i);<br>    }<br>    for(i=d.begin();i&lt;d.end();i++){<br>        cout&lt;&lt;<em>i&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;<br>    for(j=s.begin();j!=s.end();j++){<br>        cout&lt;&lt;</em>j&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;</p>
+<pre><code>for(int i=0;i&lt;10;i++){
+    q.push(i);
+}
+while(q.size()){
+    cout&lt;&lt;q.top()&lt;&lt;&apos; &apos;;
+    q.pop();
+}
+cout &lt;&lt;endl;
+
+
+priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt;q_;
+for(int i=0;i&lt;10;i++){
+    q_.push(i);
+}
+while(q_.size()){
+    cout&lt;&lt;q_.top()&lt;&lt;&apos; &apos;;
+    q_.pop();
+}
+cout &lt;&lt;endl;
+Student student[5]={{5,5},{5,4},{3,1},{2,2},{2,1}};
+sort(student,student+5);
+for(int i=0;i&lt;5;i++){
+    cout&lt;&lt;student[i].a&lt;&lt;&apos; &apos;&lt;&lt;student[i].b&lt;&lt;endl;
+}
+priority_queue &lt;Student&gt; qq;
+for(int i=0;i&lt;5;i++){
+    qq.push(student[i]);
+}
+while(qq.size()){
+    Student now=qq.top();
+    cout&lt;&lt;now.a&lt;&lt;&apos; &apos;&lt;&lt;now.b&lt;&lt;endl;
+    qq.pop();
+}
+cout &lt;&lt;endl;
+return 0;</code></pre><p>}</p>
+
       
 
       
