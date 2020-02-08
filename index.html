@@ -172,7 +172,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;<br>#define MAX 101<br>int D[MAX][MAX]={0};<br>int n;<br>int maxsum[MAX][MAX];<br>int MaxSum(int i,int j){<br>    if(maxsum[i][j]!=-1) return maxsum[i][j];<br>    if(i==n) maxsum[i][j]=D[i][j];<br>    else{<br>        int x=MaxSum(i+1,j);<br>        int y=MaxSum(i+1,j+1);<br>        maxsum[i][j]=max(x,y)+D[i][j];<br>    }<br>    return maxsum[i][j];<br>}<br>int main(){<br>    int i,j;<br>    cin&gt;&gt;n;<br>    for(i=1;i&lt;=n;i++){<br>        for(j=1;j&lt;=i;j++){<br>            cin&gt;&gt;D[i][j];<br>            maxsum[i][j]=-1;<br>        }<br>    }<br>    cout&lt;&lt;MaxSum(1,1)&lt;&lt;endl;<br>    return 0;<br>} </p>
+
       
 
       
