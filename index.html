@@ -152,6 +152,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-贪心" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/11/%E8%B4%AA%E5%BF%83/">贪心</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/11/%E8%B4%AA%E5%BF%83/" class="archive-article-date">
+  	<time datetime="2020-02-11T07:34:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;</p>
+<p>/<em>const double eps=1e-6;            //圣诞老人的礼物<br>struct Candy{<br>    int v; int w;<br>    bool operator &lt; (const Candy &amp; c){<br>        return double(v)/w-double(c.v)/c.w&gt;eps;<br>    }<br>}candies[110];</em>/</p>
+<p>struct Cow{                            //分配畜栏<br>    int a,b;<br>    int No;<br>    bool operator &lt; (const Cow &amp;c) const{<br>        return a&lt;c.a;<br>    };<br>}cows[50100];<br>int pos[50100];<br>struct Stall{<br>    int end;<br>    int No;<br>    bool operator&lt;(const Stall &amp;s) const{<br>        return end&gt;s.end;<br>    }<br>    Stall(int e,int n):end(e),No(n){</p>
+<pre><code>}</code></pre><p>};</p>
+<p>int main(){<br>    /<em>int n,w;<br>    scanf(“%d%d”,&amp;n,&amp;w);<br>    for(int i=0;i&lt;n;i++){<br>        scanf(“%d%d”,&amp;candies[i].v,&amp;candies[i].w);<br>    }<br>    sort(candies,candies+n);<br>    int totalW=0;<br>    double totalV=0;<br>    for(int i=0;i&lt;n;i++){<br>        if(totalW+candies[i].w&lt;=w){<br>            totalW+=candies[i].w;<br>            totalV+=candies[i].v;<br>        }else{<br>            totalV+=candies[i].v*double(w-totalW)/candies[i].w;<br>            break;<br>        }<br>    }<br>    printf(“%.1f”,totalV);</em>/</p>
+<pre><code>int n;
+scanf(&quot;%d&quot;,&amp;n);
+for(int i=0;i&lt;n;++i){
+    scanf(&quot;%d%d&quot;,&amp;cows[i].a,&amp;cows[i].b);
+    cows[i].No=i;
+}
+sort(cows,cows+n);
+int total=0;
+priority_queue&lt;Stall&gt; pq;
+for(int i=0;i&lt;n;++i){
+    if(pq.empty()){
+        ++total;
+        pq.push(Stall(cows[i].b,total));
+        pos[cows[i].No]=total;
+    }else{
+        Stall st=pq.top();
+        if(st.end&lt;cows[i].a){
+            pq.pop();
+            pos[cows[i].No]=st.No;
+            pq.push(Stall(cows[i].b,st.No));
+        }else{
+            ++total;
+            pq.push(Stall(cows[i].b,total));
+            pos[cows[i].No]=total;
+        }
+    }
+}
+printf(&quot;%d\n&quot;,total);
+for(int i=0;i&lt;n;i++){
+    printf(&quot;%d\n&quot;,pos[i]);
+}
+
+
+return 0;</code></pre><p>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/11/%E8%B4%AA%E5%BF%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-动态规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -877,76 +978,10 @@ return 0;</code></pre><p>}</p>
 
 
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-01T13:05:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="万事开头难–"><a href="#万事开头难–" class="headerlink" title="万事开头难–"></a><p align="left">万事开头难–</p></h1><h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a><p align="center">坚持</p></h2><hr>
-<pre><code>大四即将工作的老学长即日起更新博客.
-
-
-励志做一名中级程序员 qaq~~
-
-
-座右铭: 我赚钱养家,你拿去花.</code></pre><hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
