@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>4、IDEA和数组 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="4、IDEA和数组1、IDEA安装和使用1.1、安装​        官网一键式安装 1.2、使用​        1、新建project，选择Empty Project，一直next ​        2、新建Module，注意选择JDK版本 2、数组2.1、初始化​    1、char [] ch&#x3D; new char[size]； ​    2、静态初始化：char [] ch&#x3D; {变量值}；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4、IDEA和数组">
+<meta property="og:url" content="http://yoursite.com/2020/09/23/4%E3%80%81IDEA%E5%92%8C%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="4、IDEA和数组1、IDEA安装和使用1.1、安装​        官网一键式安装 1.2、使用​        1、新建project，选择Empty Project，一直next ​        2、新建Module，注意选择JDK版本 2、数组2.1、初始化​    1、char [] ch&#x3D; new char[size]； ​    2、静态初始化：char [] ch&#x3D; {变量值}；">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:%5CDevelop%5C1-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%5C7%E6%9C%88Java%E5%9F%BA%E7%A1%80%E7%8F%AD%5Cday04%E7%AC%94%E8%AE%B00724%5Cimg%5C1591007957052.png">
+<meta property="article:published_time" content="2020-09-23T11:55:09.000Z">
+<meta property="article:modified_time" content="2020-09-23T12:00:11.020Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:%5CDevelop%5C1-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%5C7%E6%9C%88Java%E5%9F%BA%E7%A1%80%E7%8F%AD%5Cday04%E7%AC%94%E8%AE%B00724%5Cimg%5C1591007957052.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,71 +156,57 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-递归和分治" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-4、IDEA和数组" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/">递归和分治</a>
+    <h1 class="article-title" itemprop="name">
+      4、IDEA和数组
     </h1>
   
 
         
-        <a href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/" class="archive-article-date">
-  	<time datetime="2020-02-07T15:10:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
+        <a href="/2020/09/23/4%E3%80%81IDEA%E5%92%8C%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2020-09-23T11:55:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;<br>void Swap(int &amp;a,int &amp;b){<br>    int temp=0;<br>    temp=a;<br>    a=b;<br>    b=temp;<br>}</p>
-<p>void Hanoi(int n,char src,char mid,char dest){        //汉诺塔问题<br>    if(n==1){<br>        cout&lt;&lt;src&lt;&lt;”-&gt;”&lt;&lt;dest&lt;&lt;endl;<br>        return;<br>    }<br>    Hanoi(n-1,src,dest,mid);<br>    cout&lt;&lt;src&lt;&lt;”-&gt;”&lt;&lt;dest&lt;&lt;endl;<br>    Hanoi(n-1,mid,src,dest);<br>} </p>
-<p>int N;<br>int queenPos[100];<br>void NQueen(int k){            //N皇后<br>    if(k==N){<br>        for(int i=0;i&lt;N;i++){<br>            cout&lt;&lt;queenPos[i]+1&lt;&lt;’ ‘;<br>        }<br>        cout&lt;&lt;endl;<br>        return;<br>    }<br>    for(int i=0;i&lt;N;i++){<br>        int j;<br>        for(j=0;j&lt;k;j++){<br>             if(queenPos[j]==i||abs(queenPos[j]-i)==abs(k-j)){<br>                 break;<br>            }<br>        }<br>        if(j==k){<br>                queenPos[k]=i;<br>                NQueen(k+1);<br>        }<br>    }<br>}</p>
-<p>double exp(){        //逆波兰式<br>    char s[20];<br>    cin&gt;&gt;s;<br>    switch(s[0]){<br>        case ‘+’: return exp()+exp();<br>        case ‘-‘: return exp()-exp();<br>        case ‘<em>‘: return exp()</em>exp();<br>        case ‘/‘: return exp()/exp();<br>        default:  return atof(s);<br>        break;<br>    }<br>} </p>
-<p>int expression_value(){            //表达式的值<br>    int term_value();<br>    int result=term_value();<br>    bool more=true;<br>    while(more){<br>        char op=cin.peek();<br>        if(op==’+’||op==’-‘){<br>            cin.get();<br>            int value=term_value();<br>            if(op==’+’) result+=value;<br>            else result-=value;<br>        }<br>        else more=false;<br>    }<br>    return result;<br>}<br>int term_value(){<br>    int factor_value();<br>    int result=factor_value();<br>    while(true){<br>        char op=cin.peek();<br>        if(op==’<em>‘||op==’/‘){<br>            cin.get();<br>            int value=factor_value();<br>            if(op==’</em>‘) result*=value;<br>            else result/=value;<br>        }<br>        else break;<br>    }<br>    return result;</p>
-<p>}<br>int factor_value(){<br>    int result=0;<br>    char c=cin.peek();<br>    if(c==’(‘){<br>        cin.get();<br>        result=expression_value();<br>        cin.get();<br>    }else{<br>        while(isdigit(c)){<br>            result=10*result+c-‘0’;<br>            cin.get();<br>            c=cin.peek();<br>        }<br>    }<br>    return result;<br>}</p>
-<p>bool HuiWen(string s){        //回文串判断,小写输入<br>     int h=0,t=s.size()-1;<br>     while(h&lt;=t){<br>         if(s[h]!=s[t]) return 0;<br>         h++;t–;<br>    }<br>    return 1;<br>}</p>
-<p>void QuanPai(int a[],int k,int n){        //全排列<br>     if(n==k){<br>         for(int i=1;i&lt;=n;i++){<br>             cout&lt;&lt;a[i]&lt;&lt;’ ‘;<br>        }<br>        cout&lt;&lt;endl;<br>    }else{<br>         for(int i=k;i&lt;n+1;i++){<br>             Swap(a[k],a[i]);<br>             QuanPai(a,k+1,n);<br>             Swap(a[k],a[i]);<br>        }<br>    }<br> } </p>
-<p>int main(){</p>
-<pre><code>//递归 
-/*char a=&apos;A&apos;,b=&apos;B&apos;,c=&apos;C&apos;;
- int n=0;
- cin&gt;&gt;n;
- Hanoi(n,a,b,c);*/
-
- /*cin&gt;&gt;N;
- NQueen(0);*/
-
- //cout&lt;&lt;exp()&lt;&lt;endl; 
-
- //cout&lt;&lt;expression_value()&lt;&lt;endl; 
-
-
- //分治 
- /*string s;
- int flag=-1;
- cin&gt;&gt;s;
- flag=HuiWen(s);
- cout&lt;&lt;&quot;回文串:&quot;&lt;&lt;flag&lt;&lt;endl; */
-
- /*int *a,len;
- cout&lt;&lt;&quot;len:&quot;&lt;&lt;endl;
- cin&gt;&gt;len;
- a=new int[len+1];
- for(int i=1;i&lt;len+1;i++){
-     a[i]=i;
-}
-QuanPai(a,1,len);*/
-
- return 0;</code></pre><p>} </p>
+        <h1 id="4、IDEA和数组"><a href="#4、IDEA和数组" class="headerlink" title="4、IDEA和数组"></a>4、IDEA和数组</h1><h2 id="1、IDEA安装和使用"><a href="#1、IDEA安装和使用" class="headerlink" title="1、IDEA安装和使用"></a>1、IDEA安装和使用</h2><h3 id="1-1、安装"><a href="#1-1、安装" class="headerlink" title="1.1、安装"></a>1.1、安装</h3><p>​        官网一键式安装</p>
+<h3 id="1-2、使用"><a href="#1-2、使用" class="headerlink" title="1.2、使用"></a>1.2、使用</h3><p>​        1、新建project，选择Empty Project，一直next</p>
+<p>​        2、新建Module，注意选择JDK版本</p>
+<h2 id="2、数组"><a href="#2、数组" class="headerlink" title="2、数组"></a>2、数组</h2><h3 id="2-1、初始化"><a href="#2-1、初始化" class="headerlink" title="2.1、初始化"></a>2.1、初始化</h3><p>​    1、char [] ch= new char[size]；</p>
+<p>​    2、静态初始化：char [] ch= {变量值}；</p>
+<h3 id="2-2、数组内存分配"><a href="#2-2、数组内存分配" class="headerlink" title="2.2、数组内存分配"></a>2.2、数组内存分配</h3><pre><code>1、一个数组的内存分配 ![1591007817165](D:\Develop\1-学习资料\7月Java基础班\day04笔记0724\img\1591007817165.png)</code></pre><p>​    2、两个数组的内存分配</p>
+<p><img src="D:%5CDevelop%5C1-%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%5C7%E6%9C%88Java%E5%9F%BA%E7%A1%80%E7%8F%AD%5Cday04%E7%AC%94%E8%AE%B00724%5Cimg%5C1591007957052.png" alt="1591007957052"></p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -223,16 +215,75 @@ QuanPai(a,1,len);*/
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/23/4%E3%80%81IDEA%E5%92%8C%E6%95%B0%E7%BB%84/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/23/3%E3%80%81%E5%BE%AA%E7%8E%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">3、循环</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -252,453 +303,14 @@ QuanPai(a,1,len);*/
 
 
 
-
-  
-    <article id="post-STL实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/06/STL%E5%AE%9E%E8%B7%B5/">STL实践</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/06/STL%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
-  	<time datetime="2020-02-06T15:39:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#include <iostream><br>#include<vector><br>#include<deque><br>#include<list><br>#include<set><br>#include<map><br>#include<stack><br>#include<queue><br>#include<algorithm><br>using namespace std;<br>struct Student{<br>    int a,b;<br>    bool operator &lt; (const Student &amp;rs) const{<br>        if(a==rs.a) return b&lt;rs.b;<br>        return a&lt;rs.a;<br>    }<br>};</p>
-<p>int main()<br>{<br>    priority_queue <int> q;<br>    deque <int>::const_iterator i;<br>    set <int>::const_iterator j;<br>    map &lt;int,char&gt;::iterator k;<br>    vector<int> v;<br>    deque<int> d;<br>    map&lt;int,char&gt; m;<br>    set<int> s;<br>    s.insert(5);s.insert(8);s.insert(1);s.insert(3);s.insert(3);<br>    m.insert(pair&lt;int,char&gt;(1,’a’));<br>    m.insert(pair&lt;int,char&gt;(2,’a’));<br>    m.insert(pair&lt;int,char&gt;(3,’c’));<br>    m.insert(pair&lt;int,char&gt;(4,’d’));<br>    /<em>m.insert(map&lt;int,char&gt;::value_type(1,’a’));<br>    m.insert(map&lt;int,char&gt;::value_type(1,’b’));<br>    m.insert(map&lt;int,char&gt;::value_type(3,’c’));<br>    m.insert(map&lt;int,char&gt;::value_type(4,’d’));</em>/<br>    for(k=m.begin();k!=m.end();k++){<br>        cout&lt;&lt;1&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;<br>    for(int i=0;i&lt;10;i++){<br>        v.push_back(i);<br>        d.push_front(i);<br>    }<br>    for(i=d.begin();i&lt;d.end();i++){<br>        cout&lt;&lt;<em>i&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;<br>    for(j=s.begin();j!=s.end();j++){<br>        cout&lt;&lt;</em>j&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;</p>
-<pre><code>for(int i=0;i&lt;10;i++){
-    q.push(i);
-}
-while(q.size()){
-    cout&lt;&lt;q.top()&lt;&lt;&apos; &apos;;
-    q.pop();
-}
-cout &lt;&lt;endl;
-
-
-priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt;q_;
-for(int i=0;i&lt;10;i++){
-    q_.push(i);
-}
-while(q_.size()){
-    cout&lt;&lt;q_.top()&lt;&lt;&apos; &apos;;
-    q_.pop();
-}
-cout &lt;&lt;endl;
-Student student[5]={{5,5},{5,4},{3,1},{2,2},{2,1}};
-sort(student,student+5);
-for(int i=0;i&lt;5;i++){
-    cout&lt;&lt;student[i].a&lt;&lt;&apos; &apos;&lt;&lt;student[i].b&lt;&lt;endl;
-}
-priority_queue &lt;Student&gt; qq;
-for(int i=0;i&lt;5;i++){
-    qq.push(student[i]);
-}
-while(qq.size()){
-    Student now=qq.top();
-    cout&lt;&lt;now.a&lt;&lt;&apos; &apos;&lt;&lt;now.b&lt;&lt;endl;
-    qq.pop();
-}
-cout &lt;&lt;endl;
-return 0;</code></pre><p>}</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/06/STL%E5%AE%9E%E8%B7%B5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-图的遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">图的遍历</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
-  	<time datetime="2020-02-05T14:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="邻接表存储DFS"><a href="#邻接表存储DFS" class="headerlink" title="邻接表存储DFS"></a>邻接表存储DFS</h2><p>void Visit(Vertex v){<br>    printf(“%d\n”,v);<br>}<br>void DFS(LGraph Graph,Vertex v,void (*Visit)(Vertex)){<br>    ProToAdjVNode W;<br>    Visit(v);<br>    Visited[v]=true;<br>    for(W=Graph-&gt;G[v].FitstEdge;W;W=W-&gt;Next){<br>        if(!Visited[W-&gt;Adjv]){<br>            DFS(Graph,W-&gt;Adjv,Visit);<br>        }<br>    }<br>}</p>
-<hr>
-<h2 id="邻接矩阵存储BFS"><a href="#邻接矩阵存储BFS" class="headerlink" title="邻接矩阵存储BFS"></a>邻接矩阵存储BFS</h2><p>void Visit(Vertex v){<br>    printf(“正在访问的顶点%d\n”,v);<br>}<br>bool IsEdge(MGraph Graph,Vertex v,Vertex w){<br>    return Graph-&gt;G[v][w]&lt;INFNITY?true:false;<br>}<br>void BFS(MGraph Graph,Vertex S,void(*Visit)(Vertex)){<br>    queue<Vertex> Q;<br>    Vertex V,W;<br>    Visit(S);<br>    Visited[S]=true;<br>    Q.push(S);<br>    while(!Q.empty()){<br>        V=Q.front();Q.pop();<br>        for(W=0;W<Graph->Nv;W++){<br>            if(!Visited[W]&amp;&amp;IsEdge(Graph,V,W)){<br>                Visit(W);<br>                Visited[W]=true;<br>                Q.push(W);<br>            }<br>        }<br>    }<br>}</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-图的两种表示法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/04/%E5%9B%BE%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%B3%95/">图的两种表示法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/04/%E5%9B%BE%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-04T14:38:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="邻接矩阵表示"><a href="#邻接矩阵表示" class="headerlink" title="邻接矩阵表示:"></a>邻接矩阵表示:</h2><p>#include<iostream><br>#include<cstdlib><br>#define MaxVertexNum 100<br>#define INFNITY 65535<br>using namespace std;<br>typedef int Vertex;<br>typedef int WeightType;<br>typedef char DataType;</p>
-<p>typedef struct ENode{<br>    Vertex v1,v2;<br>    WeightType Weight;<br>}*PtrToENode;<br>typedef PtrToENode Edge;</p>
-<p>typedef struct GNode{<br>    int Nv,Ne;<br>    WeightType G[MaxVertexNum][MaxVertexNum];<br>    DataType Data[MaxVertexNum];<br>}*PtrToMNode;<br>typedef PtrToMNode MGraph;</p>
-<p>MGraph CreateGraph(int VertexNum){<br>    Vertex v,w;<br>    MGraph Graph;<br>    Graph=(MGraph)malloc(sizeof(struct GNode));<br>    Graph-&gt;Nv=VertexNum;<br>    Graph-&gt;Ne=0;<br>    for(v=0;v<Graph->Nv;v++){<br>        for(w=0;w<Graph->Nv;w++){<br>            Graph-&gt;G[v][w]=INFNITY;<br>        }<br>    }<br>    return Graph;<br>}<br>void InsertEdge(MGraph Graph,Edge E){<br>    Graph-&gt;G[E-&gt;v1][E-&gt;v2]=E-&gt;Weight;<br>    Graph-&gt;G[E-&gt;v2][E-&gt;v1]=E-&gt;Weight;<br>}<br>MGraph BuildGraph(){<br>    MGraph Graph;<br>    Edge E;<br>    Vertex v;<br>    int Nv,i;<br>    scanf(“%d”,&amp;Nv);<br>    Graph=CreateGraph(Nv);<br>    scanf(“%d”,&amp;(Graph-&gt;Ne));<br>    if(Graph-&gt;Ne!=0){<br>        E=(Edge)malloc(sizeof(struct ENode));<br>        for(i=0;i<Graph->Ne;i++){<br>            scanf(“%d%d%d”,&amp;E-&gt;v1,&amp;E-&gt;v2,&amp;E-&gt;Weight);<br>            InsertEdge(Graph,E);<br>        }<br>    }<br>    for(v=0;v<Graph->Nv;v++){<br>        scanf(“ %c”,&amp;(Graph-&gt;Data[v]));<br>    }<br>    return Graph;<br>}<br>int main(){<br>    MGraph Graph;<br>    Graph=BuildGraph();<br>    int n=0;<br>    int v=-1;<br>    printf(“请输入你要查询的顶点编号:”);<br>    scanf(“%d”,&amp;v);<br>    printf(“你查询的顶点%c的邻接点:\n”,Graph-&gt;Data[v]);<br>    for(n=0;n<Graph->Nv;n++){<br>        if(Graph-&gt;G[v][n]&lt;INFNITY&amp;&amp;Graph-&gt;G[v][n]&gt;0){<br>            printf(“%c “,Graph-&gt;Data[n]);<br>        }<br>    }<br>    printf(“\n”);<br>    for(int i=0;i<Graph->Nv;i++){<br>        for(int j=0;j<Graph->Nv;j++){<br>            printf(“%d        “,Graph-&gt;G[i][j]);<br>        }<br>        printf(“\n”);<br>    }<br>    /*<br>    5<br>    5<br>    0 1 2<br>    0 3 10<br>    0 4 13<br>    1 2 4<br>    2 4 9<br>    a e d c b<br>    */<br>    return 0;<br>}</p>
-<hr>
-<h2 id="邻接表表示"><a href="#邻接表表示" class="headerlink" title="邻接表表示"></a>邻接表表示</h2><p>#include<iostream><br>#include<cstdlib><br>using namespace std;</p>
-<p>#define MaxVertexNum 100<br>typedef int Vertex;<br>typedef int WeightType;<br>typedef char DataType;</p>
-<p>typedef struct ENode{<br>    Vertex v1,v2;<br>    WeightType Weight;<br>}*PtrToENode;<br>typedef PtrToENode Edge;</p>
-<p>typedef struct AdjVNode{<br>    Vertex Adjv;<br>    WeightType Weight;<br>    AdjVNode <em>Next;<br>}</em>ProToAdjVNode;</p>
-<p>typedef struct VNode{<br>    ProToAdjVNode FitstEdge;<br>    DataType Data;<br>}AdjList[MaxVertexNum];</p>
-<p>typedef struct GNode{<br>    int Nv;<br>    int Ne;<br>    AdjList G;<br>}*PtrToGNode;<br>typedef PtrToGNode LGraph;</p>
-<p>LGraph CreateGraph(int VertexNum){<br>    Vertex v;<br>    LGraph Graph;<br>    Graph=(LGraph)malloc(sizeof(struct GNode));<br>    Graph-&gt;Nv=VertexNum;<br>    Graph-&gt;Ne=0;<br>    for(v=0;v<Graph->Nv;v++){<br>        Graph-&gt;G[v].FitstEdge=NULL;<br>    }<br>    return Graph;<br>}</p>
-<p>void InsertEdge(LGraph Graph,Edge E){<br>    ProToAdjVNode NewNode;<br>    NewNode=(ProToAdjVNode)malloc(sizeof(struct AdjVNode));<br>    NewNode-&gt;Adjv=E-&gt;v2;<br>    NewNode-&gt;Weight=E-&gt;Weight;<br>    NewNode-&gt;Next=Graph-&gt;G[E-&gt;v2].FitstEdge;<br>    Graph-&gt;G[E-&gt;v1].FitstEdge=NewNode;<br>    NewNode=(ProToAdjVNode)malloc(sizeof(struct AdjVNode));<br>    NewNode-&gt;Adjv=E-&gt;v1;<br>    NewNode-&gt;Weight=E-&gt;Weight;<br>    NewNode-&gt;Next=Graph-&gt;G[E-&gt;v2].FitstEdge;<br>    Graph-&gt;G[E-&gt;v2].FitstEdge=NewNode;<br>}<br>LGraph BuildGraph(){<br>    LGraph Graph;<br>    Edge E;<br>    Vertex v;<br>    int Nv,i;<br>    scanf(“%d”,&amp;Nv);<br>    Graph=CreateGraph(Nv);<br>    scanf(“%d”,&amp;(Graph-&gt;Ne));<br>    if(Graph-&gt;Ne!=0){<br>        E=(Edge)malloc(sizeof(ENode));<br>        for(i=0;i<Graph->Ne;i++){<br>            scanf(“%d %d %d”,&amp;E-&gt;v1,&amp;E-&gt;v2,&amp;E-&gt;Weight);<br>            InsertEdge(Graph,E);<br>        }<br>    }<br>    for(v=0;v<Graph->Nv;v++){<br>        scanf(“ %c”,&amp;(Graph-&gt;G[v].Data));<br>    }<br>    return Graph;<br>}<br>int main(){<br>    LGraph Graph;<br>    Graph=BuildGraph();<br>    int n=0;<br>    int v=-1;<br>    printf(“请输入你要查询的顶点编号:”);<br>    scanf(“%d”,&amp;v);<br>    printf(“你查询的顶点%c的邻接点:”,Graph-&gt;G[v].Data);<br>    AdjVNode <em>M;<br>    M=Graph-&gt;G[v].FitstEdge;<br>    while(M!=NULL){<br>            printf(“%c “,Graph-&gt;G[M-&gt;Adjv].Data);<br>            M=M-&gt;Next;<br>    }<br>    printf(“\n”);<br>    /</em><br>    5<br>    5<br>    1 0 2<br>    3 0 10<br>    4 0 13<br>    2 1 4<br>    4 2 9<br>    a e d c b<br>    */<br>    return 0;<br>}</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/04/%E5%9B%BE%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-静态栈和队列以及二叉树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/">栈队列二叉树的简单实现</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/" class="archive-article-date">
-  	<time datetime="2020-02-03T13:03:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#include<iostream><br>#include<cstdlib><br>using namespace std;<br>typedef char Elemtype;<br>typedef struct BiTNode{<br>    Elemtype data;<br>    BiTNode <em>lchild,<em>rchild;<br>}BiTNode,</em>BiTree;<br>int CreatBiTree(BiTree &amp;T){        //建立二叉树<br>    Elemtype ch;<br>    cin&gt;&gt;ch;<br>    if(ch==’#’) T=NULL;<br>    else{<br>        T=(BiTNode</em>)malloc(sizeof(BiTNode));<br>        T-&gt;data=ch;<br>        CreatBiTree(T-&gt;lchild);<br>        CreatBiTree(T-&gt;rchild);<br>    }<br>    return 0;<br>}<br>void PreOrder(BiTree &amp;T){<br>    if(T!=NULL){<br>        cout&lt;<T->data&lt;&lt;endl;<br>        PreOrder(T-&gt;lchild);<br>        PreOrder(T-&gt;rchild);<br>    }<br>}<br>void InOrder(BiTree &amp;T){<br>    if(T!=NULL){<br>        InOrder(T-&gt;lchild);<br>        cout&lt;<T->data&lt;&lt;endl;<br>        InOrder(T-&gt;rchild);<br>    }<br>}<br>void PostOrder(BiTree &amp;T){<br>    if(T!=NULL){<br>        PostOrder(T-&gt;lchild);<br>        PostOrder(T-&gt;rchild);<br>        cout&lt;<T->data&lt;&lt;endl;<br>    }<br>}</p>
-<p>int main(){<br>    BiTree T;<br>    CreatBiTree(T);<br>    printf(“先序遍历:\n”);      //    a<br>    PreOrder(T);            //    b        c<br>    printf(“中序遍历:\n”); //d            e<br>    InOrder(T);                  //    f  g<br>    printf(“后序遍历:\n”);<br>    PostOrder(T);<br>    return 0;<br>} </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构内部排序简单实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">数据结构几种排序的简单实现</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-02-02T15:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>源代码如下,亲测可用(基于c语言)<br>#include&lt;stdio.h&gt;<br>#include&lt;stdlib.h&gt;<br>void swap(int <em>a,int *b){    //交换<br>    int temp;<br>    temp=</em>a;<br>    <em>a=</em>b;<br>    *b=temp;<br>}<br>//直接插入排序<br>void Insert(int a[],int n){<br>    int i=0,j=0,k=0,temp=0;<br>    for(i=1;i&lt;n;i++){<br>        for(j=0;j&lt;i;j++){<br>            if(a[i]&lt;a[j]){<br>                temp=a[i];<br>                for(k=i-1;k&gt;=j;k–){<br>                    a[k+1]=a[k];<br>                }<br>                a[j]=temp;<br>            }<br>        }<br>    }<br>}<br>//希尔排序<br>void Shell(int a[],int n){<br>    int D=5,Dk=0,i=0,j=0,k=0,temp=0;<br>    for(D=5;D&gt;=1;D/=2){        //增量<br>        for(Dk=0;Dk&lt;D;Dk++){    //执行增量排序次数<br>            for(i=Dk+D;i&lt;n;i+=D){        //基于增量的直接插入排序<br>                for(j=Dk;j&lt;i;j+=D){<br>                    if(a[i]&lt;a[j]){<br>                        temp=a[i];<br>                        for(k=i-D;k&gt;=j;k-=D){<br>                            a[k+D]=a[k];<br>                        }<br>                        a[j]=temp;<br>                    }<br>                }<br>            }<br>        }<br>    }<br>}<br>//简单选择排序<br>void Select(int a[],int n){<br>    int i=0,j=0,min=-1,minIndex,temp=0;<br>    for(i=0;i&lt;n-1;i++){<br>        min=a[i];<br>        for(j=i;j&lt;n;j++){    //找出最小元素的下标<br>            if(a[j]&lt;min){<br>                min=a[j];<br>                minIndex=j;<br>            }<br>        }<br>        swap(a+i,a+minIndex);<br>    }<br>}<br>//冒泡排序<br>void Bubble(int a[],int n){<br>    int i=0,j=0,temp=0;<br>    for(i=n-1;i&gt;0;i–){<br>        for(j=0;j&lt;i;j++){<br>            if(a[j]&gt;a[j+1]){<br>                swap(a+j,a+j+1);<br>            }<br>        }<br>    }<br>}<br>//快速排序<br>void Quick(int a[],int low,int high){<br>    if(low&gt;high) return;<br>    int L=low,R=high,pivot=a[low];<br>    while(L&lt;R){<br>        while(L&lt;R&amp;&amp;a[R]&gt;=pivot){    //从右边开始找到比枢纽小的值移到左边<br>            R–;<br>        }<br>        if(L&lt;R){<br>            a[L]=a[R];<br>            L++;<br>        }<br>        while(L&lt;R&amp;&amp;a[L]&lt;pivot){        //从左边开始找到比枢纽小的值移到右边<br>            L++;<br>        }<br>        if(L&lt;R){<br>            a[R]=a[L];<br>            R–;<br>        }<br>    }<br>    Quick(a,low,L-1);<br>    Quick(a,L+1,high);</p>
-<p>}<br>int main(){<br>    int begin=0,end=0;<br>    int i=0,a[100]={0};<br>    for(i=0;i&lt;100;i++){<br>        a[i]=rand()%1000;<br>    }<br>    //Insert(a,100);<br>    //Bubble(a,100);<br>    //Select(a,100);<br>    //Shell(a,100);<br>    Quick(a,0,99);<br>    for(i=1;i&lt;=100;i++){<br>        printf(“%d “,a[i-1]);<br>        if(i%10==0) printf(“\n”);<br>    }<br>    return 0;<br>} </p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-01T13:05:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="万事开头难–"><a href="#万事开头难–" class="headerlink" title="万事开头难–"></a><p align="left">万事开头难–</p></h1><h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a><p align="center">坚持</p></h2><hr>
-<pre><code>大四即将工作的老学长即日起更新博客.
-
-
-励志做一名中级程序员 qaq~~
-
-
-座右铭: 我赚钱养家,你拿去花.</code></pre><hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -721,8 +333,8 @@ return 0;</code></pre><p>}</p>
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
