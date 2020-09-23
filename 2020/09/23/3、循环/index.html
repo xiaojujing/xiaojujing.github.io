@@ -6,17 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>1、Java概述 | Hexo</title>
+  <title>3、循环 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、Java环境搭建及入门1、Java发展历程​    2014年jdk8上线，成为目前公司主要在使用的一款稳定版；2019年更新为jdk11。 2、jvm​    jvm（java virtual method）全名java虚拟机，能够将java代码编译到不同的操作系统形成可执行的class文件。 3、jre​    jre（java runtime environment）是java程序代码必">
-<meta property="og:type" content="article">
-<meta property="og:title" content="1、Java概述">
-<meta property="og:url" content="http://yoursite.com/2020/09/22/1%E3%80%81Java%E6%A6%82%E8%BF%B0/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="3、循环">
+<meta property="og:url" content="http://yoursite.com/2020/09/23/3%E3%80%81%E5%BE%AA%E7%8E%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、Java环境搭建及入门1、Java发展历程​    2014年jdk8上线，成为目前公司主要在使用的一款稳定版；2019年更新为jdk11。 2、jvm​    jvm（java virtual method）全名java虚拟机，能够将java代码编译到不同的操作系统形成可执行的class文件。 3、jre​    jre（java runtime environment）是java程序代码必">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-22T13:09:36.000Z">
-<meta property="article:modified_time" content="2020-09-22T16:34:13.712Z">
+<meta property="article:published_time" content="2020-09-23T01:08:56.000Z">
+<meta property="article:modified_time" content="2020-09-23T01:08:56.533Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,44 +152,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-1、Java概述" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-3、循环" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      1、Java概述
+      3、循环
     </h1>
   
 
         
-        <a href="/2020/09/22/1%E3%80%81Java%E6%A6%82%E8%BF%B0/" class="archive-article-date">
-  	<time datetime="2020-09-22T13:09:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-22</time>
+        <a href="/2020/09/23/3%E3%80%81%E5%BE%AA%E7%8E%AF/" class="archive-article-date">
+  	<time datetime="2020-09-23T01:08:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1、Java环境搭建及入门"><a href="#1、Java环境搭建及入门" class="headerlink" title="1、Java环境搭建及入门"></a>1、Java环境搭建及入门</h1><h2 id="1、Java发展历程"><a href="#1、Java发展历程" class="headerlink" title="1、Java发展历程"></a>1、Java发展历程</h2><p>​    2014年jdk8上线，成为目前公司主要在使用的一款稳定版；2019年更新为jdk11。</p>
-<h2 id="2、jvm"><a href="#2、jvm" class="headerlink" title="2、jvm"></a>2、jvm</h2><p>​    jvm（java virtual method）全名java虚拟机，能够将java代码编译到不同的操作系统形成可执行的class文件。</p>
-<h2 id="3、jre"><a href="#3、jre" class="headerlink" title="3、jre"></a>3、jre</h2><p>​    jre（java runtime environment）是java程序代码必不可少的运行环境,内含jvm和核心类库。</p>
-<h2 id="4、jdk"><a href="#4、jdk" class="headerlink" title="4、jdk"></a>4、jdk</h2><p>​    jdk=（jre（jvm+核心类库）+工具集）</p>
-<h2 id="5、环境搭建"><a href="#5、环境搭建" class="headerlink" title="5、环境搭建"></a>5、环境搭建</h2><p>​    1、下载好jdk版本，并在电脑-&gt;属性-&gt;系统设置-&gt;环境变量-&gt;系统变量-&gt;新建系统变量-&gt;变量名：JAVA_HOME  变量值：jdk安装目录；在path变量下添加：%JAVA_HOME%\bin。</p>
-<h2 id="6、基本语法"><a href="#6、基本语法" class="headerlink" title="6、基本语法"></a>6、基本语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String marg)&#123;</span><br><span class="line">  System.out.println(&quot;Hello world!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="7、常用Dos命令"><a href="#7、常用Dos命令" class="headerlink" title="7、常用Dos命令"></a>7、常用Dos命令</h2><p>​    1、进入：cd..（回退）</p>
-<p>​    2、连接：ping +    主机ip</p>
-<h2 id="8、基础语法"><a href="#8、基础语法" class="headerlink" title="8、基础语法"></a>8、基础语法</h2><p>​    1、注释：单行//    多行/*    */</p>
-<p>​    2、变量名：</p>
-<p>​            规则：</p>
-<p>​                不以数字、下划线、$符号开头，不能取关键字</p>
-<p>​            规范：</p>
-<p>​                类名：大驼峰    方法名：小驼峰</p>
-<p>​    3、数据类型：</p>
-<p>​        byte、short、int、long、Double、char、String、Boolean</p>
-
+        
       
 
       
@@ -270,7 +251,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/22/1%E3%80%81Java%E6%A6%82%E8%BF%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/23/3%E3%80%81%E5%BE%AA%E7%8E%AF/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +265,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/23/2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          2、运算符
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/15/PAT%E4%B9%99%E7%BA%A71025/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PAT乙级1025</div>
+    <a href="/2020/09/23/2%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2、运算符</div>
       <i class="icon-circle-right"></i>
     </a>
   
