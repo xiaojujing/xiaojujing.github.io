@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>5、方法 | Hexo</title>
+  <title>6、进制 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="5、方法1、方法重载的几种方式​    1、参数类型不同 ​    2、参数个数不同 ​    3、参数顺序不同 1234567891011121314151617181920212223242526272829303132package com.itheima02.domain;&#x2F;** * @author xiaojujing * @date 2020-09-25 22:19 *&amp;#x">
+  <meta name="description" content="6、进制1.1、N进制转十进制​    对N进制每一位number，取number*N^(位数-1)，再做和。 1.2、十进制转N进制​    sum&#x2F;N&#x3D;ans,余r;sum&#x3D;ans,反复直到被除数等于0，将每次所得余数逆序拼接即为转化后的进制。 1.3、原码反码补码​    1、正数的原反补相同 ​    2、负数，原码等于正数的原码首位取反；反码等于原码取反（符号位不变）；补码等于反码末尾+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5、方法">
-<meta property="og:url" content="http://yoursite.com/2020/09/25/5%E3%80%81%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:title" content="6、进制">
+<meta property="og:url" content="http://yoursite.com/2020/09/28/6%E3%80%81%E8%BF%9B%E5%88%B6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="5、方法1、方法重载的几种方式​    1、参数类型不同 ​    2、参数个数不同 ​    3、参数顺序不同 1234567891011121314151617181920212223242526272829303132package com.itheima02.domain;&#x2F;** * @author xiaojujing * @date 2020-09-25 22:19 *&amp;#x">
+<meta property="og:description" content="6、进制1.1、N进制转十进制​    对N进制每一位number，取number*N^(位数-1)，再做和。 1.2、十进制转N进制​    sum&#x2F;N&#x3D;ans,余r;sum&#x3D;ans,反复直到被除数等于0，将每次所得余数逆序拼接即为转化后的进制。 1.3、原码反码补码​    1、正数的原反补相同 ​    2、负数，原码等于正数的原码首位取反；反码等于原码取反（符号位不变）；补码等于反码末尾+">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-25T14:25:34.000Z">
-<meta property="article:modified_time" content="2020-09-25T14:25:51.813Z">
+<meta property="article:published_time" content="2020-09-28T13:48:59.000Z">
+<meta property="article:modified_time" content="2020-09-28T13:49:42.415Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,30 +154,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-5、方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-6、进制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      5、方法
+      6、进制
     </h1>
   
 
         
-        <a href="/2020/09/25/5%E3%80%81%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-09-25T14:25:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-25</time>
+        <a href="/2020/09/28/6%E3%80%81%E8%BF%9B%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-09-28T13:48:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="5、方法"><a href="#5、方法" class="headerlink" title="5、方法"></a>5、方法</h1><h2 id="1、方法重载的几种方式"><a href="#1、方法重载的几种方式" class="headerlink" title="1、方法重载的几种方式"></a>1、方法重载的几种方式</h2><p>​    1、参数类型不同</p>
-<p>​    2、参数个数不同</p>
-<p>​    3、参数顺序不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima02.domain;</span><br><span class="line"></span><br><span class="line">&#x2F;**</span><br><span class="line"> * @author xiaojujing</span><br><span class="line"> * @date 2020-09-25 22:19</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class overWrite &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int a &#x3D; 1;</span><br><span class="line">        double b &#x3D; 1.1;</span><br><span class="line">        f(a);</span><br><span class="line">        f(b);</span><br><span class="line">        f(a,b);</span><br><span class="line">        f(b,a);</span><br><span class="line">    &#125;</span><br><span class="line">    private static void f(double b,int a) &#123;</span><br><span class="line">        System.out.println(&quot;我是参数位置不同的重载函数&quot;);</span><br><span class="line">        System.out.println(a + &quot; &quot; + b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void f(int a, double b) &#123;</span><br><span class="line">        System.out.println(a + &quot; &quot; + b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void f(double b) &#123;</span><br><span class="line">        System.out.println(b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void f(int a) &#123;</span><br><span class="line">        System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="6、进制"><a href="#6、进制" class="headerlink" title="6、进制"></a>6、进制</h1><h2 id="1-1、N进制转十进制"><a href="#1-1、N进制转十进制" class="headerlink" title="1.1、N进制转十进制"></a>1.1、N进制转十进制</h2><p>​    对N进制每一位number，取number*N^(位数-1)，再做和。</p>
+<h2 id="1-2、十进制转N进制"><a href="#1-2、十进制转N进制" class="headerlink" title="1.2、十进制转N进制"></a>1.2、十进制转N进制</h2><p>​    sum/N=ans,余r;sum=ans,反复直到被除数等于0，将每次所得余数逆序拼接即为转化后的进制。</p>
+<h2 id="1-3、原码反码补码"><a href="#1-3、原码反码补码" class="headerlink" title="1.3、原码反码补码"></a>1.3、原码反码补码</h2><p>​    1、正数的原反补相同</p>
+<p>​    2、负数，原码等于正数的原码首位取反；反码等于原码取反（符号位不变）；补码等于反码末尾+1。</p>
+<h2 id="1-4、二维数组"><a href="#1-4、二维数组" class="headerlink" title="1.4、二维数组"></a>1.4、二维数组</h2><p>​    1、初始化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">动态：int [][] arr &#x3D; new int[m][n];</span><br><span class="line">静态：int [][] arr &#x3D; &#123;&#123;，，，...&#125;，&#123;，，，...&#125;，...&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -258,7 +260,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/25/5%E3%80%81%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/28/6%E3%80%81%E8%BF%9B%E5%88%B6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +274,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/28/6%E3%80%81%E8%BF%9B%E5%88%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/28/7%E3%80%81%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          6、进制
+          7、面向对象基础
         
       </div>
     </a>
   
   
-    <a href="/2020/09/24/2014%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">2014蓝桥B组省赛题解</div>
+    <a href="/2020/09/25/5%E3%80%81%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">5、方法</div>
       <i class="icon-circle-right"></i>
     </a>
   

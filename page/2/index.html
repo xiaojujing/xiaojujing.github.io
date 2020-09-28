@@ -152,6 +152,256 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-广度优先搜索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/12/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/12/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" class="archive-article-date">
+  	<time datetime="2020-02-12T14:40:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;</p>
+<p>/<em>int N,K;                //抓住这头牛<br>const int MAXN=100000;<br>int visited[MAXN+10];<br>struct Step{<br>    int x;<br>    int steps;<br>    Step(int xx,int s):x(xx),steps(s){<br>    }<br>};<br>queue<Step> q;</em>/</p>
+<p>int main(){<br>    /<em>cin&gt;&gt;N&gt;&gt;K;<br>    memset(visited,0,sizeof(visited));<br>    q.push(Step(N,0));<br>    visited[N]=1;<br>    while(!q.empty()){<br>        Step s=q.front();<br>        if(s.x==K){<br>            cout&lt;&lt;s.steps&lt;&lt;endl;<br>            return 0;<br>        }else{<br>            if(s.x&gt;=0&amp;&amp;!visited[s.x-1]){<br>                q.push(Step(s.x-1,s.steps+1));<br>                visited[s.x-1]=1;<br>            }<br>            if(s.x+1&lt;=MAXN&amp;&amp;!visited[s.x+1]){<br>                q.push(Step(s.x+1,s.steps+1));<br>                visited[s.x+1]=1;<br>            }<br>            if(s.x<em>2&lt;=MAXN&amp;&amp;!visited[s.x</em>2]){<br>                q.push(Step(s.x<em>2,s.steps+1));<br>                visited[s.x</em>2]=1;<br>            }<br>            q.pop();<br>        }<br>    }</em>/</p>
+<pre><code>return 0;</code></pre><p>} </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/12/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-贪心" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/11/%E8%B4%AA%E5%BF%83/">贪心</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/11/%E8%B4%AA%E5%BF%83/" class="archive-article-date">
+  	<time datetime="2020-02-11T07:34:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;</p>
+<p>/<em>const double eps=1e-6;            //圣诞老人的礼物<br>struct Candy{<br>    int v; int w;<br>    bool operator &lt; (const Candy &amp; c){<br>        return double(v)/w-double(c.v)/c.w&gt;eps;<br>    }<br>}candies[110];</em>/</p>
+<p>struct Cow{                            //分配畜栏<br>    int a,b;<br>    int No;<br>    bool operator &lt; (const Cow &amp;c) const{<br>        return a&lt;c.a;<br>    };<br>}cows[50100];<br>int pos[50100];<br>struct Stall{<br>    int end;<br>    int No;<br>    bool operator&lt;(const Stall &amp;s) const{<br>        return end&gt;s.end;<br>    }<br>    Stall(int e,int n):end(e),No(n){</p>
+<pre><code>}</code></pre><p>};</p>
+<p>int main(){<br>    /<em>int n,w;<br>    scanf(“%d%d”,&amp;n,&amp;w);<br>    for(int i=0;i&lt;n;i++){<br>        scanf(“%d%d”,&amp;candies[i].v,&amp;candies[i].w);<br>    }<br>    sort(candies,candies+n);<br>    int totalW=0;<br>    double totalV=0;<br>    for(int i=0;i&lt;n;i++){<br>        if(totalW+candies[i].w&lt;=w){<br>            totalW+=candies[i].w;<br>            totalV+=candies[i].v;<br>        }else{<br>            totalV+=candies[i].v*double(w-totalW)/candies[i].w;<br>            break;<br>        }<br>    }<br>    printf(“%.1f”,totalV);</em>/</p>
+<pre><code>int n;
+scanf(&quot;%d&quot;,&amp;n);
+for(int i=0;i&lt;n;++i){
+    scanf(&quot;%d%d&quot;,&amp;cows[i].a,&amp;cows[i].b);
+    cows[i].No=i;
+}
+sort(cows,cows+n);
+int total=0;
+priority_queue&lt;Stall&gt; pq;
+for(int i=0;i&lt;n;++i){
+    if(pq.empty()){
+        ++total;
+        pq.push(Stall(cows[i].b,total));
+        pos[cows[i].No]=total;
+    }else{
+        Stall st=pq.top();
+        if(st.end&lt;cows[i].a){
+            pq.pop();
+            pos[cows[i].No]=st.No;
+            pq.push(Stall(cows[i].b,st.No));
+        }else{
+            ++total;
+            pq.push(Stall(cows[i].b,total));
+            pos[cows[i].No]=total;
+        }
+    }
+}
+printf(&quot;%d\n&quot;,total);
+for(int i=0;i&lt;n;i++){
+    printf(&quot;%d\n&quot;,pos[i]);
+}
+
+
+return 0;</code></pre><p>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/11/%E8%B4%AA%E5%BF%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-动态规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="archive-article-date">
+  	<time datetime="2020-02-10T11:54:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std; </p>
+<p>/<em>const int MAXN=1010;        //最长上升子序列<br>int a[MAXN];<br>int maxLen[MAXN];</em>/</p>
+<p>char sz1[1000];                //最长公共子序列<br>char sz2[1000];<br>int maxLen[1000][1000]; </p>
+<p>int main(){<br>    /<em>int N;<br>    cin&gt;&gt;N;<br>    for(int i=1;i&lt;=N;i++){<br>        cin&gt;&gt;a[i];    maxLen[i]=1;<br>    }<br>    for(int i=2;i&lt;=N;i++){<br>        for(int j=1;j&lt;i;j++){<br>            if(a[i]&gt;a[j]) maxLen[i]=max(maxLen[i],maxLen[j]+1);<br>        }<br>    }<br>    cout&lt;&lt;*max_element(maxLen+1,maxLen+N+1);</em>/</p>
+<pre><code>while(cin&gt;&gt;sz1&gt;&gt;sz2){
+    int length1=strlen(sz1);
+    int length2=strlen(sz2);
+    int nTmp;
+    int i,j;
+    for(i=0;i&lt;=length1;i++) maxLen[i][0]=0;
+    for(j=0;j&lt;=length2;j++) maxLen[0][j]=0;
+    for(i=1;i&lt;=length1;i++){
+        for(j=1;j&lt;=length2;j++){
+            if(sz1[i-1]==sz2[j-1])    maxLen[i][j]=maxLen[i-1][j-1]+1;
+            else maxLen[i][j]=max(maxLen[i][j-1],maxLen[i-1][j]);
+        }
+    }
+    cout&lt;&lt;maxLen[length1][length2]&lt;&lt;endl;
+}
+
+return 0;</code></pre><p>} </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-深度优先搜索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -728,145 +978,9 @@ return 0;</code></pre><p>}</p>
 
 
   
-    <article id="post-数据结构内部排序简单实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">数据结构几种排序的简单实现</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-  	<time datetime="2020-02-02T15:16:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>源代码如下,亲测可用(基于c语言)<br>#include&lt;stdio.h&gt;<br>#include&lt;stdlib.h&gt;<br>void swap(int <em>a,int *b){    //交换<br>    int temp;<br>    temp=</em>a;<br>    <em>a=</em>b;<br>    *b=temp;<br>}<br>//直接插入排序<br>void Insert(int a[],int n){<br>    int i=0,j=0,k=0,temp=0;<br>    for(i=1;i&lt;n;i++){<br>        for(j=0;j&lt;i;j++){<br>            if(a[i]&lt;a[j]){<br>                temp=a[i];<br>                for(k=i-1;k&gt;=j;k–){<br>                    a[k+1]=a[k];<br>                }<br>                a[j]=temp;<br>            }<br>        }<br>    }<br>}<br>//希尔排序<br>void Shell(int a[],int n){<br>    int D=5,Dk=0,i=0,j=0,k=0,temp=0;<br>    for(D=5;D&gt;=1;D/=2){        //增量<br>        for(Dk=0;Dk&lt;D;Dk++){    //执行增量排序次数<br>            for(i=Dk+D;i&lt;n;i+=D){        //基于增量的直接插入排序<br>                for(j=Dk;j&lt;i;j+=D){<br>                    if(a[i]&lt;a[j]){<br>                        temp=a[i];<br>                        for(k=i-D;k&gt;=j;k-=D){<br>                            a[k+D]=a[k];<br>                        }<br>                        a[j]=temp;<br>                    }<br>                }<br>            }<br>        }<br>    }<br>}<br>//简单选择排序<br>void Select(int a[],int n){<br>    int i=0,j=0,min=-1,minIndex,temp=0;<br>    for(i=0;i&lt;n-1;i++){<br>        min=a[i];<br>        for(j=i;j&lt;n;j++){    //找出最小元素的下标<br>            if(a[j]&lt;min){<br>                min=a[j];<br>                minIndex=j;<br>            }<br>        }<br>        swap(a+i,a+minIndex);<br>    }<br>}<br>//冒泡排序<br>void Bubble(int a[],int n){<br>    int i=0,j=0,temp=0;<br>    for(i=n-1;i&gt;0;i–){<br>        for(j=0;j&lt;i;j++){<br>            if(a[j]&gt;a[j+1]){<br>                swap(a+j,a+j+1);<br>            }<br>        }<br>    }<br>}<br>//快速排序<br>void Quick(int a[],int low,int high){<br>    if(low&gt;high) return;<br>    int L=low,R=high,pivot=a[low];<br>    while(L&lt;R){<br>        while(L&lt;R&amp;&amp;a[R]&gt;=pivot){    //从右边开始找到比枢纽小的值移到左边<br>            R–;<br>        }<br>        if(L&lt;R){<br>            a[L]=a[R];<br>            L++;<br>        }<br>        while(L&lt;R&amp;&amp;a[L]&lt;pivot){        //从左边开始找到比枢纽小的值移到右边<br>            L++;<br>        }<br>        if(L&lt;R){<br>            a[R]=a[L];<br>            R–;<br>        }<br>    }<br>    Quick(a,low,L-1);<br>    Quick(a,L+1,high);</p>
-<p>}<br>int main(){<br>    int begin=0,end=0;<br>    int i=0,a[100]={0};<br>    for(i=0;i&lt;100;i++){<br>        a[i]=rand()%1000;<br>    }<br>    //Insert(a,100);<br>    //Bubble(a,100);<br>    //Select(a,100);<br>    //Shell(a,100);<br>    Quick(a,0,99);<br>    for(i=1;i&lt;=100;i++){<br>        printf(“%d “,a[i-1]);<br>        if(i%10==0) printf(“\n”);<br>    }<br>    return 0;<br>} </p>
-<hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-02-01T13:05:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="万事开头难–"><a href="#万事开头难–" class="headerlink" title="万事开头难–"></a><p align="left">万事开头难–</p></h1><h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a><p align="center">坚持</p></h2><hr>
-<pre><code>大四即将工作的老学长即日起更新博客.
-
-
-励志做一名中级程序员 qaq~~
-
-
-座右铭: 我赚钱养家,你拿去花.</code></pre><hr>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
     </nav>
   
 
