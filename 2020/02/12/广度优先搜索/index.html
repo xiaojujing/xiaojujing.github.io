@@ -175,7 +175,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;</p>
-<p>/<em>int N,K;                //抓住这头牛<br>const int MAXN=100000;<br>int visited[MAXN+10];<br>struct Step{<br>    int x;<br>    int steps;<br>    Step(int xx,int s):x(xx),steps(s){<br>    }<br>};<br>queue<Step> q;</em>/</p>
+<p>/<em>int N,K;                //抓住这头牛<br>const int MAXN=100000;<br>int visited[MAXN+10];<br>struct Step{<br>    int x;<br>    int steps;<br>    Step(int xx,int s):x(xx),steps(s){<br>    }<br>};<br>queue<Step> q;</Step></em>/</p>
 <p>int main(){<br>    /<em>cin&gt;&gt;N&gt;&gt;K;<br>    memset(visited,0,sizeof(visited));<br>    q.push(Step(N,0));<br>    visited[N]=1;<br>    while(!q.empty()){<br>        Step s=q.front();<br>        if(s.x==K){<br>            cout&lt;&lt;s.steps&lt;&lt;endl;<br>            return 0;<br>        }else{<br>            if(s.x&gt;=0&amp;&amp;!visited[s.x-1]){<br>                q.push(Step(s.x-1,s.steps+1));<br>                visited[s.x-1]=1;<br>            }<br>            if(s.x+1&lt;=MAXN&amp;&amp;!visited[s.x+1]){<br>                q.push(Step(s.x+1,s.steps+1));<br>                visited[s.x+1]=1;<br>            }<br>            if(s.x<em>2&lt;=MAXN&amp;&amp;!visited[s.x</em>2]){<br>                q.push(Step(s.x<em>2,s.steps+1));<br>                visited[s.x</em>2]=1;<br>            }<br>            q.pop();<br>        }<br>    }</em>/</p>
 <pre><code>return 0;</code></pre><p>} </p>
 
