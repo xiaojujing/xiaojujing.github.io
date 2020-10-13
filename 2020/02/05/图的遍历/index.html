@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-05T14:42:29.000Z">
 <meta property="article:modified_time" content="2020-02-05T14:45:27.662Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="xiaojujing">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -47,10 +47,10 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="assets/img/myself.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">xiaojujing</a></h1>
 		</hgroup>
 		
 
@@ -62,6 +62,9 @@
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
 			</ul>
+		</nav>
+		<nav>
+			�������� 23
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -83,11 +86,13 @@
 				
 					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -105,10 +110,10 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="assets/img/myself.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">xiaojujing</h1>
 			</hgroup>
 			
 			
@@ -124,11 +129,13 @@
 					
 						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -165,6 +172,17 @@
     </h1>
   
 
+		<!--显示阅读次数-->
+		
+		  <br/>
+		  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+		  <span class="icon-sort"></span>
+		  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+			阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+		  </span>
+		  </a>
+		
+		<!--显示阅读次数完毕-->
         
         <a href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/" class="archive-article-date">
   	<time datetime="2020-02-05T14:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
@@ -177,10 +195,11 @@
         <hr>
 <h2 id="邻接表存储DFS"><a href="#邻接表存储DFS" class="headerlink" title="邻接表存储DFS"></a>邻接表存储DFS</h2><p>void Visit(Vertex v){<br>    printf(“%d\n”,v);<br>}<br>void DFS(LGraph Graph,Vertex v,void (*Visit)(Vertex)){<br>    ProToAdjVNode W;<br>    Visit(v);<br>    Visited[v]=true;<br>    for(W=Graph-&gt;G[v].FitstEdge;W;W=W-&gt;Next){<br>        if(!Visited[W-&gt;Adjv]){<br>            DFS(Graph,W-&gt;Adjv,Visit);<br>        }<br>    }<br>}</p>
 <hr>
-<h2 id="邻接矩阵存储BFS"><a href="#邻接矩阵存储BFS" class="headerlink" title="邻接矩阵存储BFS"></a>邻接矩阵存储BFS</h2><p>void Visit(Vertex v){<br>    printf(“正在访问的顶点%d\n”,v);<br>}<br>bool IsEdge(MGraph Graph,Vertex v,Vertex w){<br>    return Graph-&gt;G[v][w]&lt;INFNITY?true:false;<br>}<br>void BFS(MGraph Graph,Vertex S,void(*Visit)(Vertex)){<br>    queue<Vertex> Q;<br>    Vertex V,W;<br>    Visit(S);<br>    Visited[S]=true;<br>    Q.push(S);<br>    while(!Q.empty()){<br>        V=Q.front();Q.pop();<br>        for(W=0;W<Graph->Nv;W++){<br>            if(!Visited[W]&amp;&amp;IsEdge(Graph,V,W)){<br>                Visit(W);<br>                Visited[W]=true;<br>                Q.push(W);<br>            }<br>        }<br>    }<br>}</Graph-></Vertex></p>
+<h2 id="邻接矩阵存储BFS"><a href="#邻接矩阵存储BFS" class="headerlink" title="邻接矩阵存储BFS"></a>邻接矩阵存储BFS</h2><p>void Visit(Vertex v){<br>    printf(“正在访问的顶点%d\n”,v);<br>}<br>bool IsEdge(MGraph Graph,Vertex v,Vertex w){<br>    return Graph-&gt;G[v][w]&lt;INFNITY?true:false;<br>}<br>void BFS(MGraph Graph,Vertex S,void(*Visit)(Vertex)){<br>    queue<Vertex> Q;<br>    Vertex V,W;<br>    Visit(S);<br>    Visited[S]=true;<br>    Q.push(S);<br>    while(!Q.empty()){<br>        V=Q.front();Q.pop();<br>        for(W=0;W<Graph->Nv;W++){<br>            if(!Visited[W]&amp;&amp;IsEdge(Graph,V,W)){<br>                Visit(W);<br>                Visited[W]=true;<br>                Q.push(W);<br>            }<br>        }<br>    }<br>}</p>
 
       
-
+	  
+	
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -194,6 +213,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/简历照片.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/简历照片">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -325,7 +354,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		&copy; 2020 xiaojujing
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
