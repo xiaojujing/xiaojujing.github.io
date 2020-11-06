@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="xiaojujing" />
+
+
+
+<meta name="description" content="#include&lt;bits&#x2F;stdc++.h&gt;using namespace std;#define MAX 101int D[MAX][MAX]&#x3D;{0};int n;int maxsum[MAX][MAX];int MaxSum(int i,int j){    if(maxsum[i][j]!&#x3D;-1) return maxsum[i][j];    if(i&#x3D;&#x3D;n) maxsum[">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分治再探">
+<meta property="og:url" content="http://yoursite.com/2020/02/08/%E5%88%86%E6%B2%BB%E5%86%8D%E6%8E%A2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#include&lt;bits&#x2F;stdc++.h&gt;using namespace std;#define MAX 101int D[MAX][MAX]&#x3D;{0};int n;int maxsum[MAX][MAX];int MaxSum(int i,int j){    if(maxsum[i][j]!&#x3D;-1) return maxsum[i][j];    if(i&#x3D;&#x3D;n) maxsum[">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-08T15:45:45.000Z">
+<meta property="article:modified_time" content="2020-02-08T15:54:00.706Z">
+<meta property="article:author" content="xiaojujing">
+<meta name="twitter:card" content="summary">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>分治再探 | Hexo</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/picture/1.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">xiaojujing</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/491342709@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="/xiaojujing.github" title="GitHub"></a>
+                            
+                                <a class="fa bilibili" href="/%E5%B0%8F%E5%B1%85%E6%99%AF" title="bilibili"></a>
+                            
+                                <a class="fa 微信" href="/xiao_jujing" title="微信"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/" target="_blank" rel="noopener">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/" target="_blank" rel="noopener">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">xiaojujing</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/picture/1.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">xiaojujing</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/491342709@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="/xiaojujing.github" title="GitHub"></a>
+                            
+                                <a class="fa bilibili" target="_blank" href="/%E5%B0%8F%E5%B1%85%E6%99%AF" title="bilibili"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/xiao_jujing" title="微信"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-分治再探" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/08/%E5%88%86%E6%B2%BB%E5%86%8D%E6%8E%A2/" class="article-date">
+      <time datetime="2020-02-08T15:45:45.000Z" itemprop="datePublished">2020-02-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      分治再探
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;<br>#define MAX 101<br>int D[MAX][MAX]={0};<br>int n;<br>int maxsum[MAX][MAX];<br>int MaxSum(int i,int j){<br>    if(maxsum[i][j]!=-1) return maxsum[i][j];<br>    if(i==n) maxsum[i][j]=D[i][j];<br>    else{<br>        int x=MaxSum(i+1,j);<br>        int y=MaxSum(i+1,j+1);<br>        maxsum[i][j]=max(x,y)+D[i][j];<br>    }<br>    return maxsum[i][j];<br>}<br>int main(){<br>    int i,j;<br>    cin&gt;&gt;n;<br>    for(i=1;i&lt;=n;i++){<br>        for(j=1;j&lt;=i;j++){<br>            cin&gt;&gt;D[i][j];<br>            maxsum[i][j]=-1;<br>        }<br>    }<br>    cout&lt;&lt;MaxSum(1,1)&lt;&lt;endl;<br>    return 0;<br>} </p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2020/02/08/%E5%88%86%E6%B2%BB%E5%86%8D%E6%8E%A2/">分治再探</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">xiaojujing</a></p>
+        <p><span>Created:</span>2020-02-08, 23:45:45</p>
+        <p><span>Updated:</span>2020-02-08, 23:54:00</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2020/02/08/%E5%88%86%E6%B2%BB%E5%86%8D%E6%8E%A2/" title="分治再探">http://yoursite.com/2020/02/08/%E5%88%86%E6%B2%BB%E5%86%8D%E6%8E%A2/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2020/02/08/%E5%88%86%E6%B2%BB%E5%86%8D%E6%8E%A2/　　By xiaojujing" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/02/09/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">
+                    深度优先搜索
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/">
+                    递归和分治
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"分治再探　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2020/02/09/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" title="Pre: 深度优先搜索">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/" title="Next: 递归和分治">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/11/07/2018%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2018蓝桥B组省赛题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/07/2017%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2017蓝桥B组省赛题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/07/2016%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2016蓝桥B组省赛题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/07/2015%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2015蓝桥B组省赛题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/07/2014%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2014蓝桥B组省赛题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/07/2013%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2013蓝桥B组省赛题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/06/12-%E7%BB%A7%E6%89%BF/">12_继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/06/11_%E5%88%86%E7%B1%BB%E5%92%8Cstatic/">分类和static</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/05/10_Git%E4%BB%8B%E7%BB%8D/">10_Git介绍</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/05/9_ArrayList/">9_ArrayList</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/04/8_API/">8_API</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/04/7_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">7_类和对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/03/6_Debug%E6%A8%A1%E5%BC%8F/">6_Debug模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/03/5_%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0/">5_方法概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/02/4_IDEA%E5%92%8C%E6%95%B0%E7%BB%84/">4_IDEA和数组</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/02/3_switch%E8%AF%AD%E5%8F%A5/">3_switch语句</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/01/2_Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">2_Java基础语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/11/01/1_Java%E6%A6%82%E8%BF%B0/">1_Java概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/15/PAT%E4%B9%99%E7%BA%A71025/">PAT乙级1025</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/12/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">广度优先搜索</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/11/%E8%B4%AA%E5%BF%83/">贪心</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/10/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/09/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/">深度优先搜索</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/08/%E5%88%86%E6%B2%BB%E5%86%8D%E6%8E%A2/">分治再探</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/">递归和分治</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/06/STL%E5%AE%9E%E8%B7%B5/">STL实践</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/05/%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86/">图的遍历</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/04/%E5%9B%BE%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%B3%95/">图的两种表示法</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/03/%E9%9D%99%E6%80%81%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E4%BB%A5%E5%8F%8A%E4%BA%8C%E5%8F%89%E6%A0%91/">栈队列二叉树的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0/">数据结构几种排序的简单实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2020 xiaojujing
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

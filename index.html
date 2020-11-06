@@ -273,6 +273,636 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2018蓝桥B组省赛题解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/07/2018%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="article-date">
+      <time datetime="2020-11-06T16:17:47.909Z" itemprop="datePublished">2020-11-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/2018%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2018蓝桥B组省赛题解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="2018蓝桥B组省赛题解"><a href="#2018蓝桥B组省赛题解" class="headerlink" title="2018蓝桥B组省赛题解"></a>2018蓝桥B组省赛题解</h1><h2 id="1、第几天"><a href="#1、第几天" class="headerlink" title="1、第几天"></a>1、第几天</h2><p>​    答案：125</p>
+<p>​    思路：注意2000年为闰年</p>
+<h2 id="2、明码"><a href="#2、明码" class="headerlink" title="2、明码"></a>2、明码</h2><p>​    答案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3、乘积尾零"><a href="#3、乘积尾零" class="headerlink" title="3、乘积尾零"></a>3、乘积尾零</h2><p>​    答案：</p>
+<p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4、测试次数"><a href="#4、测试次数" class="headerlink" title="4、测试次数"></a>4、测试次数</h2><p>​    答案：19</p>
+<p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="5、快速排序"><a href="#5、快速排序" class="headerlink" title="5、快速排序"></a>5、快速排序</h2><p>​    答案：a,i+1,r,k-i+l-1</p>
+<p>​    思路：递归</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">&#x2F;&#x2F; 求x用10进制表示时的数位长度 </span><br><span class="line">int len(int x)&#123;</span><br><span class="line"> if(x&lt;10) return 1;</span><br><span class="line"> return len(x&#x2F;10)+1;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F; 取x的第k位数字</span><br><span class="line">int f(int x, int k)&#123;</span><br><span class="line"> if(len(x)-k&#x3D;&#x3D;0) return x%10;</span><br><span class="line">&#x2F;&#x2F; return _____________________;  &#x2F;&#x2F;填空</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"> int x &#x3D; 23574;</span><br><span class="line"> printf(&quot;%d\n&quot;, f(x,3));</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、递增三元数组"><a href="#6、递增三元数组" class="headerlink" title="6、递增三元数组"></a>6、递增三元数组</h2><p>​    答案：a[i-1][j-1]+1;</p>
+<p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"> </span><br><span class="line">#define N 256</span><br><span class="line">int f(const char* s1, const char* s2)</span><br><span class="line">&#123;</span><br><span class="line">	int a[N][N];</span><br><span class="line">	int len1 &#x3D; strlen(s1);</span><br><span class="line">	int len2 &#x3D; strlen(s2);</span><br><span class="line">	int i,j;</span><br><span class="line">	</span><br><span class="line">	memset(a,0,sizeof(int)*N*N);</span><br><span class="line">	int max &#x3D; 0;</span><br><span class="line">	for(i&#x3D;1; i&lt;&#x3D;len1; i++)&#123;</span><br><span class="line">		for(j&#x3D;1; j&lt;&#x3D;len2; j++)&#123;</span><br><span class="line">			if(s1[i-1]&#x3D;&#x3D;s2[j-1]) &#123;</span><br><span class="line">				a[i][j] &#x3D; __________________________;  &#x2F;&#x2F;填空</span><br><span class="line">				if(a[i][j] &gt; max) max &#x3D; a[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return max;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;%d\n&quot;, f(&quot;abcdkkk&quot;, &quot;baabcdadabc&quot;));</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7、螺旋折线"><a href="#7、螺旋折线" class="headerlink" title="7、螺旋折线"></a>7、螺旋折线</h2><p>​    答案：</p>
+<p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="8、日志统计"><a href="#8、日志统计" class="headerlink" title="8、日志统计"></a>8、日志统计</h2><h2 id="9、全球变暖"><a href="#9、全球变暖" class="headerlink" title="9、全球变暖"></a>9、全球变暖</h2><h2 id="10、最大乘积"><a href="#10、最大乘积" class="headerlink" title="10、最大乘积"></a>10、最大乘积</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2017蓝桥B组省赛题解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/07/2017%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="article-date">
+      <time datetime="2020-11-06T16:17:47.905Z" itemprop="datePublished">2020-11-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/2017%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2017蓝桥B组省赛题解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="2017蓝桥B组省赛题解"><a href="#2017蓝桥B组省赛题解" class="headerlink" title="2017蓝桥B组省赛题解"></a>2017蓝桥B组省赛题解</h1><h2 id="1、购物单"><a href="#1、购物单" class="headerlink" title="1、购物单"></a>1、购物单</h2><p>​    答案：5200</p>
+<p>​    思路：字符串截取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2、等差素数列"><a href="#2、等差素数列" class="headerlink" title="2、等差素数列"></a>2、等差素数列</h2><p>​    答案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3、承压计算"><a href="#3、承压计算" class="headerlink" title="3、承压计算"></a>3、承压计算</h2><p>​    答案：</p>
+<p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4、方格分割"><a href="#4、方格分割" class="headerlink" title="4、方格分割"></a>4、方格分割</h2><p>​    答案：509</p>
+<p>​    思路：搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="5、取位数"><a href="#5、取位数" class="headerlink" title="5、取位数"></a>5、取位数</h2><p>​    答案：f(x/10,k)</p>
+<p>​    思路：递归</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">&#x2F;&#x2F; 求x用10进制表示时的数位长度 </span><br><span class="line">int len(int x)&#123;</span><br><span class="line"> if(x&lt;10) return 1;</span><br><span class="line"> return len(x&#x2F;10)+1;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F; 取x的第k位数字</span><br><span class="line">int f(int x, int k)&#123;</span><br><span class="line"> if(len(x)-k&#x3D;&#x3D;0) return x%10;</span><br><span class="line">&#x2F;&#x2F; return _____________________;  &#x2F;&#x2F;填空</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line"> int x &#x3D; 23574;</span><br><span class="line"> printf(&quot;%d\n&quot;, f(x,3));</span><br><span class="line"> return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、最大公共字串"><a href="#6、最大公共字串" class="headerlink" title="6、最大公共字串"></a>6、最大公共字串</h2><p>​    答案：a[i-1][j-1]+1;</p>
+<p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"> </span><br><span class="line">#define N 256</span><br><span class="line">int f(const char* s1, const char* s2)</span><br><span class="line">&#123;</span><br><span class="line">	int a[N][N];</span><br><span class="line">	int len1 &#x3D; strlen(s1);</span><br><span class="line">	int len2 &#x3D; strlen(s2);</span><br><span class="line">	int i,j;</span><br><span class="line">	</span><br><span class="line">	memset(a,0,sizeof(int)*N*N);</span><br><span class="line">	int max &#x3D; 0;</span><br><span class="line">	for(i&#x3D;1; i&lt;&#x3D;len1; i++)&#123;</span><br><span class="line">		for(j&#x3D;1; j&lt;&#x3D;len2; j++)&#123;</span><br><span class="line">			if(s1[i-1]&#x3D;&#x3D;s2[j-1]) &#123;</span><br><span class="line">				a[i][j] &#x3D; __________________________;  &#x2F;&#x2F;填空</span><br><span class="line">				if(a[i][j] &gt; max) max &#x3D; a[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return max;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;%d\n&quot;, f(&quot;abcdkkk&quot;, &quot;baabcdadabc&quot;));</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7、日期问题"><a href="#7、日期问题" class="headerlink" title="7、日期问题"></a>7、日期问题</h2><p>​    答案：</p>
+<p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="8、包子凑数"><a href="#8、包子凑数" class="headerlink" title="8、包子凑数"></a>8、包子凑数</h2><h2 id="9、分巧克力"><a href="#9、分巧克力" class="headerlink" title="9、分巧克力"></a>9、分巧克力</h2><h2 id="10、k倍区间"><a href="#10、k倍区间" class="headerlink" title="10、k倍区间"></a>10、k倍区间</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2016蓝桥B组省赛题解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/07/2016%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="article-date">
+      <time datetime="2020-11-06T16:17:47.901Z" itemprop="datePublished">2020-11-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/2016%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2016蓝桥B组省赛题解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="2016蓝桥B组省赛题解"><a href="#2016蓝桥B组省赛题解" class="headerlink" title="2016蓝桥B组省赛题解"></a>2016蓝桥B组省赛题解</h1><h2 id="1、煤球数目"><a href="#1、煤球数目" class="headerlink" title="1、煤球数目"></a>1、煤球数目</h2><p>​    答案：171700</p>
+<p>​    思路：数学归纳</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int ans &#x3D; 0,cnt&#x3D;0;</span><br><span class="line">	for(int i &#x3D; 1;i&lt;&#x3D;100;i++)&#123;</span><br><span class="line">		cnt+&#x3D;i;</span><br><span class="line">		ans+&#x3D;cnt;</span><br><span class="line">		cout&lt;&lt;&quot;第&quot;&lt;&lt;i&lt;&lt;&quot;层:&quot;&lt;&lt;cnt&lt;&lt;&quot;   ans&#x3D;&quot;&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125; </span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、生日蜡烛"><a href="#2、生日蜡烛" class="headerlink" title="2、生日蜡烛"></a>2、生日蜡烛</h2><p>​    答案：26</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	for(int i &#x3D; 1;i&lt;236;i++)&#123;</span><br><span class="line">		int ans &#x3D; 0;</span><br><span class="line">		int j;</span><br><span class="line">		for(j&#x3D;i;j&lt;&#x3D;1000;j++)&#123;</span><br><span class="line">			ans+&#x3D;j;</span><br><span class="line">			if(ans&#x3D;&#x3D;236)&#123;</span><br><span class="line">				cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j&lt;&lt;endl;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、凑算式"><a href="#3、凑算式" class="headerlink" title="3、凑算式"></a>3、凑算式</h2><p>​    答案：29</p>
+<p>​    思路：全排列枚举</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int ans&#x3D;0;</span><br><span class="line">	int a[9]&#x3D;&#123;1,2,3,4,5,6,7,8,9&#125;;</span><br><span class="line">	do&#123;</span><br><span class="line">		int A&#x3D;a[0],B&#x3D;a[1],C&#x3D;a[2];</span><br><span class="line">		int D&#x3D;a[3]*100+a[4]*10+a[5];</span><br><span class="line">		int G&#x3D;a[6]*100+a[7]*10+a[8];</span><br><span class="line">		int up&#x3D;B*G+C*D,down&#x3D;C*G;</span><br><span class="line">		if(up%down!&#x3D;0) continue;</span><br><span class="line">		else&#123;</span><br><span class="line">			if(A+up&#x2F;down&#x3D;&#x3D;10)&#123;</span><br><span class="line">				ans++;</span><br><span class="line">				cout&lt;&lt;A&lt;&lt;&quot;+&quot;&lt;&lt;B&lt;&lt;&quot;&#x2F;&quot;&lt;&lt;C&lt;&lt;&quot;+&quot;&lt;&lt;D&lt;&lt;&quot;&#x2F;&quot;&lt;&lt;G&lt;&lt;endl;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;while(next_permutation(a,a+9));</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、快速排序"><a href="#4、快速排序" class="headerlink" title="4、快速排序"></a>4、快速排序</h2><p>​    答案：swap(a,p,j)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void swap(int a[], int i, int j)</span><br><span class="line">&#123;</span><br><span class="line">    int t &#x3D; a[i];</span><br><span class="line">    a[i] &#x3D; a[j];</span><br><span class="line">    a[j] &#x3D; t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int partition(int a[], int p, int r)</span><br><span class="line">&#123;</span><br><span class="line">    int i &#x3D; p;</span><br><span class="line">    int j &#x3D; r + 1;</span><br><span class="line">    int x &#x3D; a[p];</span><br><span class="line">    while(1)&#123;</span><br><span class="line">        while(i&lt;r &amp;&amp; a[++i]&lt;x);</span><br><span class="line">        while(a[--j]&gt;x);</span><br><span class="line">         if(i&gt;&#x3D;j) break;</span><br><span class="line">        swap(a,i,j);</span><br><span class="line">    &#125;</span><br><span class="line">   &#x2F;&#x2F; _______________;&#x2F;&#x2F;填空位置</span><br><span class="line">    return j;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void quicksort(int a[], int p, int r)</span><br><span class="line">&#123;</span><br><span class="line">    if(p&lt;r)&#123;</span><br><span class="line">        int q &#x3D; partition(a,p,r);</span><br><span class="line">        quicksort(a,p,q-1);</span><br><span class="line">        quicksort(a,q+1,r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    int a[] &#x3D; &#123;5,13,6,24,2,8,19,27,6,12,1,17&#125;;</span><br><span class="line">    int N &#x3D; 12;</span><br><span class="line">    </span><br><span class="line">    quicksort(a, 0, N-1);</span><br><span class="line">    </span><br><span class="line">    for(i&#x3D;0; i&lt;N; i++) printf(&quot;%d &quot;, a[i]);</span><br><span class="line">    printf(&quot;\n&quot;);</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、抽签"><a href="#5、抽签" class="headerlink" title="5、抽签"></a>5、抽签</h2><p>​    答案：f(a,k+1,m-j,b);</p>
+<p>​    思路：运气</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#define N 6</span><br><span class="line">#define M 5</span><br><span class="line">#define BUF 1024</span><br><span class="line"></span><br><span class="line">void f(int a[], int k, int m, char b[])</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    </span><br><span class="line">    if(k&#x3D;&#x3D;N)&#123; </span><br><span class="line">        b[M] &#x3D; 0;</span><br><span class="line">        if(m&#x3D;&#x3D;0) printf(&quot;%s\n&quot;,b);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    for(i&#x3D;0; i&lt;&#x3D;a[k]; i++)&#123;</span><br><span class="line">        for(j&#x3D;0; j&lt;i; j++) b[M-m+j] &#x3D; k+&#39;A&#39;;</span><br><span class="line">        &#x2F;&#x2F;______________________;  &#x2F;&#x2F;填空位置</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;    </span><br><span class="line">    int  a[N] &#x3D; &#123;4,2,2,1,1,3&#125;;</span><br><span class="line">    char b[BUF];</span><br><span class="line">    f(a,0,M,b);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、方格填数"><a href="#6、方格填数" class="headerlink" title="6、方格填数"></a>6、方格填数</h2><p>​    答案：1580</p>
+<p>​    思路：全排列枚举</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int ans&#x3D;0;</span><br><span class="line">	int A[10]&#x3D;&#123;0,1,2,3,4,5,6,7,8,9&#125;;</span><br><span class="line">	do&#123;</span><br><span class="line">		&#x2F;*		0	1	2</span><br><span class="line">			3	4	5	6</span><br><span class="line">			7	8	9</span><br><span class="line">		*&#x2F;</span><br><span class="line">		if(abs(A[0]-A[1])&#x3D;&#x3D;1||abs(A[1]-A[2])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[7]-A[8])&#x3D;&#x3D;1||abs(A[8]-A[9])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[3]-A[4])&#x3D;&#x3D;1||abs(A[4]-A[5])&#x3D;&#x3D;1||abs(A[5]-A[6])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[3]-A[7])&#x3D;&#x3D;1||abs(A[2]-A[6])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[0]-A[4])&#x3D;&#x3D;1||abs(A[4]-A[8])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[1]-A[5])&#x3D;&#x3D;1||abs(A[5]-A[9])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[3]-A[8])&#x3D;&#x3D;1||abs(A[4]-A[9])&#x3D;&#x3D;1||abs(A[0]-A[5])&#x3D;&#x3D;1||abs(A[1]-A[6])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[0]-A[3])&#x3D;&#x3D;1||abs(A[1]-A[4])&#x3D;&#x3D;1||abs(A[4]-A[7])&#x3D;&#x3D;1</span><br><span class="line">		||abs(A[2]-A[5])&#x3D;&#x3D;1||abs(A[5]-A[8])&#x3D;&#x3D;1||abs(A[6]-A[9])&#x3D;&#x3D;1) continue;</span><br><span class="line">&#x2F;&#x2F;		printf(&quot;\t%d\t%d\t%d\n&quot;,A[0],A[1],A[2]);</span><br><span class="line">&#x2F;&#x2F;		printf(&quot;%d\t%d\t%d\t%d\n&quot;,A[3],A[4],A[5],A[6]);</span><br><span class="line">&#x2F;&#x2F;		printf(&quot;%d\t%d\t%d\n&quot;,A[7],A[8],A[9]);</span><br><span class="line">&#x2F;&#x2F;		printf(&quot;--------------------\n&quot;);</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;while(next_permutation(A,A+10));</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7、剪邮票"><a href="#7、剪邮票" class="headerlink" title="7、剪邮票"></a>7、剪邮票</h2><p>​    答案：288</p>
+<p>​    思路：深搜递归</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt; </span><br><span class="line">using namespace std;</span><br><span class="line">int M[3][4];</span><br><span class="line">int ans;</span><br><span class="line">int dirt[4][2]&#x3D;&#123;&#123;0,1&#125;,&#123;1,0&#125;,&#123;0,-1&#125;,&#123;-1,0&#125;&#125;;</span><br><span class="line">void dfs(int x,int y,int cnt)&#123;</span><br><span class="line">	if(cnt&gt;5) return;</span><br><span class="line">	if(cnt&#x3D;&#x3D;5) ans++;</span><br><span class="line">	for(int z&#x3D;0;z&lt;4;z++)&#123;</span><br><span class="line">		int xx&#x3D;x+dirt[z][0],yy&#x3D;y+dirt[z][1];</span><br><span class="line">		if(M[xx][yy]&#x3D;&#x3D;0&amp;&amp;(xx&gt;&#x3D;0&amp;&amp;xx&lt;3&amp;&amp;yy&gt;&#x3D;0&amp;&amp;yy&lt;4)) dfs(xx,yy,cnt+1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	for(int i&#x3D;0;i&lt;3;i++)&#123;</span><br><span class="line">		for(int j&#x3D;0;j&lt;4;j++)&#123;</span><br><span class="line">			dfs(i,j,1);</span><br><span class="line">			M[i][j]&#x3D;1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、四平方和"><a href="#8、四平方和" class="headerlink" title="8、四平方和"></a>8、四平方和</h2><h2 id="9、交换瓶子"><a href="#9、交换瓶子" class="headerlink" title="9、交换瓶子"></a>9、交换瓶子</h2><h2 id="10、最大比例"><a href="#10、最大比例" class="headerlink" title="10、最大比例"></a>10、最大比例</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2015蓝桥B组省赛题解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/07/2015%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="article-date">
+      <time datetime="2020-11-06T16:17:47.897Z" itemprop="datePublished">2020-11-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/2015%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2015蓝桥B组省赛题解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="2015蓝桥B组省赛题解"><a href="#2015蓝桥B组省赛题解" class="headerlink" title="2015蓝桥B组省赛题解"></a>2015蓝桥B组省赛题解</h1><h1 id="1、奖券数目"><a href="#1、奖券数目" class="headerlink" title="1、奖券数目"></a>1、奖券数目</h1><p>​    答案：52488</p>
+<p>​    思路：枚举，不包含4的数字结果加一</p>
+<h2 id="2、星系炸弹"><a href="#2、星系炸弹" class="headerlink" title="2、星系炸弹"></a>2、星系炸弹</h2><p>​    答案：2017-08-05</p>
+<p>​    思路：程序模拟计算器加法，i=21+31+365+366+31+28+31+30+31+30+31+5=1000;</p>
+<h2 id="3、三羊献瑞"><a href="#3、三羊献瑞" class="headerlink" title="3、三羊献瑞"></a>3、三羊献瑞</h2><p>​    答案：1085</p>
+<p>​    思路：小学加法规则推导</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	9	b	b+1	d</span><br><span class="line">+	1 	0	8	b</span><br><span class="line">1	0	b+1	b	2</span><br><span class="line">肯定要进位所以：b+1&#x3D;c 又b+1+g&#x3D;b+10 -&gt;g&#x3D;9 矛盾，所以也必定进位，故 g&#x3D;8</span><br><span class="line">所以d+b&#x3D;h+10</span><br><span class="line">又只剩2 3 4 5 6 7</span><br><span class="line">h只能为2 或者3 又为3时b+1不能满足条件了，所以h&#x3D;2</span><br><span class="line">所以b&#x3D; 5 d &#x3D; 7</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、格子中输出"><a href="#4、格子中输出" class="headerlink" title="4、格子中输出"></a>4、格子中输出</h2><p>​    答案：(width-strlen(buf)-2)/2,””,buf,(width-strlen(buf)-2)/2,””</p>
+<p>​    思路：查看c++文档，猜测*号表示的是输出时填补的字符及个数，编写代码验证。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">void StringInGrid(int width, int height, const char* s)</span><br><span class="line">&#123;</span><br><span class="line">int i,k;</span><br><span class="line">char buf[1000];</span><br><span class="line">strcpy(buf, s);</span><br><span class="line">if(strlen(s)&gt;width-2) buf[width-2]&#x3D;0;</span><br><span class="line"></span><br><span class="line">printf(&quot;+&quot;);</span><br><span class="line">for(i&#x3D;0;i&lt;width-2;i++) printf(&quot;-&quot;);</span><br><span class="line">printf(&quot;+\n&quot;);</span><br><span class="line"></span><br><span class="line">for(k&#x3D;1; k&lt;(height-1)&#x2F;2;k++)&#123;</span><br><span class="line">printf(&quot;|&quot;);</span><br><span class="line">for(i&#x3D;0;i&lt;width-2;i++) printf(&quot; &quot;);</span><br><span class="line">printf(&quot;|\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printf(&quot;|&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;printf(&quot;%*s%s%*s&quot;,_____________________________________________);  &#x2F;&#x2F;填空</span><br><span class="line">         </span><br><span class="line">printf(&quot;|\n&quot;);</span><br><span class="line"></span><br><span class="line">for(k&#x3D;(height-1)&#x2F;2+1; k&lt;height-1; k++)&#123;</span><br><span class="line">printf(&quot;|&quot;);</span><br><span class="line">for(i&#x3D;0;i&lt;width-2;i++) printf(&quot; &quot;);</span><br><span class="line">printf(&quot;|\n&quot;);</span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">printf(&quot;+&quot;);</span><br><span class="line">for(i&#x3D;0;i&lt;width-2;i++) printf(&quot;-&quot;);</span><br><span class="line">printf(&quot;+\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">StringInGrid(20,6,&quot;abcd1234&quot;);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、九数组分数"><a href="#5、九数组分数" class="headerlink" title="5、九数组分数"></a>5、九数组分数</h2><p>​    答案：{t = x[k];x[k] = x[i];x[i] = t;}</p>
+<p>​    思路：全排列且递归时用到的同一个数组变量，显而易见，填空处为回溯。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">void test(int x[])</span><br><span class="line">&#123;</span><br><span class="line">    int a &#x3D; x[0]*1000 + x[1]*100 + x[2]*10 +x[3];</span><br><span class="line">    int b &#x3D; x[4]*10000 + x[5]*1000 + x[6]*100 +x[7]*10 + x[8];</span><br><span class="line">    if(a * 3 &#x3D;&#x3D; b)</span><br><span class="line">        printf(&quot;%d &#x2F; %d\n&quot;, a,b);</span><br><span class="line">&#125;</span><br><span class="line">void f(int x[],int k)</span><br><span class="line">&#123;</span><br><span class="line">    int i,t;</span><br><span class="line">    if(k &gt;&#x3D; 9)</span><br><span class="line">    &#123;</span><br><span class="line">        test(x);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for(i &#x3D; k; i &lt; 9; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        &#123;t &#x3D; x[k];x[k] &#x3D; x[i];x[i] &#x3D; t;&#125;</span><br><span class="line">        f(x,k+1);</span><br><span class="line">        &#x2F;&#x2F;_______________________________&#x2F;&#x2F; 填空处</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int x[] &#x3D; &#123;1,2,3,4,5,6,7,8,9&#125;;</span><br><span class="line">    f(x,0);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、加法变乘法"><a href="#6、加法变乘法" class="headerlink" title="6、加法变乘法"></a>6、加法变乘法</h2><p>​    答案：16</p>
+<p>​    思路：枚举</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;	</span><br><span class="line">	for(int i&#x3D;0;i&lt;48;i++)&#123;</span><br><span class="line">		for(int j&#x3D;i+2;j&lt;48;j++)&#123;</span><br><span class="line">			if(i*(i+1)-(2*i+1)+j*(j+1)-(2*j+1)&#x3D;&#x3D;2015-1225)&#123;</span><br><span class="line">				printf(&quot;%d\n&quot;,i);</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7、牌型总数"><a href="#7、牌型总数" class="headerlink" title="7、牌型总数"></a>7、牌型总数</h2><p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int ans;</span><br><span class="line">void f(int sum,int cnt)&#123;</span><br><span class="line">	if(sum&gt;13||cnt&gt;13) return ;</span><br><span class="line">	if(sum&#x3D;&#x3D;13&amp;&amp;cnt&#x3D;&#x3D;13) ans++;</span><br><span class="line">	for(int i&#x3D;0;i&lt;5;i++)&#123;</span><br><span class="line">		f(sum+1,cnt+i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;	</span><br><span class="line">	f(0,0);</span><br><span class="line">	printf(&quot;%d\n&quot;,ans);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、移动距离"><a href="#8、移动距离" class="headerlink" title="8、移动距离"></a>8、移动距离</h2><p>​    思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;	</span><br><span class="line">	int w,m,n;</span><br><span class="line">	while(scanf(&quot;%d %d %d&quot;,&amp;w,&amp;m,&amp;n)!&#x3D;EOF)&#123;</span><br><span class="line">		int rm&#x3D;m%w&#x3D;&#x3D;0?m&#x2F;w:m&#x2F;w+1;</span><br><span class="line">		int rn&#x3D;n%w&#x3D;&#x3D;0?n&#x2F;w:n&#x2F;w+1;</span><br><span class="line">		int cm&#x3D;0,cn&#x3D;0;</span><br><span class="line">		if(rm%2&#x3D;&#x3D;0) cm&#x3D;rm*w-m+1;</span><br><span class="line">		else cm&#x3D;w-(rm*w-m);</span><br><span class="line">		if(rn%2&#x3D;&#x3D;0) cn&#x3D;rn*w-n+1;</span><br><span class="line">		else cn&#x3D;w-(rn*w-n);</span><br><span class="line">		printf(&quot;%d\n&quot;,abs(rm-rn)+abs(cm-cn));	</span><br><span class="line">	&#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9、垒骰子"><a href="#9、垒骰子" class="headerlink" title="9、垒骰子"></a>9、垒骰子</h2><h2 id="10、生命之树"><a href="#10、生命之树" class="headerlink" title="10、生命之树"></a>10、生命之树</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2014蓝桥B组省赛题解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/07/2014%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="article-date">
+      <time datetime="2020-11-06T16:17:47.892Z" itemprop="datePublished">2020-11-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/2014%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2014蓝桥B组省赛题解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="2014蓝桥B组省赛题解"><a href="#2014蓝桥B组省赛题解" class="headerlink" title="2014蓝桥B组省赛题解"></a>2014蓝桥B组省赛题解</h1><h2 id="1、啤酒和饮料"><a href="#1、啤酒和饮料" class="headerlink" title="1、啤酒和饮料"></a>1、啤酒和饮料</h2><p>​    答案：11</p>
+<p>​    思路：简单循环列举所有情况，送分题</p>
+<h2 id="2、切面条"><a href="#2、切面条" class="headerlink" title="2、切面条"></a>2、切面条</h2><p>​    答案：1025</p>
+<p>​    思路：数学归纳法。</p>
+<table>
+<thead>
+<tr>
+<th>对折次数</th>
+<th>折角</th>
+<th>切一刀面条数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>2+1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1+2</td>
+<td>2+1+2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1+2+4</td>
+<td>2+1+2+4</td>
+</tr>
+<tr>
+<td>n</td>
+<td>1+2+…+2^(n-1)</td>
+<td>2+1+2+..2^(n-1)</td>
+</tr>
+</tbody></table>
+<h2 id="3、李白打酒"><a href="#3、李白打酒" class="headerlink" title="3、李白打酒"></a>3、李白打酒</h2><p>​    答案：14</p>
+<p>​    思路：按条件试探进行深搜，注意题目给的最后一次遇到的是花，出口应设置要提前一次。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt; </span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int ans &#x3D; 0;</span><br><span class="line">void f(int dian,int hua ,int jiu)&#123;</span><br><span class="line">	if(dian&#x3D;&#x3D;0&amp;&amp;hua&#x3D;&#x3D;0&amp;&amp;jiu&#x3D;&#x3D;1)&#123;</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	if(dian&gt;0) f(dian-1,hua,jiu*2);</span><br><span class="line">	if(hua&gt;0) f(dian,hua-1,jiu-1);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	f(5,9,2);</span><br><span class="line">	cout&lt;&lt;ans;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、史丰收速算"><a href="#4、史丰收速算" class="headerlink" title="4、史丰收速算"></a>4、史丰收速算</h2><p>​    答案：if(r&gt;0) return i;</p>
+<p>​    思路：代码填空的经验一般要结合上下代码，写出相似或者是补充的判断条件，由此写出if条件为r&gt;0,返回的值为i是模拟了f(“4285712”)的结果输出了2999997，首字母为2与直接输出i=2相对应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std; </span><br><span class="line">&#x2F;&#x2F;计算个位 </span><br><span class="line">int ge_wei(int a)</span><br><span class="line">&#123;</span><br><span class="line">	if(a % 2 &#x3D;&#x3D; 0)</span><br><span class="line">		return (a * 2) % 10;</span><br><span class="line">	else</span><br><span class="line">		return (a * 2 + 5) % 10;	</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;计算进位 </span><br><span class="line">int jin_wei(char* p)</span><br><span class="line">&#123;</span><br><span class="line">	char* level[] &#x3D; &#123;</span><br><span class="line">		&quot;142857&quot;,</span><br><span class="line">		&quot;285714&quot;,</span><br><span class="line">		&quot;428571&quot;,</span><br><span class="line">		&quot;571428&quot;,</span><br><span class="line">		&quot;714285&quot;,</span><br><span class="line">		&quot;857142&quot;</span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	char buf[7];</span><br><span class="line">	buf[6] &#x3D; &#39;\0&#39;;</span><br><span class="line">	strncpy(buf,p,6);</span><br><span class="line">	</span><br><span class="line">	int i;</span><br><span class="line">	for(i&#x3D;5; i&gt;&#x3D;0; i--)&#123;</span><br><span class="line">		int r &#x3D; strcmp(level[i], buf);</span><br><span class="line">		if(r&lt;0) return i+1;</span><br><span class="line">		while(r&#x3D;&#x3D;0)&#123;</span><br><span class="line">			p +&#x3D; 6;</span><br><span class="line">			strncpy(buf,p,6);</span><br><span class="line">			r &#x3D; strcmp(level[i], buf);</span><br><span class="line">			if(r&lt;0) return i+1;</span><br><span class="line">			&#x2F;&#x2F;______________________________;  &#x2F;&#x2F;填空</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;多位数乘以7</span><br><span class="line">void f(char* s) </span><br><span class="line">&#123;</span><br><span class="line">	int head &#x3D; jin_wei(s);</span><br><span class="line">	if(head &gt; 0) printf(&quot;%d&quot;, head);</span><br><span class="line">	</span><br><span class="line">	char* p &#x3D; s;</span><br><span class="line">	while(*p)&#123;</span><br><span class="line">		int a &#x3D; (*p-&#39;0&#39;);</span><br><span class="line">		int x &#x3D; (ge_wei(a) + jin_wei(p+1)) % 10;</span><br><span class="line">		printf(&quot;%d&quot;,x);</span><br><span class="line">		p++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	f(&quot;428571428571&quot;);</span><br><span class="line">	f(&quot;34553834937543&quot;);		</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、打印图形"><a href="#5、打印图形" class="headerlink" title="5、打印图形"></a>5、打印图形</h2><p>​    答案：f(a, rank-1, row, col+w/2);</p>
+<p>​    思路：递归代码看整体，容易看出题目给出的是切割出来的下面两段，故补上上面段的递归打印。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std; </span><br><span class="line">#define N 70</span><br><span class="line"></span><br><span class="line">void f(char a[][N], int rank, int row, int col)</span><br><span class="line">&#123;</span><br><span class="line">	if(rank&#x3D;&#x3D;1)&#123;</span><br><span class="line">		a[row][col] &#x3D; &#39;*&#39;;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	int w &#x3D; 1;</span><br><span class="line">	int i;</span><br><span class="line">	for(i&#x3D;0; i&lt;rank-1; i++) w *&#x3D; 2;</span><br><span class="line">	</span><br><span class="line">	f(a, rank-1, row, col+w&#x2F;2);</span><br><span class="line">	&#x2F;&#x2F;_________________;填空 </span><br><span class="line">	f(a, rank-1, row+w&#x2F;2, col);</span><br><span class="line">	f(a, rank-1, row+w&#x2F;2, col+w);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char a[N][N];</span><br><span class="line">	int i,j;</span><br><span class="line">	for(i&#x3D;0;i&lt;N;i++)</span><br><span class="line">	for(j&#x3D;0;j&lt;N;j++) a[i][j] &#x3D; &#39; &#39;;</span><br><span class="line">	</span><br><span class="line">	f(a,6,0,0);</span><br><span class="line">	</span><br><span class="line">	for(i&#x3D;0; i&lt;N; i++)&#123;</span><br><span class="line">		for(j&#x3D;0; j&lt;N; j++) printf(&quot;%c&quot;,a[i][j]);</span><br><span class="line">		printf(&quot;\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、奇怪的分式"><a href="#6、奇怪的分式" class="headerlink" title="6、奇怪的分式"></a>6、奇怪的分式</h2><p>​    答案：14</p>
+<p>​    思路：枚举所有种类的分数记录满足条件的结果数，这里我把题目中重复的部分分开了，只计算分数都小于1的相乘情况，再将结果乘以两倍；同时还考虑到了一个分数小于1一个分数大于1的情况，但是简单验证发现这部分没有满足题解的。建议大家还是列举所有的分子、分母不相等的情况，中间用continue跳过分子==分母的条件，这样不容易遗漏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt; </span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int gcd(int a,int b)&#123;</span><br><span class="line">	if(b&#x3D;&#x3D;0) return a;</span><br><span class="line">	return gcd(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line">int count &#x3D; 0;</span><br><span class="line">int main()&#123;</span><br><span class="line">	for(int i&#x3D;9;i&gt;&#x3D;1;i--)&#123;</span><br><span class="line">		for(int j&#x3D;i-1;j&gt;&#x3D;1;j--)&#123; </span><br><span class="line">			for(int k&#x3D;9;k&gt;&#x3D;1;k--)&#123;</span><br><span class="line">				for(int z&#x3D;k-1;z&gt;&#x3D;1;z--)&#123;</span><br><span class="line">						&#x2F;*</span><br><span class="line">							i&#x2F;j * z&#x2F;k</span><br><span class="line">						*&#x2F;</span><br><span class="line">					int x1&#x3D;i*z;</span><br><span class="line">					int y1&#x3D;j*k;</span><br><span class="line">					int m&#x3D;gcd(x1,y1);</span><br><span class="line">					&#x2F;&#x2F;cout&lt;&lt;x1&lt;&lt;&quot; &quot;&lt;&lt;y1&lt;&lt;&quot; &quot;&lt;&lt;m&lt;&lt;endl;</span><br><span class="line">					x1&#x2F;&#x3D;m;y1&#x2F;&#x3D;m;</span><br><span class="line">					int x2&#x3D;i*10+z;</span><br><span class="line">					int y2&#x3D;j*10+k;</span><br><span class="line">					int n&#x3D;gcd(x2,y2);</span><br><span class="line">					x2&#x2F;&#x3D;n;y2&#x2F;&#x3D;n;</span><br><span class="line">					if(x1&#x3D;&#x3D;x2&amp;&amp;y1&#x3D;&#x3D;y2) count++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	count*&#x3D;2;</span><br><span class="line">	cout&lt;&lt;count;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7、六角填数"><a href="#7、六角填数" class="headerlink" title="7、六角填数"></a>7、六角填数</h2><p>​    答案：10</p>
+<p>​    思路：全排列所有可填入的情况，填充找到满足6条直线和等值的结果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt; </span><br><span class="line">#include&lt;algorithm&gt; </span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	&#x2F;*</span><br><span class="line">			1	2	3</span><br><span class="line">		  9		  4</span><br><span class="line">		5	6	7	8</span><br><span class="line">	*&#x2F;</span><br><span class="line">	int a[9]&#x3D;&#123;2,4,5,6,7,9,10,11,12&#125;;</span><br><span class="line">	do&#123;</span><br><span class="line">		int b&#x3D;8+a[0]+a[1]+a[2];</span><br><span class="line">		int c&#x3D;8+a[8]+a[5]+3;</span><br><span class="line">		if(b!&#x3D;c) continue;</span><br><span class="line">		int d&#x3D;a[2]+a[3]+a[6]+3;</span><br><span class="line">		if(c!&#x3D;d) continue;</span><br><span class="line">		int e&#x3D;1+a[0]+a[8]+a[4];</span><br><span class="line">		if(d!&#x3D;e) continue;</span><br><span class="line">		int f&#x3D;1+a[1]+a[3]+a[7];</span><br><span class="line">		if(e!&#x3D;f) continue;</span><br><span class="line">		int g&#x3D;a[4]+a[5]+a[6]+a[7];</span><br><span class="line">		if(f!&#x3D;g) continue;</span><br><span class="line">		cout&lt;&lt;a[8];</span><br><span class="line">	&#125;while(next_permutation(a,a+9));</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、蚂蚁感冒"><a href="#8、蚂蚁感冒" class="headerlink" title="8、蚂蚁感冒"></a>8、蚂蚁感冒</h2><p>​    思路：蚂蚁碰撞时，两个都将感染，或者不；此时可假设两个蚂蚁并没有回头而是交换了身份继续往原来的方向走（不影响继续感染的结果），由此它们会继续感染与他们反向的所有蚂蚁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt; </span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">	int n;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	int a[n];</span><br><span class="line">	for(int i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">		cin&gt;&gt;a[i];</span><br><span class="line">	&#125; </span><br><span class="line">	if(a[0]&gt;0)&#123;		&#x2F;&#x2F;感染源往右 </span><br><span class="line">		int ans&#x3D;1;</span><br><span class="line">		for(int i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">			if(a[i]&lt;0&amp;&amp;-a[i]&gt;a[0])&#123;		&#x2F;&#x2F;感染源右边往左走 </span><br><span class="line">				ans++; </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(ans!&#x3D;1)&#123;</span><br><span class="line">			&#x2F;&#x2F;一旦有被感染的往左走，那么感染源左边的往右走的也必将被感染</span><br><span class="line">			for(int i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">				if(a[i]&gt;0&amp;&amp;a[i]&lt;a[0])</span><br><span class="line">				ans++;</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;ans;</span><br><span class="line">	&#125;</span><br><span class="line">	if(a[0]&lt;0)&#123;		&#x2F;&#x2F;感染源往左 </span><br><span class="line">		int ans&#x3D;1;</span><br><span class="line">		for(int i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">			if(a[i]&gt;0&amp;&amp;a[i]&lt;-a[0])&#123;		&#x2F;&#x2F;感染源左边边往右走 </span><br><span class="line">				ans++; </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(ans!&#x3D;1)&#123;</span><br><span class="line">			&#x2F;&#x2F;一旦有被感染的往右走，那么感染源右边的往左走的也必将被感染</span><br><span class="line">			for(int i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">				if(a[i]&lt;0&amp;&amp;a[i]&lt;a[0])</span><br><span class="line">				ans++;</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;ans;</span><br><span class="line">	return 0;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="9、地宫取宝"><a href="#9、地宫取宝" class="headerlink" title="9、地宫取宝"></a>9、地宫取宝</h2><p>​    思路：记忆型递归动态规划，深搜</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std; </span><br><span class="line">int n,m,k;</span><br><span class="line">int M[50][50];</span><br><span class="line">int cache[50][50][14][13];</span><br><span class="line">long long dfs(int x,int y,int max,int num)&#123;</span><br><span class="line">	if(cache[x][y][max+1][num]!&#x3D;-1) return cache[x][y][max+1][num];</span><br><span class="line">	if(x&gt;&#x3D;n||y&gt;&#x3D;m||num&gt;k) return 0;</span><br><span class="line">	if(x&#x3D;&#x3D;n-1&amp;&amp;y&#x3D;&#x3D;m-1)&#123;</span><br><span class="line">		if(num&#x3D;&#x3D;k||(num&#x3D;&#x3D;k-1&amp;&amp;M[x][y]&gt;max))</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	long long int ans&#x3D;0;</span><br><span class="line">	ans+&#x3D;dfs(x+1,y,max,num);</span><br><span class="line">	ans+&#x3D;dfs(x,y+1,max,num);</span><br><span class="line">	if(M[x][y]&gt;max)&#123;</span><br><span class="line">		ans+&#x3D;dfs(x+1,y,M[x][y],num+1);</span><br><span class="line">		ans+&#x3D;dfs(x,y+1,M[x][y],num+1);</span><br><span class="line">	&#125;</span><br><span class="line">	cache[x][y][max+1][num]&#x3D;ans%1000000007;</span><br><span class="line">	return ans%1000000007;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;</span><br><span class="line">	for(int i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">		for(int j&#x3D;0;j&lt;m;j++)&#123;</span><br><span class="line">			cin&gt;&gt;M[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	memset(cache,-1,sizeof(cache));</span><br><span class="line">	cout&lt;&lt;dfs(0,0,-1,0);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="10、小朋友排队"><a href="#10、小朋友排队" class="headerlink" title="10、小朋友排队"></a>10、小朋友排队</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-2013蓝桥B组省赛题解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/07/2013%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/" class="article-date">
+      <time datetime="2020-11-06T16:17:47.884Z" itemprop="datePublished">2020-11-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/07/2013%E8%93%9D%E6%A1%A5B%E7%BB%84%E7%9C%81%E8%B5%9B%E9%A2%98%E8%A7%A3/">2013蓝桥B组省赛题解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="2013蓝桥B组省赛题解"><a href="#2013蓝桥B组省赛题解" class="headerlink" title="2013蓝桥B组省赛题解"></a>2013蓝桥B组省赛题解</h1><h2 id="1、高斯日记"><a href="#1、高斯日记" class="headerlink" title="1、高斯日记"></a>1、高斯日记</h2><p>​    答案：1799-07-16</p>
+<p>​    思路：枚举天数对应的日期，注意题目中的坑点高斯生日算第一天。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">bool is_year(int year)&#123;</span><br><span class="line">	if((year%4&#x3D;&#x3D;0&amp;&amp;year%100!&#x3D;0)||year%400&#x3D;&#x3D;0) return true;</span><br><span class="line">	else return false;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	int N;</span><br><span class="line">	cin&gt;&gt;N;</span><br><span class="line">	int year &#x3D; 1777,month &#x3D; 4,day &#x3D; 30; </span><br><span class="line">	int cnt&#x3D;1;</span><br><span class="line">	int a[2][12]&#x3D;&#123;&#123;31,28,31,30,31,30,31,31,30,31,30,31&#125;,</span><br><span class="line">	&#123;31,29,31,30,31,30,31,31,30,31,30,31&#125;&#125;;</span><br><span class="line">	while(cnt&lt;N)&#123;</span><br><span class="line">		cnt++;</span><br><span class="line">		int flag&#x3D;0;</span><br><span class="line">		if(is_year(year))&#123;</span><br><span class="line">			flag&#x3D;1;</span><br><span class="line">		&#125;</span><br><span class="line">		day++;</span><br><span class="line">		if(day&gt;a[flag][month-1])&#123;</span><br><span class="line">			month++;</span><br><span class="line">			day&#x3D;1;</span><br><span class="line">			if(month&gt;12)&#123;</span><br><span class="line">				year++;</span><br><span class="line">				month&#x3D;1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;%d-%02d-%d&quot;,year,month,day);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、马虎的算式"><a href="#2、马虎的算式" class="headerlink" title="2、马虎的算式"></a>2、马虎的算式</h2><p>​    答案：142</p>
+<p>​    思路：循环枚举</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std; </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int ans&#x3D;0;</span><br><span class="line">	for(int a&#x3D;1;a&lt;&#x3D;9;a++)&#123;</span><br><span class="line">		for(int b&#x3D;1;b&lt;&#x3D;9;b++)&#123;</span><br><span class="line">			if(b&#x3D;&#x3D;a) continue;</span><br><span class="line">			for(int c&#x3D;1;c&lt;&#x3D;9;c++)&#123;</span><br><span class="line">				if(c&#x3D;&#x3D;b||c&#x3D;&#x3D;a) continue;</span><br><span class="line">				for(int d&#x3D;1;d&lt;&#x3D;9;d++)&#123;</span><br><span class="line">					if(d&#x3D;&#x3D;c||d&#x3D;&#x3D;a|d&#x3D;&#x3D;b) continue;</span><br><span class="line">					for(int e&#x3D;1;e&lt;&#x3D;9;e++)&#123;</span><br><span class="line">						if(e&#x3D;&#x3D;d||e&#x3D;&#x3D;a||e&#x3D;&#x3D;b||e&#x3D;&#x3D;c) continue;</span><br><span class="line">						int x&#x3D;a*10+b,y&#x3D;c*100+d*10+e;</span><br><span class="line">						int z&#x3D;a*100+d*10+b,w&#x3D;c*10+e;</span><br><span class="line">						if(x*y&#x3D;&#x3D;z*w) ans++;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	cout&lt;&lt;ans;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、第39级台阶"><a href="#3、第39级台阶" class="headerlink" title="3、第39级台阶"></a>3、第39级台阶</h2><p>​    答案：51167078</p>
+<p>​    思路：模式匹配，递归搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int ans &#x3D; 0;</span><br><span class="line">void f(int time,int floor)&#123;</span><br><span class="line">	if(floor&gt;39) return;</span><br><span class="line">	if(floor&#x3D;&#x3D;39&amp;&amp;time%2&#x3D;&#x3D;0) ans++;</span><br><span class="line">	f(time+1,floor+1);</span><br><span class="line">	f(time+1,floor+1);</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">	f(0,0);</span><br><span class="line">	cout&lt;&lt;ans;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、黄金连分数"><a href="#4、黄金连分数" class="headerlink" title="4、黄金连分数"></a>4、黄金连分数</h2><p>​    答案：</p>
+<p>​    思路：</p>
+<h2 id="5、前缀判断"><a href="#5、前缀判断" class="headerlink" title="5、前缀判断"></a>5、前缀判断</h2><p>​    答案：*(haystack++) != *(needle++)</p>
+<h2 id="6、三部排序"><a href="#6、三部排序" class="headerlink" title="6、三部排序"></a>6、三部排序</h2><p>​    答案：p++</p>
+<h2 id="7、错误票据"><a href="#7、错误票据" class="headerlink" title="7、错误票据"></a>7、错误票据</h2><h2 id="8、翻硬币"><a href="#8、翻硬币" class="headerlink" title="8、翻硬币"></a>8、翻硬币</h2><h2 id="9、带分数"><a href="#9、带分数" class="headerlink" title="9、带分数"></a>9、带分数</h2><h2 id="10、连号区间数"><a href="#10、连号区间数" class="headerlink" title="10、连号区间数"></a>10、连号区间数</h2><h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>​    不应该按顺序做，做题前先预判，无思路放弃，有思路预估要多少时间，先做性价比高的题。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-12-继承" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/06/12-%E7%BB%A7%E6%89%BF/" class="article-date">
+      <time datetime="2020-11-06T15:46:27.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/12-%E7%BB%A7%E6%89%BF/">12_继承</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="1-继承"><a href="#1-继承" class="headerlink" title="1. 继承"></a>1. 继承</h2><h3 id="1-1-继承的实现（掌握）"><a href="#1-1-继承的实现（掌握）" class="headerlink" title="1.1 继承的实现（掌握）"></a>1.1 继承的实现（掌握）</h3><ul>
+<li><p>继承的概念</p>
+<ul>
+<li>继承是面向对象三大特征之一，可以使得子类具有父类的属性和方法，还可以在子类中重新定义，以及追加属性和方法
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2020/11/06/12-%E7%BB%A7%E6%89%BF/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-11_分类和static" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/06/11_%E5%88%86%E7%B1%BB%E5%92%8Cstatic/" class="article-date">
+      <time datetime="2020-11-06T15:45:54.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/11_%E5%88%86%E7%B1%BB%E5%92%8Cstatic/">分类和static</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="1-案例驱动模式"><a href="#1-案例驱动模式" class="headerlink" title="1.案例驱动模式"></a>1.案例驱动模式</h2><h3 id="1-1案例驱动模式概述-理解"><a href="#1-1案例驱动模式概述-理解" class="headerlink" title="1.1案例驱动模式概述 (理解)"></a>1.1案例驱动模式概述 (理解)</h3><p>通过我们已掌握的知识点,先实现一个案例,然后找出这个案例中,存在的一些问题,在通过新知识点解决问题
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2020/11/06/11_%E5%88%86%E7%B1%BB%E5%92%8Cstatic/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-10_Git介绍" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -395,504 +1025,10 @@
 
 
   
-    <article id="post-8_API" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2020/11/04/8_API/" class="article-date">
-      <time datetime="2020-11-04T14:41:55.500Z" itemprop="datePublished">2020-11-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/04/8_API/">8_API</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-API"><a href="#1-API" class="headerlink" title="1.API"></a>1.API</h2><h3 id="1-1-API概述-帮助文档的使用"><a href="#1-1-API概述-帮助文档的使用" class="headerlink" title="1.1 API概述-帮助文档的使用"></a>1.1 API概述-帮助文档的使用</h3><ul>
-<li><p>什么是API</p>
-<p>​    API (Application Programming Interface) ：应用程序编程接口</p>
-</li>
-<li><p>java中的API
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/04/8_API/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-7_类和对象" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/04/7_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" class="article-date">
-      <time datetime="2020-11-04T14:41:16.824Z" itemprop="datePublished">2020-11-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/04/7_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">7_类和对象</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-类和对象"><a href="#1-类和对象" class="headerlink" title="1. 类和对象"></a>1. 类和对象</h2><p>*<em>面向对象和面向过程的思想对比 : *</em></p>
-<p>​    <strong>面向过程 ：</strong>是一种以过程为中心的编程思想，实现功能的每一步，都是自己实现的</p>
-<p>​    <strong>面向对象 ：</strong>是一种以对象为中心的编程思想，通过指挥对象实现具体的功能
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/04/7_%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-6_Debug模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/03/6_Debug%E6%A8%A1%E5%BC%8F/" class="article-date">
-      <time datetime="2020-11-03T15:15:30.312Z" itemprop="datePublished">2020-11-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/03/6_Debug%E6%A8%A1%E5%BC%8F/">6_Debug模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-Debug模式"><a href="#1-Debug模式" class="headerlink" title="1.Debug模式"></a>1.Debug模式</h2><h3 id="1-1-什么是Debug模式"><a href="#1-1-什么是Debug模式" class="headerlink" title="1.1 什么是Debug模式"></a>1.1 什么是Debug模式</h3><p>是供程序员使用的程序调试工具，它可以用于查看程序的执行流程，也可以用于追踪程序执行过程来调试程序。
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/03/6_Debug%E6%A8%A1%E5%BC%8F/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-5_方法概述" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/03/5_%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0/" class="article-date">
-      <time datetime="2020-11-03T15:14:41.628Z" itemprop="datePublished">2020-11-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/03/5_%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0/">5_方法概述</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-方法概述"><a href="#1-方法概述" class="headerlink" title="1. 方法概述"></a>1. 方法概述</h2><h3 id="1-1-方法的概念"><a href="#1-1-方法的概念" class="headerlink" title="1.1 方法的概念"></a>1.1 方法的概念</h3><p>​    方法（method）是将具有独立功能的代码块组织成为一个整体，使其具有特殊功能的代码集  封装</p>
-<ul>
-<li>注意：<ul>
-<li>方法必须先创建才可以使用，该过程成为方法定义</li>
-<li>方法创建后并不是直接可以运行的，需要手动使用后，才执行，该过程成为方法调用
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/03/5_%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-4_IDEA和数组" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/02/4_IDEA%E5%92%8C%E6%95%B0%E7%BB%84/" class="article-date">
-      <time datetime="2020-11-02T15:43:12.066Z" itemprop="datePublished">2020-11-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/02/4_IDEA%E5%92%8C%E6%95%B0%E7%BB%84/">4_IDEA和数组</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="第一部分-IDEA开发工具"><a href="#第一部分-IDEA开发工具" class="headerlink" title="第一部分 : IDEA开发工具"></a>第一部分 : IDEA开发工具</h2><p><strong>参见 ：IEDA的安装请参考文件夹PPT中的 04_IDEA.ppt</strong></p>
-<h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h2><h3 id="1-1-数组介绍"><a href="#1-1-数组介绍" class="headerlink" title="1.1 数组介绍"></a>1.1 数组介绍</h3><p>​    数组就是存储数据长度固定的容器，存储多个数据的数据类型要一致。
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/02/4_IDEA%E5%92%8C%E6%95%B0%E7%BB%84/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-3_switch语句" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/02/3_switch%E8%AF%AD%E5%8F%A5/" class="article-date">
-      <time datetime="2020-11-02T15:42:34.078Z" itemprop="datePublished">2020-11-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/02/3_switch%E8%AF%AD%E5%8F%A5/">3_switch语句</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-switch语句"><a href="#1-switch语句" class="headerlink" title="1. switch语句"></a>1. switch语句</h2><h3 id="1-1-分支语句switch语句"><a href="#1-1-分支语句switch语句" class="headerlink" title="1.1 分支语句switch语句"></a>1.1 分支语句switch语句</h3><ul>
-<li><p>格式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (表达式) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		语句体<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		语句体<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		语句体n+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>执行流程：
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/02/3_switch%E8%AF%AD%E5%8F%A5/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-2_Java基础语法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/01/2_Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="article-date">
-      <time datetime="2020-11-01T15:49:40.774Z" itemprop="datePublished">2020-11-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/01/2_Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">2_Java基础语法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="day02-Java基础语法"><a href="#day02-Java基础语法" class="headerlink" title="day02 - Java基础语法"></a>day02 - Java基础语法</h1><h2 id="1-类型转换"><a href="#1-类型转换" class="headerlink" title="1 类型转换"></a>1 类型转换</h2><p>在Java中，一些数据类型之间是可以相互转换的。分为两种情况：隐式类型转换和强制类型转换</p>
-<h3 id="1-1-隐式转换-理解"><a href="#1-1-隐式转换-理解" class="headerlink" title="1.1 隐式转换(理解)"></a>1.1 隐式转换(理解)
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/01/2_Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-1_Java概述" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/01/1_Java%E6%A6%82%E8%BF%B0/" class="article-date">
-      <time datetime="2020-11-01T15:48:20.534Z" itemprop="datePublished">2020-11-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/01/1_Java%E6%A6%82%E8%BF%B0/">1_Java概述</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1. Java概述"></a>1. Java概述</h2><h3 id="1-1-Java语言背景介绍（了解）"><a href="#1-1-Java语言背景介绍（了解）" class="headerlink" title="1.1 Java语言背景介绍（了解）"></a>1.1 Java语言背景介绍（了解）</h3><p>语言：人与人交流的一种方式</p>
-<p>计算机语言：人与计算机进行交流的一种方式,java就是其中一种最优秀的方式之一.</p>
-<p>Java语言是美国Sun公司（Stanford University Network）在1995年推出的计算机语言
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2020/11/01/1_Java%E6%A6%82%E8%BF%B0/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
