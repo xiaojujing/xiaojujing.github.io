@@ -275,6 +275,193 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-递归和分治" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/" class="article-date">
+      <time datetime="2020-02-07T15:10:35.000Z" itemprop="datePublished">2020-02-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/07/%E9%80%92%E5%BD%92%E5%92%8C%E5%88%86%E6%B2%BB/">递归和分治</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;<br>void Swap(int &amp;a,int &amp;b){<br>    int temp=0;<br>    temp=a;<br>    a=b;<br>    b=temp;<br>}</p>
+<p>void Hanoi(int n,char src,char mid,char dest){        //汉诺塔问题<br>    if(n==1){<br>        cout&lt;&lt;src&lt;&lt;”-&gt;”&lt;&lt;dest&lt;&lt;endl;<br>        return;<br>    }<br>    Hanoi(n-1,src,dest,mid);<br>    cout&lt;&lt;src&lt;&lt;”-&gt;”&lt;&lt;dest&lt;&lt;endl;<br>    Hanoi(n-1,mid,src,dest);<br>} </p>
+<p>int N;<br>int queenPos[100];<br>void NQueen(int k){            //N皇后<br>    if(k==N){<br>        for(int i=0;i&lt;N;i++){<br>            cout&lt;&lt;queenPos[i]+1&lt;&lt;’ ‘;<br>        }<br>        cout&lt;&lt;endl;<br>        return;<br>    }<br>    for(int i=0;i&lt;N;i++){<br>        int j;<br>        for(j=0;j&lt;k;j++){<br>             if(queenPos[j]==i||abs(queenPos[j]-i)==abs(k-j)){<br>                 break;<br>            }<br>        }<br>        if(j==k){<br>                queenPos[k]=i;<br>                NQueen(k+1);<br>        }<br>    }<br>}</p>
+<p>double exp(){        //逆波兰式<br>    char s[20];<br>    cin&gt;&gt;s;<br>    switch(s[0]){<br>        case ‘+’: return exp()+exp();<br>        case ‘-‘: return exp()-exp();<br>        case ‘<em>‘: return exp()</em>exp();<br>        case ‘/‘: return exp()/exp();<br>        default:  return atof(s);<br>        break;<br>    }<br>} </p>
+<p>int expression_value(){            //表达式的值<br>    int term_value();<br>    int result=term_value();<br>    bool more=true;<br>    while(more){<br>        char op=cin.peek();<br>        if(op==’+’||op==’-‘){<br>            cin.get();<br>            int value=term_value();<br>            if(op==’+’) result+=value;<br>            else result-=value;<br>        }<br>        else more=false;<br>    }<br>    return result;<br>}<br>int term_value(){<br>    int factor_value();<br>    int result=factor_value();<br>    while(true){<br>        char op=cin.peek();<br>        if(op==’<em>‘||op==’/‘){<br>            cin.get();<br>            int value=factor_value();<br>            if(op==’</em>‘) result*=value;<br>            else result/=value;<br>        }<br>        else break;<br>    }<br>    return result;</p>
+<p>}<br>int factor_value(){<br>    int result=0;<br>    char c=cin.peek();<br>    if(c==’(‘){<br>        cin.get();<br>        result=expression_value();<br>        cin.get();<br>    }else{<br>        while(isdigit(c)){<br>            result=10*result+c-‘0’;<br>            cin.get();<br>            c=cin.peek();<br>        }<br>    }<br>    return result;<br>}</p>
+<p>bool HuiWen(string s){        //回文串判断,小写输入<br>     int h=0,t=s.size()-1;<br>     while(h&lt;=t){<br>         if(s[h]!=s[t]) return 0;<br>         h++;t–;<br>    }<br>    return 1;<br>}</p>
+<p>void QuanPai(int a[],int k,int n){        //全排列<br>     if(n==k){<br>         for(int i=1;i&lt;=n;i++){<br>             cout&lt;&lt;a[i]&lt;&lt;’ ‘;<br>        }<br>        cout&lt;&lt;endl;<br>    }else{<br>         for(int i=k;i&lt;n+1;i++){<br>             Swap(a[k],a[i]);<br>             QuanPai(a,k+1,n);<br>             Swap(a[k],a[i]);<br>        }<br>    }<br> } </p>
+<p>int main(){</p>
+<pre><code>//递归 
+/*char a=&apos;A&apos;,b=&apos;B&apos;,c=&apos;C&apos;;
+ int n=0;
+ cin&gt;&gt;n;
+ Hanoi(n,a,b,c);*/
+
+ /*cin&gt;&gt;N;
+ NQueen(0);*/
+
+ //cout&lt;&lt;exp()&lt;&lt;endl; 
+
+ //cout&lt;&lt;expression_value()&lt;&lt;endl; 
+
+
+ //分治 
+ /*string s;
+ int flag=-1;
+ cin&gt;&gt;s;
+ flag=HuiWen(s);
+ cout&lt;&lt;&quot;回文串:&quot;&lt;&lt;flag&lt;&lt;endl; */
+
+ /*int *a,len;
+ cout&lt;&lt;&quot;len:&quot;&lt;&lt;endl;
+ cin&gt;&gt;len;
+ a=new int[len+1];
+ for(int i=1;i&lt;len+1;i++){
+     a[i]=i;
+}
+QuanPai(a,1,len);*/
+
+ return 0;</code></pre><p>} </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-STL实践" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/06/STL%E5%AE%9E%E8%B7%B5/" class="article-date">
+      <time datetime="2020-02-06T15:39:45.000Z" itemprop="datePublished">2020-02-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/06/STL%E5%AE%9E%E8%B7%B5/">STL实践</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include <iostream><br>#include<vector><br>#include<deque><br>#include<list><br>#include<set><br>#include<map><br>#include<stack><br>#include<queue><br>#include<algorithm><br>using namespace std;<br>struct Student{<br>    int a,b;<br>    bool operator &lt; (const Student &amp;rs) const{<br>        if(a==rs.a) return b&lt;rs.b;<br>        return a&lt;rs.a;<br>    }<br>};</p>
+<p>int main()<br>{<br>    priority_queue <int> q;<br>    deque <int>::const_iterator i;<br>    set <int>::const_iterator j;<br>    map &lt;int,char&gt;::iterator k;<br>    vector<int> v;<br>    deque<int> d;<br>    map&lt;int,char&gt; m;<br>    set<int> s;<br>    s.insert(5);s.insert(8);s.insert(1);s.insert(3);s.insert(3);<br>    m.insert(pair&lt;int,char&gt;(1,’a’));<br>    m.insert(pair&lt;int,char&gt;(2,’a’));<br>    m.insert(pair&lt;int,char&gt;(3,’c’));<br>    m.insert(pair&lt;int,char&gt;(4,’d’));<br>    /<em>m.insert(map&lt;int,char&gt;::value_type(1,’a’));<br>    m.insert(map&lt;int,char&gt;::value_type(1,’b’));<br>    m.insert(map&lt;int,char&gt;::value_type(3,’c’));<br>    m.insert(map&lt;int,char&gt;::value_type(4,’d’));</em>/<br>    for(k=m.begin();k!=m.end();k++){<br>        cout&lt;&lt;1&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;<br>    for(int i=0;i&lt;10;i++){<br>        v.push_back(i);<br>        d.push_front(i);<br>    }<br>    for(i=d.begin();i&lt;d.end();i++){<br>        cout&lt;&lt;<em>i&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;<br>    for(j=s.begin();j!=s.end();j++){<br>        cout&lt;&lt;</em>j&lt;&lt;’ ‘;<br>    }<br>    cout &lt;&lt;endl;</p>
+<pre><code>for(int i=0;i&lt;10;i++){
+    q.push(i);
+}
+while(q.size()){
+    cout&lt;&lt;q.top()&lt;&lt;&apos; &apos;;
+    q.pop();
+}
+cout &lt;&lt;endl;
+
+
+priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt; &gt;q_;
+for(int i=0;i&lt;10;i++){
+    q_.push(i);
+}
+while(q_.size()){
+    cout&lt;&lt;q_.top()&lt;&lt;&apos; &apos;;
+    q_.pop();
+}
+cout &lt;&lt;endl;
+Student student[5]={{5,5},{5,4},{3,1},{2,2},{2,1}};
+sort(student,student+5);
+for(int i=0;i&lt;5;i++){
+    cout&lt;&lt;student[i].a&lt;&lt;&apos; &apos;&lt;&lt;student[i].b&lt;&lt;endl;
+}
+priority_queue &lt;Student&gt; qq;
+for(int i=0;i&lt;5;i++){
+    qq.push(student[i]);
+}
+while(qq.size()){
+    Student now=qq.top();
+    cout&lt;&lt;now.a&lt;&lt;&apos; &apos;&lt;&lt;now.b&lt;&lt;endl;
+    qq.pop();
+}
+cout &lt;&lt;endl;
+return 0;</code></pre><p>}</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-图的遍历" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
