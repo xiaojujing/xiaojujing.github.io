@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li></ul>
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91-%E7%B1%BB%E5%8A%A0%E8%BD%BD-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE/" rel="tag">编译 类加载 双亲委派</a></li></ul>
                     </div>
                 </section>
                 
@@ -274,6 +274,70 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-8_API" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/04/8_API/" class="article-date">
+      <time datetime="2020-11-04T14:41:55.500Z" itemprop="datePublished">2020-11-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/04/8_API/">8_API</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="1-API"><a href="#1-API" class="headerlink" title="1.API"></a>1.API</h2><h3 id="1-1-API概述-帮助文档的使用"><a href="#1-1-API概述-帮助文档的使用" class="headerlink" title="1.1 API概述-帮助文档的使用"></a>1.1 API概述-帮助文档的使用</h3><ul>
+<li><p>什么是API</p>
+<p>​    API (Application Programming Interface) ：应用程序编程接口</p>
+</li>
+<li><p>java中的API
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2020/11/04/8_API/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-7_类和对象" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -823,103 +887,9 @@
 
 
   
-    <article id="post-贪心" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/02/11/%E8%B4%AA%E5%BF%83/" class="article-date">
-      <time datetime="2020-02-11T07:34:19.000Z" itemprop="datePublished">2020-02-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/11/%E8%B4%AA%E5%BF%83/">贪心</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>#include&lt;bits/stdc++.h&gt;<br>using namespace std;</p>
-<p>/<em>const double eps=1e-6;            //圣诞老人的礼物<br>struct Candy{<br>    int v; int w;<br>    bool operator &lt; (const Candy &amp; c){<br>        return double(v)/w-double(c.v)/c.w&gt;eps;<br>    }<br>}candies[110];</em>/</p>
-<p>struct Cow{                            //分配畜栏<br>    int a,b;<br>    int No;<br>    bool operator &lt; (const Cow &amp;c) const{<br>        return a&lt;c.a;<br>    };<br>}cows[50100];<br>int pos[50100];<br>struct Stall{<br>    int end;<br>    int No;<br>    bool operator&lt;(const Stall &amp;s) const{<br>        return end&gt;s.end;<br>    }<br>    Stall(int e,int n):end(e),No(n){</p>
-<pre><code>}</code></pre><p>};</p>
-<p>int main(){<br>    /<em>int n,w;<br>    scanf(“%d%d”,&amp;n,&amp;w);<br>    for(int i=0;i&lt;n;i++){<br>        scanf(“%d%d”,&amp;candies[i].v,&amp;candies[i].w);<br>    }<br>    sort(candies,candies+n);<br>    int totalW=0;<br>    double totalV=0;<br>    for(int i=0;i&lt;n;i++){<br>        if(totalW+candies[i].w&lt;=w){<br>            totalW+=candies[i].w;<br>            totalV+=candies[i].v;<br>        }else{<br>            totalV+=candies[i].v*double(w-totalW)/candies[i].w;<br>            break;<br>        }<br>    }<br>    printf(“%.1f”,totalV);</em>/</p>
-<pre><code>int n;
-scanf(&quot;%d&quot;,&amp;n);
-for(int i=0;i&lt;n;++i){
-    scanf(&quot;%d%d&quot;,&amp;cows[i].a,&amp;cows[i].b);
-    cows[i].No=i;
-}
-sort(cows,cows+n);
-int total=0;
-priority_queue&lt;Stall&gt; pq;
-for(int i=0;i&lt;n;++i){
-    if(pq.empty()){
-        ++total;
-        pq.push(Stall(cows[i].b,total));
-        pos[cows[i].No]=total;
-    }else{
-        Stall st=pq.top();
-        if(st.end&lt;cows[i].a){
-            pq.pop();
-            pos[cows[i].No]=st.No;
-            pq.push(Stall(cows[i].b,st.No));
-        }else{
-            ++total;
-            pq.push(Stall(cows[i].b,total));
-            pos[cows[i].No]=total;
-        }
-    }
-}
-printf(&quot;%d\n&quot;,total);
-for(int i=0;i&lt;n;i++){
-    printf(&quot;%d\n&quot;,pos[i]);
-}
-
-
-return 0;</code></pre><p>}</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
     </nav>
   
 </div>
