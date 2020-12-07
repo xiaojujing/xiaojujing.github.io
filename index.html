@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-Tomcat-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">内存管理 Tomcat 垃圾回收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91-%E7%B1%BB%E5%8A%A0%E8%BD%BD-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE/" rel="tag">编译 类加载 双亲委派</a></li></ul>
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx-%E6%A8%A1%E6%9D%BF/" rel="tag">Nginx 模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK%E9%9B%86%E6%88%90/" rel="tag">SDK集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-Tomcat-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">内存管理 Tomcat 垃圾回收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91-%E7%B1%BB%E5%8A%A0%E8%BD%BD-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE/" rel="tag">编译 类加载 双亲委派</a></li></ul>
                     </div>
                 </section>
                 
@@ -274,6 +274,195 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-day02探花交友" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/12/07/day02%E6%8E%A2%E8%8A%B1%E4%BA%A4%E5%8F%8B/" class="article-date">
+      <time datetime="2020-12-07T01:36:19.000Z" itemprop="datePublished">2020-12-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/07/day02%E6%8E%A2%E8%8A%B1%E4%BA%A4%E5%8F%8B/">day02探花交友</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="day02探花交友"><a href="#day02探花交友" class="headerlink" title="day02探花交友"></a>day02探花交友</h1><h1 id="1-Nginx配置"><a href="#1-Nginx配置" class="headerlink" title="1 Nginx配置"></a>1 Nginx配置</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">location [=| |^~|~*|~|/] /url/ &#123;...&#125;</span><br><span class="line">匹配顺序 [<span class="number">1</span>精准匹配|<span class="number">2</span>空格字符串匹配|<span class="number">3</span>优于正则匹配|<span class="number">4</span>正则匹配不区分大小写|<span class="number">5</span>正则区分大小写|<span class="number">6</span>通用匹配]</span><br><span class="line">    </span><br><span class="line">client_max_body_size <span class="number">20</span>M;</span><br><span class="line">nginx对上传文件的大小有限制，默认是<span class="number">1</span>M，当超过大小的时候会报<span class="number">413</span>（too large）错误。这个时候我们要修改nginx的参数</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-登陆、圈子、视频功能"><a href="#2-登陆、圈子、视频功能" class="headerlink" title="2 登陆、圈子、视频功能"></a>2 登陆、圈子、视频功能</h1><table>
+<thead>
+<tr>
+<th>Controller</th>
+<th>Service</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>SmsService</td>
+<td>sendCheckCode</td>
+</tr>
+<tr>
+<td></td>
+<td>UserService</td>
+<td>login</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>queryUserByToken</td>
+</tr>
+<tr>
+<td></td>
+<td>UserInfoService</td>
+<td>saveUserInfo</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>saveLogo</td>
+</tr>
+<tr>
+<td></td>
+<td>QuanziApiImpl</td>
+<td>savePublish</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>queryPublishList</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>saveLikeComment</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>removeComment</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>saveLoveComment</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>saveComment</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>queryCommentCount</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>queryPublishById</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>queryCommentList</td>
+</tr>
+<tr>
+<td></td>
+<td>RecommendUserApiImpl</td>
+<td>queryWithMaxScore</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>queryPageInfo</td>
+</tr>
+<tr>
+<td></td>
+<td>VideoApiImpl</td>
+<td>saveVideo</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>queryVideoList</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>followUser</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>disFollowUser</td>
+</tr>
+</tbody></table>
+<h1 id="3-模板类及方法"><a href="#3-模板类及方法" class="headerlink" title="3 模板类及方法"></a>3 模板类及方法</h1><h2 id="3-1-Jackson"><a href="#3-1-Jackson" class="headerlink" title="3.1 Jackson"></a>3.1 Jackson</h2><ul>
+<li>ObjectMapper（）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">对象转为字符串</span><br><span class="line">mapper.writeValueAsString(user);</span><br><span class="line">json字符串转为对象</span><br><span class="line">mapper.readValue(jsonStr, User.class);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-2-Mybatis-Plus"><a href="#3-2-Mybatis-Plus" class="headerlink" title="3.2 Mybatis-Plus"></a>3.2 Mybatis-Plus</h2><ul>
+<li>queryMapper（）条件构造器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Entity对象封装操作类，常用方法</span><br><span class="line">eq 等于 | ne 不等于 | gt 大于 | ge 大于等于 | lt 小于 | le 小于等于</span><br><span class="line">between | like | in | group by | orderByAsc | orderByDesc </span><br><span class="line">having | or | and</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-3-RedisTemplate"><a href="#3-3-RedisTemplate" class="headerlink" title="3.3 RedisTemplate"></a>3.3 RedisTemplate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">判断key是否存在</span><br><span class="line">hasKey(key)</span><br><span class="line">获取缓存</span><br><span class="line">opsForValue().get(key)</span><br><span class="line">添加缓存</span><br><span class="line">set(key, value)</span><br><span class="line">添加缓存并设置过期时间</span><br><span class="line">set(key, value, time, TimeUnit.SECONDS)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-4-RocketMQTemplate"><a href="#3-4-RocketMQTemplate" class="headerlink" title="3.4 RocketMQTemplate"></a>3.4 RocketMQTemplate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">发送消息</span><br><span class="line">convertAndSend(&quot;topic&quot;,User)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-5-ResponseEntity"><a href="#3-5-ResponseEntity" class="headerlink" title="3.5 ResponseEntity"></a>3.5 ResponseEntity</h2><p>​    泛型响应数据，@RestController+@RequestBody；前端页面接收响应数据：在ajax中使用statusCode处理结果。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx-%E6%A8%A1%E6%9D%BF/" rel="tag">Nginx 模板</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-JVM03" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -367,14 +556,16 @@
         <h1 id="JVM02"><a href="#JVM02" class="headerlink" title="JVM02"></a>JVM02</h1><h1 id="1、JVM内存区域"><a href="#1、JVM内存区域" class="headerlink" title="1、JVM内存区域"></a>1、JVM内存区域</h1><ul>
 <li>JVM内存原理图</li>
 </ul>
-<p><img src="C:%5CUsers%5Cadmin%5Cblog%5Csource_posts%5CJVM02%5C01.png" alt="01"></p>
+<img src="/2020/12/04/JVM02/01.png" class="">
+
 <h2 id="1-1、方法区"><a href="#1-1、方法区" class="headerlink" title="1.1、方法区"></a>1.1、方法区</h2><p>​    用来存放加载的Java类，jdk1.8之后更名为<strong>元数据空间</strong>。</p>
 <h2 id="1-2、栈内存"><a href="#1-2、栈内存" class="headerlink" title="1.2、栈内存"></a>1.2、栈内存</h2><p>​    用于存放类中的成员变量以及每个方法的<strong>栈帧</strong>。</p>
 <h2 id="1-3、堆内存"><a href="#1-3、堆内存" class="headerlink" title="1.3、堆内存"></a>1.3、堆内存</h2><p>​    用于存放对象的<strong>实例化数据</strong>。</p>
 <h1 id="2、Tomcat中的类加载机制"><a href="#2、Tomcat中的类加载机制" class="headerlink" title="2、Tomcat中的类加载机制"></a>2、Tomcat中的类加载机制</h1><ul>
 <li>Tomcat的非双亲委派模型</li>
 </ul>
-<p><img src="C:%5CUsers%5Cadmin%5Cblog%5Csource_posts%5CJVM02%5C02.png" alt="02"></p>
+<img src="/2020/12/04/JVM02/02.png" class="">
+
 <h2 id="2-1、我们思考一下：Tomcat是个web容器，-那么它要解决什么问题："><a href="#2-1、我们思考一下：Tomcat是个web容器，-那么它要解决什么问题：" class="headerlink" title="2.1、我们思考一下：Tomcat是个web容器， 那么它要解决什么问题："></a>2.1、我们思考一下：Tomcat是个web容器， 那么它要解决什么问题：</h2><ol>
 <li>一个web容器可能需要部署两个应用程序，不同的应用程序可能会依赖同一个第三方类库的不同版本，不能要求同一个类库在同一个服务器只有一份，因此要保证每个应用程序的类库都是独立的，保证相互隔离。 </li>
 <li>部署在同一个web容器中相同的类库相同的版本可以共享。否则，如果服务器有10个应用程序，那么要有10份相同的类库加载进虚拟机。</li>
@@ -473,13 +664,15 @@
 <h2 id="1-2-JVM运行"><a href="#1-2-JVM运行" class="headerlink" title="1.2 JVM运行"></a>1.2 JVM运行</h2><ul>
 <li>JVM运行原理图</li>
 </ul>
-<p><img src="C:%5CUsers%5Cadmin%5Cblog%5Csource_posts%5CJVM01%5C01.png" alt="01"></p>
+<img src="/2020/12/01/JVM01/01.png" class="">
+
 <p>​    在JVM中加载了编译生成的类字节码文件，并通过解释器转化成机器能识别的指令，再执行代码。</p>
 <h2 id="1-3-怎么防止反编译"><a href="#1-3-怎么防止反编译" class="headerlink" title="1.3 怎么防止反编译"></a>1.3 怎么防止反编译</h2><p>​    在编译的时候，对字节码进行加密；在类加载的时候，对加密的类采用自定义的类加载器来解密文件。</p>
 <h1 id="2-类加载过程"><a href="#2-类加载过程" class="headerlink" title="2 类加载过程"></a>2 类加载过程</h1><ul>
 <li>类加载过程原理图</li>
 </ul>
-<p><img src="C:%5CUsers%5Cadmin%5Cblog%5Csource_posts%5CJVM01%5C02.png" alt="02"></p>
+<img src="/2020/12/01/JVM01/02.png" class="">
+
 <h2 id="2-1-验证"><a href="#2-1-验证" class="headerlink" title="2.1 验证"></a>2.1 验证</h2><p>​    检查字节码文件是否符合规范。</p>
 <h2 id="2-2-准备"><a href="#2-2-准备" class="headerlink" title="2.2 准备"></a>2.2 准备</h2><p>​    给类分配内存空间（如：成员变量及附初值等）。</p>
 <h2 id="2-3-解析"><a href="#2-3-解析" class="headerlink" title="2.3 解析"></a>2.3 解析</h2><p>​    把符号引用替换为直接引用。</p>
@@ -487,7 +680,8 @@
 <h1 id="3-双亲委派机制"><a href="#3-双亲委派机制" class="headerlink" title="3 双亲委派机制"></a>3 双亲委派机制</h1><ul>
 <li>双亲委派原理图</li>
 </ul>
-<p><img src="C:%5CUsers%5Cadmin%5Cblog%5Csource_posts%5CJVM01%5C03.png" alt="03"></p>
+<img src="/2020/12/01/JVM01/03.png" class="">
+
 <h2 id="3-1、启动类加载器"><a href="#3-1、启动类加载器" class="headerlink" title="3.1、启动类加载器"></a>3.1、启动类加载器</h2><p>​    Bootstrap ClassLoader主要负责加载我们在机器上安装在Java目录下的核心类。</p>
 <h2 id="3-2、扩展类加载器"><a href="#3-2、扩展类加载器" class="headerlink" title="3.2、扩展类加载器"></a>3.2、扩展类加载器</h2><p>​    Extension ClassLoader加载Java目录下lib\ext中的类。</p>
 <h2 id="3-3、应用程序类加载器"><a href="#3-3、应用程序类加载器" class="headerlink" title="3.3、应用程序类加载器"></a>3.3、应用程序类加载器</h2><p>​    Application ClassLoader负责加载“ClassPath”环境变量所指定的路径中的类。</p>
@@ -561,6 +755,10 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDK%E9%9B%86%E6%88%90/" rel="tag">SDK集成</a></li></ul>
+    </div>
+
       
         <p class="article-more-link">
           <a href="/2020/11/27/day01%E6%8E%A2%E8%8A%B1%E4%BA%A4%E5%8F%8B/#more">more >></a>
@@ -872,74 +1070,6 @@
       
         <p class="article-more-link">
           <a href="/2020/11/11/22-IO%E6%B5%8102/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-21-IO流01" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/11/21-IO%E6%B5%8101/" class="article-date">
-      <time datetime="2020-11-11T06:31:06.000Z" itemprop="datePublished">2020-11-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/11/21-IO%E6%B5%8101/">21_IO流01</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h2><h3 id="1-1File类概述和构造方法【应用】"><a href="#1-1File类概述和构造方法【应用】" class="headerlink" title="1.1File类概述和构造方法【应用】"></a>1.1File类概述和构造方法【应用】</h3><ul>
-<li><p>File类介绍</p>
-<ul>
-<li>它是文件和目录路径名的抽象表示</li>
-<li>文件和目录是可以通过File封装成对象的
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/11/11/21-IO%E6%B5%8101/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -196,7 +196,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-Tomcat-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">内存管理 Tomcat 垃圾回收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91-%E7%B1%BB%E5%8A%A0%E8%BD%BD-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE/" rel="tag">编译 类加载 双亲委派</a></li></ul>
+                        <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO%E6%B5%81/" rel="tag">IO流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx-%E6%A8%A1%E6%9D%BF/" rel="tag">Nginx 模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SDK%E9%9B%86%E6%88%90/" rel="tag">SDK集成</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-Tomcat-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">内存管理 Tomcat 垃圾回收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E8%AF%91-%E7%B1%BB%E5%8A%A0%E8%BD%BD-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE/" rel="tag">编译 类加载 双亲委派</a></li></ul>
                     </div>
                 </section>
                 
@@ -274,6 +274,68 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-1_Java概述" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/01/1_Java%E6%A6%82%E8%BF%B0/" class="article-date">
+      <time datetime="2020-11-01T15:48:20.534Z" itemprop="datePublished">2020-11-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/01/1_Java%E6%A6%82%E8%BF%B0/">1_Java概述</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="1-Java概述"><a href="#1-Java概述" class="headerlink" title="1. Java概述"></a>1. Java概述</h2><h3 id="1-1-Java语言背景介绍（了解）"><a href="#1-1-Java语言背景介绍（了解）" class="headerlink" title="1.1 Java语言背景介绍（了解）"></a>1.1 Java语言背景介绍（了解）</h3><p>语言：人与人交流的一种方式</p>
+<p>计算机语言：人与计算机进行交流的一种方式,java就是其中一种最优秀的方式之一.</p>
+<p>Java语言是美国Sun公司（Stanford University Network）在1995年推出的计算机语言
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+        <p class="article-more-link">
+          <a href="/2020/11/01/1_Java%E6%A6%82%E8%BF%B0/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-PAT乙级1025" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -934,75 +996,6 @@ return 0;</code></pre><p>}</p>
 <h2 id="邻接表存储DFS"><a href="#邻接表存储DFS" class="headerlink" title="邻接表存储DFS"></a>邻接表存储DFS</h2><p>void Visit(Vertex v){<br>    printf(“%d\n”,v);<br>}<br>void DFS(LGraph Graph,Vertex v,void (*Visit)(Vertex)){<br>    ProToAdjVNode W;<br>    Visit(v);<br>    Visited[v]=true;<br>    for(W=Graph-&gt;G[v].FitstEdge;W;W=W-&gt;Next){<br>        if(!Visited[W-&gt;Adjv]){<br>            DFS(Graph,W-&gt;Adjv,Visit);<br>        }<br>    }<br>}</p>
 <hr>
 <h2 id="邻接矩阵存储BFS"><a href="#邻接矩阵存储BFS" class="headerlink" title="邻接矩阵存储BFS"></a>邻接矩阵存储BFS</h2><p>void Visit(Vertex v){<br>    printf(“正在访问的顶点%d\n”,v);<br>}<br>bool IsEdge(MGraph Graph,Vertex v,Vertex w){<br>    return Graph-&gt;G[v][w]&lt;INFNITY?true:false;<br>}<br>void BFS(MGraph Graph,Vertex S,void(*Visit)(Vertex)){<br>    queue<Vertex> Q;<br>    Vertex V,W;<br>    Visit(S);<br>    Visited[S]=true;<br>    Q.push(S);<br>    while(!Q.empty()){<br>        V=Q.front();Q.pop();<br>        for(W=0;W<Graph->Nv;W++){<br>            if(!Visited[W]&amp;&amp;IsEdge(Graph,V,W)){<br>                Visit(W);<br>                Visited[W]=true;<br>                Q.push(W);<br>            }<br>        }<br>    }<br>}</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-图的两种表示法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/02/04/%E5%9B%BE%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%B3%95/" class="article-date">
-      <time datetime="2020-02-04T14:38:09.000Z" itemprop="datePublished">2020-02-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/04/%E5%9B%BE%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%B3%95/">图的两种表示法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<h2 id="邻接矩阵表示"><a href="#邻接矩阵表示" class="headerlink" title="邻接矩阵表示:"></a>邻接矩阵表示:</h2><p>#include<iostream><br>#include<cstdlib><br>#define MaxVertexNum 100<br>#define INFNITY 65535<br>using namespace std;<br>typedef int Vertex;<br>typedef int WeightType;<br>typedef char DataType;</p>
-<p>typedef struct ENode{<br>    Vertex v1,v2;<br>    WeightType Weight;<br>}*PtrToENode;<br>typedef PtrToENode Edge;</p>
-<p>typedef struct GNode{<br>    int Nv,Ne;<br>    WeightType G[MaxVertexNum][MaxVertexNum];<br>    DataType Data[MaxVertexNum];<br>}*PtrToMNode;<br>typedef PtrToMNode MGraph;</p>
-<p>MGraph CreateGraph(int VertexNum){<br>    Vertex v,w;<br>    MGraph Graph;<br>    Graph=(MGraph)malloc(sizeof(struct GNode));<br>    Graph-&gt;Nv=VertexNum;<br>    Graph-&gt;Ne=0;<br>    for(v=0;v<Graph->Nv;v++){<br>        for(w=0;w<Graph->Nv;w++){<br>            Graph-&gt;G[v][w]=INFNITY;<br>        }<br>    }<br>    return Graph;<br>}<br>void InsertEdge(MGraph Graph,Edge E){<br>    Graph-&gt;G[E-&gt;v1][E-&gt;v2]=E-&gt;Weight;<br>    Graph-&gt;G[E-&gt;v2][E-&gt;v1]=E-&gt;Weight;<br>}<br>MGraph BuildGraph(){<br>    MGraph Graph;<br>    Edge E;<br>    Vertex v;<br>    int Nv,i;<br>    scanf(“%d”,&amp;Nv);<br>    Graph=CreateGraph(Nv);<br>    scanf(“%d”,&amp;(Graph-&gt;Ne));<br>    if(Graph-&gt;Ne!=0){<br>        E=(Edge)malloc(sizeof(struct ENode));<br>        for(i=0;i<Graph->Ne;i++){<br>            scanf(“%d%d%d”,&amp;E-&gt;v1,&amp;E-&gt;v2,&amp;E-&gt;Weight);<br>            InsertEdge(Graph,E);<br>        }<br>    }<br>    for(v=0;v<Graph->Nv;v++){<br>        scanf(“ %c”,&amp;(Graph-&gt;Data[v]));<br>    }<br>    return Graph;<br>}<br>int main(){<br>    MGraph Graph;<br>    Graph=BuildGraph();<br>    int n=0;<br>    int v=-1;<br>    printf(“请输入你要查询的顶点编号:”);<br>    scanf(“%d”,&amp;v);<br>    printf(“你查询的顶点%c的邻接点:\n”,Graph-&gt;Data[v]);<br>    for(n=0;n<Graph->Nv;n++){<br>        if(Graph-&gt;G[v][n]&lt;INFNITY&amp;&amp;Graph-&gt;G[v][n]&gt;0){<br>            printf(“%c “,Graph-&gt;Data[n]);<br>        }<br>    }<br>    printf(“\n”);<br>    for(int i=0;i<Graph->Nv;i++){<br>        for(int j=0;j<Graph->Nv;j++){<br>            printf(“%d        “,Graph-&gt;G[i][j]);<br>        }<br>        printf(“\n”);<br>    }<br>    /*<br>    5<br>    5<br>    0 1 2<br>    0 3 10<br>    0 4 13<br>    1 2 4<br>    2 4 9<br>    a e d c b<br>    */<br>    return 0;<br>}</p>
-<hr>
-<h2 id="邻接表表示"><a href="#邻接表表示" class="headerlink" title="邻接表表示"></a>邻接表表示</h2><p>#include<iostream><br>#include<cstdlib><br>using namespace std;</p>
-<p>#define MaxVertexNum 100<br>typedef int Vertex;<br>typedef int WeightType;<br>typedef char DataType;</p>
-<p>typedef struct ENode{<br>    Vertex v1,v2;<br>    WeightType Weight;<br>}*PtrToENode;<br>typedef PtrToENode Edge;</p>
-<p>typedef struct AdjVNode{<br>    Vertex Adjv;<br>    WeightType Weight;<br>    AdjVNode <em>Next;<br>}</em>ProToAdjVNode;</p>
-<p>typedef struct VNode{<br>    ProToAdjVNode FitstEdge;<br>    DataType Data;<br>}AdjList[MaxVertexNum];</p>
-<p>typedef struct GNode{<br>    int Nv;<br>    int Ne;<br>    AdjList G;<br>}*PtrToGNode;<br>typedef PtrToGNode LGraph;</p>
-<p>LGraph CreateGraph(int VertexNum){<br>    Vertex v;<br>    LGraph Graph;<br>    Graph=(LGraph)malloc(sizeof(struct GNode));<br>    Graph-&gt;Nv=VertexNum;<br>    Graph-&gt;Ne=0;<br>    for(v=0;v<Graph->Nv;v++){<br>        Graph-&gt;G[v].FitstEdge=NULL;<br>    }<br>    return Graph;<br>}</p>
-<p>void InsertEdge(LGraph Graph,Edge E){<br>    ProToAdjVNode NewNode;<br>    NewNode=(ProToAdjVNode)malloc(sizeof(struct AdjVNode));<br>    NewNode-&gt;Adjv=E-&gt;v2;<br>    NewNode-&gt;Weight=E-&gt;Weight;<br>    NewNode-&gt;Next=Graph-&gt;G[E-&gt;v2].FitstEdge;<br>    Graph-&gt;G[E-&gt;v1].FitstEdge=NewNode;<br>    NewNode=(ProToAdjVNode)malloc(sizeof(struct AdjVNode));<br>    NewNode-&gt;Adjv=E-&gt;v1;<br>    NewNode-&gt;Weight=E-&gt;Weight;<br>    NewNode-&gt;Next=Graph-&gt;G[E-&gt;v2].FitstEdge;<br>    Graph-&gt;G[E-&gt;v2].FitstEdge=NewNode;<br>}<br>LGraph BuildGraph(){<br>    LGraph Graph;<br>    Edge E;<br>    Vertex v;<br>    int Nv,i;<br>    scanf(“%d”,&amp;Nv);<br>    Graph=CreateGraph(Nv);<br>    scanf(“%d”,&amp;(Graph-&gt;Ne));<br>    if(Graph-&gt;Ne!=0){<br>        E=(Edge)malloc(sizeof(ENode));<br>        for(i=0;i<Graph->Ne;i++){<br>            scanf(“%d %d %d”,&amp;E-&gt;v1,&amp;E-&gt;v2,&amp;E-&gt;Weight);<br>            InsertEdge(Graph,E);<br>        }<br>    }<br>    for(v=0;v<Graph->Nv;v++){<br>        scanf(“ %c”,&amp;(Graph-&gt;G[v].Data));<br>    }<br>    return Graph;<br>}<br>int main(){<br>    LGraph Graph;<br>    Graph=BuildGraph();<br>    int n=0;<br>    int v=-1;<br>    printf(“请输入你要查询的顶点编号:”);<br>    scanf(“%d”,&amp;v);<br>    printf(“你查询的顶点%c的邻接点:”,Graph-&gt;G[v].Data);<br>    AdjVNode <em>M;<br>    M=Graph-&gt;G[v].FitstEdge;<br>    while(M!=NULL){<br>            printf(“%c “,Graph-&gt;G[M-&gt;Adjv].Data);<br>            M=M-&gt;Next;<br>    }<br>    printf(“\n”);<br>    /</em><br>    5<br>    5<br>    1 0 2<br>    3 0 10<br>    4 0 13<br>    2 1 4<br>    4 2 9<br>    a e d c b<br>    */<br>    return 0;<br>}</p>
 
       
     </div>
