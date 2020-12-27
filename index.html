@@ -304,13 +304,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="1、归并排序"><a href="#1、归并排序" class="headerlink" title="1、归并排序"></a>1、归并排序</h1><ul>
-<li>分治要排序队列为两部分，归并时从两个子队列选取</li>
-</ul>
-<h1 id="2、堆排序"><a href="#2、堆排序" class="headerlink" title="2、堆排序"></a>2、堆排序</h1><ul>
-<li>将无序队列构建成一个堆，将堆顶元素与末尾元素交换；重新调整结构使其满足堆定义</li>
-</ul>
-<h1 id="4、排序算法的比较"><a href="#4、排序算法的比较" class="headerlink" title="4、排序算法的比较"></a>4、排序算法的比较</h1><img src="/2020/12/21/47_%E6%8E%92%E5%BA%8F/01_%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83.png" class="">
+              <h1 id="1、归并排序"><a href="#1、归并排序" class="headerlink" title="1、归并排序"></a>1、归并排序</h1><ul>
+<li>分治要排序队列为两部分，归并时从两个子队列选取
+          
       
     </div>
     
@@ -323,6 +319,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-%E5%A0%86%E6%8E%92%E5%BA%8F/" rel="tag">归并排序 堆排序</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2020/12/21/47_%E6%8E%92%E5%BA%8F/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -369,10 +369,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h1 id="1、IOC"><a href="#1、IOC" class="headerlink" title="1、IOC"></a>1、IOC</h1><ul>
-<li>依赖注入(DI)和控制反转(IOC)是从不同的角度的描述的同一件事情，就是指通过引入IOC容器，利用依赖关系注入的方式，实现对象之间的解耦，动态地将某种依赖关系注入到对象之中</li>
-</ul>
-<h1 id="2、AOP"><a href="#2、AOP" class="headerlink" title="2、AOP"></a>2、AOP</h1>
+              <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h1 id="1、IOC"><a href="#1、IOC" class="headerlink" title="1、IOC"></a>1、IOC</h1><ul>
+<li>依赖注入(DI)和控制反转(IOC)是从不同的角度的描述的同一件事情，就是指通过引入IOC容器，利用依赖关系注入的方式，实现对象之间的解耦，动态地将某种依赖关系注入到对象之中
+          
       
     </div>
     
@@ -381,6 +380,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2020/12/21/46_Spring/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -427,8 +430,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><h1 id="HashMap和HashTable区别"><a href="#HashMap和HashTable区别" class="headerlink" title="HashMap和HashTable区别"></a>HashMap和HashTable区别</h1><p><a href="https://www.cnblogs.com/williamjie/p/9099141.html" target="_blank" rel="noopener">https://www.cnblogs.com/williamjie/p/9099141.html</a></p>
-
+              <h1 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h1><h1 id="HashMap和HashTable区别"><a href="#HashMap和HashTable区别" class="headerlink" title="HashMap和HashTable区别"></a>HashMap和HashTable区别
+          
       
     </div>
     
@@ -437,6 +440,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2020/12/21/45_%E5%AE%B9%E5%99%A8/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -483,137 +490,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="day02探花交友"><a href="#day02探花交友" class="headerlink" title="day02探花交友"></a>day02探花交友</h1><h1 id="1-Nginx配置"><a href="#1-Nginx配置" class="headerlink" title="1 Nginx配置"></a>1 Nginx配置</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">location [=| |^~|~*|~|/] /url/ &#123;...&#125;</span><br><span class="line">匹配顺序 [<span class="number">1</span>精准匹配|<span class="number">2</span>空格字符串匹配|<span class="number">3</span>优于正则匹配|<span class="number">4</span>正则匹配不区分大小写|<span class="number">5</span>正则区分大小写|<span class="number">6</span>通用匹配]</span><br><span class="line">    </span><br><span class="line">client_max_body_size <span class="number">20</span>M;</span><br><span class="line">nginx对上传文件的大小有限制，默认是<span class="number">1</span>M，当超过大小的时候会报<span class="number">413</span>（too large）错误。这个时候我们要修改nginx的参数</span><br></pre></td></tr></table></figure>
-
-<h1 id="2-登陆、圈子、视频功能"><a href="#2-登陆、圈子、视频功能" class="headerlink" title="2 登陆、圈子、视频功能"></a>2 登陆、圈子、视频功能</h1><table>
-<thead>
-<tr>
-<th>Controller</th>
-<th>Service</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td></td>
-<td>SmsService</td>
-<td>sendCheckCode</td>
-</tr>
-<tr>
-<td></td>
-<td>UserService</td>
-<td>login</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>queryUserByToken</td>
-</tr>
-<tr>
-<td></td>
-<td>UserInfoService</td>
-<td>saveUserInfo</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>saveLogo</td>
-</tr>
-<tr>
-<td></td>
-<td>QuanziApiImpl</td>
-<td>savePublish</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>queryPublishList</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>saveLikeComment</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>removeComment</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>saveLoveComment</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>saveComment</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>queryCommentCount</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>queryPublishById</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>queryCommentList</td>
-</tr>
-<tr>
-<td></td>
-<td>RecommendUserApiImpl</td>
-<td>queryWithMaxScore</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>queryPageInfo</td>
-</tr>
-<tr>
-<td></td>
-<td>VideoApiImpl</td>
-<td>saveVideo</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>queryVideoList</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>followUser</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>disFollowUser</td>
-</tr>
-</tbody></table>
-<h1 id="3-模板类及方法"><a href="#3-模板类及方法" class="headerlink" title="3 模板类及方法"></a>3 模板类及方法</h1><h2 id="3-1-Jackson"><a href="#3-1-Jackson" class="headerlink" title="3.1 Jackson"></a>3.1 Jackson</h2><ul>
-<li>ObjectMapper（）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">对象转为字符串</span><br><span class="line">mapper.writeValueAsString(user);</span><br><span class="line">json字符串转为对象</span><br><span class="line">mapper.readValue(jsonStr, User.class);</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-2-Mybatis-Plus"><a href="#3-2-Mybatis-Plus" class="headerlink" title="3.2 Mybatis-Plus"></a>3.2 Mybatis-Plus</h2><ul>
-<li>queryMapper（）条件构造器</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Entity对象封装操作类，常用方法</span><br><span class="line">eq 等于 | ne 不等于 | gt 大于 | ge 大于等于 | lt 小于 | le 小于等于</span><br><span class="line">between | like | in | group by | orderByAsc | orderByDesc </span><br><span class="line">having | or | and</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="3-3-RedisTemplate"><a href="#3-3-RedisTemplate" class="headerlink" title="3.3 RedisTemplate"></a>3.3 RedisTemplate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">判断key是否存在</span><br><span class="line">hasKey(key)</span><br><span class="line">获取缓存</span><br><span class="line">opsForValue().get(key)</span><br><span class="line">添加缓存</span><br><span class="line">set(key, value)</span><br><span class="line">添加缓存并设置过期时间</span><br><span class="line">set(key, value, time, TimeUnit.SECONDS)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-4-RocketMQTemplate"><a href="#3-4-RocketMQTemplate" class="headerlink" title="3.4 RocketMQTemplate"></a>3.4 RocketMQTemplate</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">发送消息</span><br><span class="line">convertAndSend(&quot;topic&quot;,User)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-5-ResponseEntity"><a href="#3-5-ResponseEntity" class="headerlink" title="3.5 ResponseEntity"></a>3.5 ResponseEntity</h2><p>​    泛型响应数据，@RestController+@RequestBody；前端页面接收响应数据：在ajax中使用statusCode处理结果。</p>
-
+              <h1 id="day02探花交友"><a href="#day02探花交友" class="headerlink" title="day02探花交友"></a>day02探花交友</h1><h1 id="1-Nginx配置"><a href="#1-Nginx配置" class="headerlink" title="1 Nginx配置"></a>1 Nginx配置
+          
       
     </div>
     
@@ -626,6 +504,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx-%E6%A8%A1%E6%9D%BF/" rel="tag">Nginx 模板</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2020/12/07/41_day02%E6%8E%A2%E8%8A%B1%E4%BA%A4%E5%8F%8B/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -672,14 +554,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="JVM03"><a href="#JVM03" class="headerlink" title="JVM03"></a>JVM03</h1><h1 id="1-新生代GC"><a href="#1-新生代GC" class="headerlink" title="1 新生代GC"></a>1 新生代GC</h1><ol>
-<li>大部分正常对象，创建时都会优先分配进JVM堆内存新生代。</li>
-<li>新生代如果对象满时会触发Minor GC回收掉没有引用的垃圾对象。</li>
-<li>如果有对象躲过了十多次的垃圾回收，就会放入老年代。</li>
-</ol>
-<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="java中static变量存在内存什么区域"><a href="#java中static变量存在内存什么区域" class="headerlink" title="java中static变量存在内存什么区域"></a>java中static变量存在内存什么区域</h2><p>​    内存总体一共分为了4个部分(stack segment、heap segment、code segment、data segment) 。</p>
-<p>​    当我们在程序中，申明一个局部变量的时候，此变量就存放在了 stack segment(栈)当中； 当new 一个对象的时候，此对象放在了heap segment(堆)当中； 而static 的变量或者字符串常量 则存在在 data segment(数据区)中； 那么类中方法的话，是存在在 code segment(代码区)中了。</p>
-
+              <h1 id="JVM03"><a href="#JVM03" class="headerlink" title="JVM03"></a>JVM03</h1><h1 id="1-新生代GC"><a href="#1-新生代GC" class="headerlink" title="1 新生代GC"></a>1 新生代GC
+          
       
     </div>
     
@@ -688,6 +564,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a href="/2020/12/05/44_JVM03/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -734,46 +614,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="JVM02"><a href="#JVM02" class="headerlink" title="JVM02"></a>JVM02</h1><h1 id="1、JVM内存区域"><a href="#1、JVM内存区域" class="headerlink" title="1、JVM内存区域"></a>1、JVM内存区域</h1><ul>
-<li>JVM内存原理图</li>
-</ul>
-
-
-<h2 id="1-1、方法区"><a href="#1-1、方法区" class="headerlink" title="1.1、方法区"></a>1.1、方法区</h2><p>​    用来存放加载的Java类，jdk1.8之后更名为<strong>元数据空间</strong>。</p>
-<h2 id="1-2、栈内存"><a href="#1-2、栈内存" class="headerlink" title="1.2、栈内存"></a>1.2、栈内存</h2><p>​    用于存放类中的成员变量以及每个方法的<strong>栈帧</strong>。</p>
-<h2 id="1-3、堆内存"><a href="#1-3、堆内存" class="headerlink" title="1.3、堆内存"></a>1.3、堆内存</h2><p>​    用于存放对象的<strong>实例化数据</strong>。</p>
-<h1 id="2、Tomcat中的类加载机制"><a href="#2、Tomcat中的类加载机制" class="headerlink" title="2、Tomcat中的类加载机制"></a>2、Tomcat中的类加载机制</h1><ul>
-<li>Tomcat的非双亲委派模型</li>
-</ul>
-
-
-<h2 id="2-1、我们思考一下：Tomcat是个web容器，-那么它要解决什么问题："><a href="#2-1、我们思考一下：Tomcat是个web容器，-那么它要解决什么问题：" class="headerlink" title="2.1、我们思考一下：Tomcat是个web容器， 那么它要解决什么问题："></a>2.1、我们思考一下：Tomcat是个web容器， 那么它要解决什么问题：</h2><ol>
-<li>一个web容器可能需要部署两个应用程序，不同的应用程序可能会依赖同一个第三方类库的不同版本，不能要求同一个类库在同一个服务器只有一份，因此要保证每个应用程序的类库都是独立的，保证相互隔离。 </li>
-<li>部署在同一个web容器中相同的类库相同的版本可以共享。否则，如果服务器有10个应用程序，那么要有10份相同的类库加载进虚拟机。</li>
-<li>web容器也有自己依赖的类库，不能于应用程序的类库混淆。基于安全考虑，应该让容器的类库和程序的类库隔离开来</li>
-<li>web容器要支持jsp的修改，我们知道，jsp 文件最终也是要编译成class文件才能在虚拟机中运行，但程序运行后修改jsp已经是司空见惯的事情。所以，web容器需要支持 jsp 修改后不用重启。</li>
-</ol>
-<h2 id="2-2、Tomcat-如果使用默认的类加载机制行不行？"><a href="#2-2、Tomcat-如果使用默认的类加载机制行不行？" class="headerlink" title="2.2、Tomcat 如果使用默认的类加载机制行不行？"></a>2.2、Tomcat 如果使用默认的类加载机制行不行？</h2><p>​    答案是不行的。</p>
-<p>​    为什么？我们看，第一个问题，如果使用默认的类加载器机制，那么是无法加载两个相同类库的不同版本的，默认的累加器是不管你是什么版本的，只在乎你的全限定类名，并且只有一份。</p>
-<p>​    第二个问题，默认的类加载器是能够实现的，因为他的职责就是保证唯一性。第三个问题和第一个问题一样。</p>
-<p>​    我们再看第四个问题，我们想我们要怎么实现jsp文件的热修改，jsp 文件其实也就是class文件，那么如果修改了，但类名还是一样，类加载器会直接取方法区中已经存在的，修改后的jsp是不会重新加载的。那么怎么办呢？我们可以直接卸载掉这jsp文件的类加载器，所以你应该想到了，每个jsp文件对应一个唯一的类加载器，当一个jsp文件修改了，就直接卸载这个jsp类加载器。重新创建类加载器，重新加载jsp文件。</p>
-<h1 id="3、垃圾回收"><a href="#3、垃圾回收" class="headerlink" title="3、垃圾回收"></a>3、垃圾回收</h1><p>​    Java堆内存中的对象包含了对象<strong>实例化数据</strong>和<strong>本身信息</strong>两部分，占用了内存资源。但是当栈中的方法执行完并出栈，局部变量也被释放，就没有再指向堆中的对象，这也就意味着这个对象没有用了。在有限的内存资源下，JVM提供了垃圾回收机制，只要启动一个JVM进程就会自带一个后台线程不断检查堆内存中的各个实例对象，如果<strong>某个实例对象没有任何一个局部变量，也没有任何一个类的静态变量包括常量等指向它</strong>，这个线程就会把这个没有指向的实例对象回收掉，从内存清除。</p>
-<h1 id="4、方法区类回收"><a href="#4、方法区类回收" class="headerlink" title="4、方法区类回收"></a>4、方法区类回收</h1><p>​    方法区也有垃圾回收机制，必须满足下面的条件: </p>
-<ul>
-<li>首先该类的所有实例对象已经从Java堆内存里回收 </li>
-<li>其次该类的ClassLoader已经被回收</li>
-<li>最后该类的Class对象没有任何引用</li>
-</ul>
-<h1 id="5、JVM分代模型"><a href="#5、JVM分代模型" class="headerlink" title="5、JVM分代模型"></a>5、JVM分代模型</h1><ul>
-<li>新生代： 对象创建后立马被回收</li>
-<li>老年代： 对象创建后长时间不被回收</li>
-</ul>
-<h1 id="6、扩展小结"><a href="#6、扩展小结" class="headerlink" title="6、扩展小结"></a>6、扩展小结</h1><ol>
-<li>Java多线程每个线程都有自己的虚拟栈，但是共享一个堆。</li>
-<li>静态变量多线程不安全。</li>
-<li>每一个类都需要它的类加载器和这个类本身同一确立其在JVM中的唯一性，为了避免重复加载所有用到双亲委派模型。</li>
-</ol>
-
+              <h1 id="JVM02"><a href="#JVM02" class="headerlink" title="JVM02"></a>JVM02</h1><h1 id="1、JVM内存区域"><a href="#1、JVM内存区域" class="headerlink" title="1、JVM内存区域"></a>1、JVM内存区域
+          
       
     </div>
     
@@ -786,6 +628,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-Tomcat-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">内存管理 Tomcat 垃圾回收</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2020/12/04/43_JVM02/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -832,42 +678,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="JVM01"><a href="#JVM01" class="headerlink" title="JVM01"></a>JVM01</h1><h1 id="1-Java代码怎么运行"><a href="#1-Java代码怎么运行" class="headerlink" title="1 Java代码怎么运行"></a>1 Java代码怎么运行</h1><h2 id="1-1-编译"><a href="#1-1-编译" class="headerlink" title="1.1 编译"></a>1.1 编译</h2><p>​    Javac是一种编译器，能<strong>将一种语言规范转化成另外一种语言规范，通常编译器都是将便于人理解的语言规范转化成机器容易理解的语言规范</strong>，如C/C++或者汇编语言都是将源代码直接编译成目标机器码，这个目标机器代码是CPU直接执行的指令集合。这些指令集合也就是底层的一种语言规范。</p>
-<p>​    Javac的编译器也是将Java这种对人非常友好的编程语言编译成对对所有机器都非常友好的一种语言。这种语言不是针对某种机器或某个平台。怎么<strong>消除不同种类，不同平台之间的差异这个任务就有JVM来完成</strong>，而<strong>Javac的任务就是将Java源代码语言转化为JVM能够识别的一种语言</strong>，然后由JVM将JVM语言再转化成当前这个机器能够识别的机器语言。</p>
-<p>​    Javac的任务就是将Java源代码编译成Java字节码，也就是JVM能够识别的二进制代码，从表面看是将.java文件转化为.class文件。而实际上是将Java源代码转化成一连串二进制数字，这些二进制数字是有格式的，只有JVM能够真确的识别他们到底代表什么意思。</p>
-<p>​    编译器把一种语言规范转化为另一种语言规范的这个过程需要哪些步骤？回答这个问题需要参照《编译原理》，总结过程如下：</p>
-<ol>
-<li>词法分析：读取源代码，一个字节一个字节的读进来，找出这些词法中我们定义的语言关键词如：if、else、while等，识别哪些if是合法的哪些是不合法的。这个步骤就是词法分析过程。词法分析的结果：就是从源代码中找出了一些规范化的token流，就像人类语言中，给你一句话你要分辨出哪些是一个词语，哪些是标点符号，哪些是动词，哪些是名词。</li>
-<li>语法分析：就是对词法分析中得到的token流进行语法分析，这一步就是检查这些关键词组合在一起是不是符合Java语言规范。如if的后面是不是紧跟着一个布尔型判断表达式。语法分析的结果：就是形成一个符合Java语言规定的抽象语法树，抽象语法树是一个结构化的语法表达形式，它的作用是把语言的主要词法用一个结构化的形式组织在一起。这棵语法树可以被后面按照新的规则再重新组织。</li>
-<li>语义分析：语法分析完成之后也就不存在语法问题了，语义分析的主要工作就是把一些难懂的，复杂的语法转化成更简单的语法。就如难懂的文言文转化为大家都懂的百话文，或者是注释一下一些不懂的成语。语义分析结果：就是将复杂的语法转化为简单的语法，对应到Java就是将foreach转化为for循环，还有一些注释等。最后生成一棵抽象的语法树，这棵语法树也就更接近目标语言的语法规则。</li>
-<li>字节码生成：将会根据经过注释的抽象语法树生成字节码，也就是将一个数据结构转化为另外一个数据结构。就像将所有的中文词语翻译成英文单词后按照英文语法组装文英文语句。代码生成器的结果就是生成符合java虚拟机规范的字节码。</li>
-</ol>
-<h2 id="1-2-JVM运行"><a href="#1-2-JVM运行" class="headerlink" title="1.2 JVM运行"></a>1.2 JVM运行</h2><ul>
-<li>JVM运行原理图</li>
-</ul>
-
-
-<p>​    在JVM中加载了编译生成的类字节码文件，并通过解释器转化成机器能识别的指令，再执行代码。</p>
-<h2 id="1-3-怎么防止反编译"><a href="#1-3-怎么防止反编译" class="headerlink" title="1.3 怎么防止反编译"></a>1.3 怎么防止反编译</h2><p>​    在编译的时候，对字节码进行加密；在类加载的时候，对加密的类采用自定义的类加载器来解密文件。</p>
-<h1 id="2-类加载过程"><a href="#2-类加载过程" class="headerlink" title="2 类加载过程"></a>2 类加载过程</h1><ul>
-<li>类加载过程原理图</li>
-</ul>
-
-
-<h2 id="2-1-验证"><a href="#2-1-验证" class="headerlink" title="2.1 验证"></a>2.1 验证</h2><p>​    检查字节码文件是否符合规范。</p>
-<h2 id="2-2-准备"><a href="#2-2-准备" class="headerlink" title="2.2 准备"></a>2.2 准备</h2><p>​    给类分配内存空间（如：成员变量及附初值等）。</p>
-<h2 id="2-3-解析"><a href="#2-3-解析" class="headerlink" title="2.3 解析"></a>2.3 解析</h2><p>​    把符号引用替换为直接引用。</p>
-<h2 id="2-4-初始化"><a href="#2-4-初始化" class="headerlink" title="2.4 初始化"></a>2.4 初始化</h2><p>​    赋值并进行初始化全过程（如：加载父类等）。</p>
-<h1 id="3-双亲委派机制"><a href="#3-双亲委派机制" class="headerlink" title="3 双亲委派机制"></a>3 双亲委派机制</h1><ul>
-<li>双亲委派原理图</li>
-</ul>
-
-
-<h2 id="3-1、启动类加载器"><a href="#3-1、启动类加载器" class="headerlink" title="3.1、启动类加载器"></a>3.1、启动类加载器</h2><p>​    Bootstrap ClassLoader主要负责加载我们在机器上安装在Java目录下的核心类。</p>
-<h2 id="3-2、扩展类加载器"><a href="#3-2、扩展类加载器" class="headerlink" title="3.2、扩展类加载器"></a>3.2、扩展类加载器</h2><p>​    Extension ClassLoader加载Java目录下lib\ext中的类。</p>
-<h2 id="3-3、应用程序类加载器"><a href="#3-3、应用程序类加载器" class="headerlink" title="3.3、应用程序类加载器"></a>3.3、应用程序类加载器</h2><p>​    Application ClassLoader负责加载“ClassPath”环境变量所指定的路径中的类。</p>
-<h2 id="3-4、自定义类加载器"><a href="#3-4、自定义类加载器" class="headerlink" title="3.4、自定义类加载器"></a>3.4、自定义类加载器</h2><p>​    继承ClassLoader类，重写里面的方法，指定加载的路径。</p>
-
+              <h1 id="JVM01"><a href="#JVM01" class="headerlink" title="JVM01"></a>JVM01</h1><h1 id="1-Java代码怎么运行"><a href="#1-Java代码怎么运行" class="headerlink" title="1 Java代码怎么运行"></a>1 Java代码怎么运行</h1><h2 id="1-1-编译"><a href="#1-1-编译" class="headerlink" title="1.1 编译"></a>1.1 编译
+          
       
     </div>
     
@@ -880,6 +692,10 @@
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91-%E7%B1%BB%E5%8A%A0%E8%BD%BD-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE/" rel="tag">编译 类加载 双亲委派</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2020/12/01/42_JVM01/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
