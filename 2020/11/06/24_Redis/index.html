@@ -15,19 +15,19 @@
 
 
 
-<meta name="description" content="集合1、Collection 长度可变的容器 只能存储引用类型，存基本数据类型要用到包装类">
+<meta name="description" content="Redis1、NoSQL(1) 概念  NoSQL：Not-Only SQL(泛指非关系型数据库)，作为关系型数据库的补充。作业：应对基于海量用户和海量数据前提下的数据处理问  (2) 特征  可扩容、可伸缩；大数据量下高性能。  (3) 应用场景   2、持久化2.1、RDB(数据快照) 将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单 场景：承受数分钟以内的数据丢失，且追求大数据集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="15_集合">
-<meta property="og:url" content="http://xiaojujing.com/2020/11/01/15_%E9%9B%86%E5%90%88/index.html">
+<meta property="og:title" content="24_Redis">
+<meta property="og:url" content="http://xiaojujing.com/2020/11/06/24_Redis/index.html">
 <meta property="og:site_name" content="xiaojujing&#39;s blogs">
-<meta property="og:description" content="集合1、Collection 长度可变的容器 只能存储引用类型，存基本数据类型要用到包装类">
+<meta property="og:description" content="Redis1、NoSQL(1) 概念  NoSQL：Not-Only SQL(泛指非关系型数据库)，作为关系型数据库的补充。作业：应对基于海量用户和海量数据前提下的数据处理问  (2) 特征  可扩容、可伸缩；大数据量下高性能。  (3) 应用场景   2、持久化2.1、RDB(数据快照) 将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单 场景：承受数分钟以内的数据丢失，且追求大数据集">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://xiaojujing.com/2020/11/01/15_%E9%9B%86%E5%90%88/01_%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png">
-<meta property="article:published_time" content="2020-11-01T15:49:40.774Z">
-<meta property="article:modified_time" content="2020-12-25T06:36:05.010Z">
+<meta property="og:image" content="http://xiaojujing.com/2020/11/06/24_Redis/%E7%94%B5%E5%95%86%E5%9C%BA%E6%99%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png">
+<meta property="article:published_time" content="2020-11-06T15:45:54.846Z">
+<meta property="article:modified_time" content="2021-01-03T05:34:28.312Z">
 <meta property="article:author" content="xiaojujing">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://xiaojujing.com/2020/11/01/15_%E9%9B%86%E5%90%88/01_%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png">
+<meta name="twitter:image" content="http://xiaojujing.com/2020/11/06/24_Redis/%E7%94%B5%E5%95%86%E5%9C%BA%E6%99%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -61,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>15_集合 | xiaojujing&#39;s blogs</title>
+<title>24_Redis | xiaojujing&#39;s blogs</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -272,11 +272,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-15_集合" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-24_Redis" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/11/01/15_%E9%9B%86%E5%90%88/" class="article-date">
-      <time datetime="2020-11-01T15:49:40.774Z" itemprop="datePublished">2020-11-01</time>
+      <a href="/2020/11/06/24_Redis/" class="article-date">
+      <time datetime="2020-11-06T15:45:54.846Z" itemprop="datePublished">2020-11-06</time>
 </a>
 
 
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      15_集合
+      24_Redis
     </h1>
   
 
@@ -308,54 +308,80 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h1 id="1、Collection"><a href="#1、Collection" class="headerlink" title="1、Collection"></a>1、Collection</h1><ul>
-<li>长度可变的容器</li>
-<li>只能存储引用类型，存基本数据类型要用到包装类<a id="more"></a></li>
-<li>JDK1.5之后新增<strong>增强for</strong>用来简化集合遍历</li>
+        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h1 id="1、NoSQL"><a href="#1、NoSQL" class="headerlink" title="1、NoSQL"></a>1、NoSQL</h1><p>(1) 概念</p>
+<ul>
+<li>NoSQL：Not-Only SQL(泛指非关系型数据库)，作为关系型数据库的补充。作业：应对基于海量用户和海量数据前提下的数据处理问</li>
 </ul>
-<img src="/2020/11/01/15_%E9%9B%86%E5%90%88/01_%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png" class="">
+<p>(2) 特征</p>
+<ul>
+<li>可扩容、可伸缩；大数据量下高性能。</li>
+</ul>
+<p>(3) 应用场景</p>
+<img src="/2020/11/06/24_Redis/%E7%94%B5%E5%95%86%E5%9C%BA%E6%99%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png" class="">
 
-<h1 id="2、List"><a href="#2、List" class="headerlink" title="2、List"></a>2、List</h1><ul>
-<li>存取有序、可重复、有索引</li>
+<h1 id="2、持久化"><a href="#2、持久化" class="headerlink" title="2、持久化"></a>2、持久化</h1><h2 id="2-1、RDB-数据快照"><a href="#2-1、RDB-数据快照" class="headerlink" title="2.1、RDB(数据快照)"></a>2.1、RDB(数据快照)</h2><ul>
+<li>将当前数据状态进行保存，快照形式，存储数据结果，存储格式简单</li>
+<li>场景：承受数分钟以内的数据丢失，且追求大数据集的恢复速度</li>
 </ul>
-<h2 id="2-1、ArrayList"><a href="#2-1、ArrayList" class="headerlink" title="2.1、ArrayList"></a>2.1、ArrayList</h2><ul>
-<li>数组结构实现，查询快、增删慢</li>
+<h2 id="2-2、AOF-过程日志"><a href="#2-2、AOF-过程日志" class="headerlink" title="2.2、AOF(过程日志)"></a>2.2、AOF(过程日志)</h2><ul>
+<li>将数据操作过程进行保存，日志形式，存储操作过程，存储格式复杂</li>
+<li>场景：对数据业务非常敏感，保障数据无丢失</li>
 </ul>
-<h2 id="2-2、LinkList"><a href="#2-2、LinkList" class="headerlink" title="2.2、LinkList"></a>2.2、LinkList</h2><ul>
-<li>链表结构实现，查询慢、增删快</li>
+<h1 id="3、数据删除和淘汰策略"><a href="#3、数据删除和淘汰策略" class="headerlink" title="3、数据删除和淘汰策略"></a>3、数据删除和淘汰策略</h1><h2 id="3-1、数据删除"><a href="#3-1、数据删除" class="headerlink" title="3.1、数据删除"></a>3.1、数据删除</h2><h3 id="3-1-1、定时删除"><a href="#3-1-1、定时删除" class="headerlink" title="3.1.1、定时删除"></a>3.1.1、定时删除</h3><p>​        创建一个定时器，当key设置的过期时间到达时，由定时器任务立即执行对键的删除操作。</p>
+<ul>
+<li>性能：节约内存，占用CPU资源</li>
 </ul>
-<h1 id="3、Set"><a href="#3、Set" class="headerlink" title="3、Set"></a>3、Set</h1><ul>
-<li>不可重复、无索引（不能使用普通for）</li>
+<h3 id="3-1-2、惰性删除"><a href="#3-1-2、惰性删除" class="headerlink" title="3.1.2、惰性删除"></a>3.1.2、惰性删除</h3><p>​        数据到达过期时间不作处理，等下次访问该数据时判断，如果发现已过期，删除。</p>
+<ul>
+<li>性能：节约CPU性能，内存压力很大，出现长期占用内存的数据</li>
 </ul>
-<h2 id="3-1、TreeSet"><a href="#3-1、TreeSet" class="headerlink" title="3.1、TreeSet"></a>3.1、TreeSet</h2><h3 id="3-1-1、自然排序"><a href="#3-1-1、自然排序" class="headerlink" title="3.1.1、自然排序"></a>3.1.1、自然排序</h3><ol>
-<li>空参创建TreeSet集合</li>
-<li>自定义类实现Comparable接口</li>
-<li>重写CompareTo方法</li>
-</ol>
-<h3 id="3-1-2、比较器排序"><a href="#3-1-2、比较器排序" class="headerlink" title="3.1.2、比较器排序"></a>3.1.2、比较器排序</h3><ol>
-<li>TreeSet带参构造接收Comparetor的实现类对象</li>
-<li>重写compare(T o1,T o2)方法</li>
-</ol>
-<h2 id="3-2、HashSet"><a href="#3-2、HashSet" class="headerlink" title="3.2、HashSet"></a>3.2、HashSet</h2><ul>
-<li>底层是哈希表、无序、不可重复、无索引</li>
-<li>哈希表结构基于<strong>数组+链表</strong>，JDK1.8之后当结点多于8个基于<strong>数组+红黑树</strong></li>
-<li>HashSet集合存储自定义类型元素,要想实现元素的唯一,要求必须重写hashCode方法和equals方法</li>
+<h3 id="3-1-3、定期删除"><a href="#3-1-3、定期删除" class="headerlink" title="3.1.3、定期删除"></a>3.1.3、定期删除</h3><p>​        周期性轮询redis库中的时效性数据，采用随机抽取的策略，利用过期数据占比的方式控制删除频度。</p>
+<ul>
+<li>性能：CPU性能占用设置有峰值，检测频度可自定义设置；内存压力不是很大，长期占用内存的冷数据会被持续清理</li>
 </ul>
-<h1 id="4、Map"><a href="#4、Map" class="headerlink" title="4、Map"></a>4、Map</h1><ul>
-<li>双列集合，一个键对应一个值</li>
-<li>键不可以重复，值可以重复</li>
+<h2 id="3-2、淘汰策略"><a href="#3-2、淘汰策略" class="headerlink" title="3.2、淘汰策略"></a>3.2、淘汰策略</h2><ul>
+<li>检测易失数据</li>
 </ul>
-<h2 id="4-1、遍历方式"><a href="#4-1、遍历方式" class="headerlink" title="4.1、遍历方式"></a>4.1、遍历方式</h2><ul>
-<li>map.values()、map.keyset()</li>
-<li>map.entrySet()</li>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">volatile-lru：挑选最近最少使用的数据淘汰</span></span><br><span class="line"><span class="attr">volatile-lfu：挑选最近使用次数最少的数据淘汰</span></span><br><span class="line"><span class="attr">volatile-ttl：挑选将要过期的数据淘汰</span></span><br><span class="line"><span class="attr">volatile-random：任意选择数据淘汰</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检测全库数据</li>
 </ul>
-<h2 id="4-2、HashMap"><a href="#4-2、HashMap" class="headerlink" title="4.2、HashMap"></a>4.2、HashMap</h2><ul>
-<li>HashMap底层是哈希表结构的</li>
-<li>依赖hashCode方法和equals方法保证键的唯一</li>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">allkeys-lru：挑选最近最少使用的数据淘汰</span></span><br><span class="line"><span class="attr">allkeLyRs-lfu：：挑选最近使用次数最少的数据淘汰</span></span><br><span class="line"><span class="attr">allkeys-random：任意选择数据淘汰，相当于随机</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>放弃数据驱除</li>
 </ul>
-<h2 id="4-3、TreeMap"><a href="#4-3、TreeMap" class="headerlink" title="4.3、TreeMap"></a>4.3、TreeMap</h2><ul>
-<li>TreeMap底层是红黑树结构</li>
-<li>依赖自然排序或者比较器排序,对键进行排序</li>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">no-enviction（驱逐）：禁止驱逐数据(redis4.0中默认策略)，会引发OOM(Out</span> <span class="string">Of Memory)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4、主从复制"><a href="#4、主从复制" class="headerlink" title="4、主从复制"></a>4、主从复制</h1><p>主从复制大体分为3个阶段：</p>
+<ul>
+<li>建立连接</li>
+<li>数据同步</li>
+<li>命令传播（反复同步）</li>
+</ul>
+<h1 id="5、哨兵"><a href="#5、哨兵" class="headerlink" title="5、哨兵"></a>5、哨兵</h1><p>​        哨兵(sentinel)是一个分布式系统，用于对主从结构中的每台服务器进行监控，当出现故障时通过<strong>投票</strong>机制选择新的master并将所有slave连接到新的master</p>
+<h1 id="6、集群"><a href="#6、集群" class="headerlink" title="6、集群"></a>6、集群</h1><p><strong>集群作用</strong>：</p>
+<ul>
+<li>分散单台服务器的访问压力，实现负载均衡</li>
+<li>分散单台服务器的存储压力，实现可扩展性</li>
+<li>降低单台服务器宕机带来的业务灾难</li>
+</ul>
+<h1 id="7、企业级解决方案"><a href="#7、企业级解决方案" class="headerlink" title="7、企业级解决方案"></a>7、企业级解决方案</h1><h2 id="7-1、缓存预热"><a href="#7-1、缓存预热" class="headerlink" title="7.1、缓存预热"></a>7.1、缓存预热</h2><p>​        大量请求过来在缓存中没有获取到数据</p>
+<ul>
+<li>解决方案：系统启动前，提前将相关的缓存数据直接加载到缓存系统；避免在用户请求的时候查数据库。</li>
+</ul>
+<h2 id="7-2、缓存雪崩"><a href="#7-2、缓存雪崩" class="headerlink" title="7.2、缓存雪崩"></a>7.2、缓存雪崩</h2><p>​        短时间大量key集中过期</p>
+<ul>
+<li>解决方案：更多页面静态化处理、多级缓存、Mysql优化、灾难预警、限流降级</li>
+</ul>
+<h2 id="7-3、缓存击穿"><a href="#7-3、缓存击穿" class="headerlink" title="7.3、缓存击穿"></a>7.3、缓存击穿</h2><p>​        单个高热数据key过期</p>
+<ul>
+<li>解决方案：监控测试、及时调整</li>
+</ul>
+<h2 id="7-4、缓存穿透"><a href="#7-4、缓存穿透" class="headerlink" title="7.4、缓存穿透"></a>7.4、缓存穿透</h2><p>​        获取的数据在数据库中不存在，跳过了合法数据的redis数据缓存</p>
+<ul>
+<li>解决方案：缓存null、黑白名单、实施监控、key加密</li>
 </ul>
 
       
@@ -365,13 +391,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/11/01/15_%E9%9B%86%E5%90%88/">15_集合</a></p>
+        <p><span>本文标题:</span><a href="/2020/11/06/24_Redis/">24_Redis</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">xiaojujing</a></p>
-        <p><span>发布时间:</span>2020-11-01, 23:49:40</p>
-        <p><span>最后更新:</span>2020-12-25, 14:36:05</p>
+        <p><span>发布时间:</span>2020-11-06, 23:45:54</p>
+        <p><span>最后更新:</span>2021-01-03, 13:34:28</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/11/01/15_%E9%9B%86%E5%90%88/" title="15_集合">http://xiaojujing.com/2020/11/01/15_%E9%9B%86%E5%90%88/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://xiaojujing.com/2020/11/01/15_%E9%9B%86%E5%90%88/　　作者: xiaojujing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/11/06/24_Redis/" title="24_Redis">http://xiaojujing.com/2020/11/06/24_Redis/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://xiaojujing.com/2020/11/06/24_Redis/　　作者: xiaojujing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -384,15 +410,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/11/02/16_%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-                    16_多线程
+                <a href="/2020/11/06/25_%E7%BB%A7%E6%89%BF/">
+                    25_继承
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/11/01/14_Java%E5%9F%BA%E7%A1%80/">
-                    14_Java基础
+                <a href="/2020/11/05/23_Mybatis/">
+                    23_Mybatis
                 </a>
             </div>
         
@@ -404,7 +430,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#集合"><span class="toc-number">1.</span> <span class="toc-text">集合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1、Collection"><span class="toc-number">2.</span> <span class="toc-text">1、Collection</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、List"><span class="toc-number">3.</span> <span class="toc-text">2、List</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1、ArrayList"><span class="toc-number">3.1.</span> <span class="toc-text">2.1、ArrayList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2、LinkList"><span class="toc-number">3.2.</span> <span class="toc-text">2.2、LinkList</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、Set"><span class="toc-number">4.</span> <span class="toc-text">3、Set</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、TreeSet"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、TreeSet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1、自然排序"><span class="toc-number">4.1.1.</span> <span class="toc-text">3.1.1、自然排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2、比较器排序"><span class="toc-number">4.1.2.</span> <span class="toc-text">3.1.2、比较器排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、HashSet"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、HashSet</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、Map"><span class="toc-number">5.</span> <span class="toc-text">4、Map</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1、遍历方式"><span class="toc-number">5.1.</span> <span class="toc-text">4.1、遍历方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2、HashMap"><span class="toc-number">5.2.</span> <span class="toc-text">4.2、HashMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3、TreeMap"><span class="toc-number">5.3.</span> <span class="toc-text">4.3、TreeMap</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis"><span class="toc-number">1.</span> <span class="toc-text">Redis</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1、NoSQL"><span class="toc-number">2.</span> <span class="toc-text">1、NoSQL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、持久化"><span class="toc-number">3.</span> <span class="toc-text">2、持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1、RDB-数据快照"><span class="toc-number">3.1.</span> <span class="toc-text">2.1、RDB(数据快照)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2、AOF-过程日志"><span class="toc-number">3.2.</span> <span class="toc-text">2.2、AOF(过程日志)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、数据删除和淘汰策略"><span class="toc-number">4.</span> <span class="toc-text">3、数据删除和淘汰策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1、数据删除"><span class="toc-number">4.1.</span> <span class="toc-text">3.1、数据删除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1、定时删除"><span class="toc-number">4.1.1.</span> <span class="toc-text">3.1.1、定时删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2、惰性删除"><span class="toc-number">4.1.2.</span> <span class="toc-text">3.1.2、惰性删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3、定期删除"><span class="toc-number">4.1.3.</span> <span class="toc-text">3.1.3、定期删除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2、淘汰策略"><span class="toc-number">4.2.</span> <span class="toc-text">3.2、淘汰策略</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、主从复制"><span class="toc-number">5.</span> <span class="toc-text">4、主从复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5、哨兵"><span class="toc-number">6.</span> <span class="toc-text">5、哨兵</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6、集群"><span class="toc-number">7.</span> <span class="toc-text">6、集群</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7、企业级解决方案"><span class="toc-number">8.</span> <span class="toc-text">7、企业级解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1、缓存预热"><span class="toc-number">8.1.</span> <span class="toc-text">7.1、缓存预热</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2、缓存雪崩"><span class="toc-number">8.2.</span> <span class="toc-text">7.2、缓存雪崩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3、缓存击穿"><span class="toc-number">8.3.</span> <span class="toc-text">7.3、缓存击穿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4、缓存穿透"><span class="toc-number">8.4.</span> <span class="toc-text">7.4、缓存穿透</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -440,7 +466,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"15_集合　| xiaojujing's blogs　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"24_Redis　| xiaojujing's blogs　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -460,7 +486,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/11/02/16_%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="上一篇: 16_多线程">
+            <a href="/2020/11/06/25_%E7%BB%A7%E6%89%BF/" title="上一篇: 25_继承">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -468,7 +494,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/11/01/14_Java%E5%9F%BA%E7%A1%80/" title="下一篇: 14_Java基础">
+            <a href="/2020/11/05/23_Mybatis/" title="下一篇: 23_Mybatis">
                 <i class="fa fa-angle-right"></i>
             </a>
         
